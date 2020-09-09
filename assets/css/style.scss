@@ -1,0 +1,150 @@
+---
+---
+
+/*
+Logo Red: #DB0000
+Logo Dark Grey: #383838
+(Button or Section) Dark Blue: #214862
+
+(Background) Light Blue: #DEFDFF
+(Background) Light Green: #E8FDE3
+(Background) Tan: #FFF6E3
+*/
+$black: #30373F;
+$white: #FFFFFF;
+$beige: #FFFBF5;
+$darkblue: #91DDFF;
+$blue: #E2F3FA;
+$lightblue: #F1F9FF;
+$textblue: #167394;
+$dark: $textblue;
+
+$gray: #454C52;
+$red: #DB0000;
+$green: #E8FDE3;
+$purple: #403D58;
+$yellow: #FFD45E;
+/* $lightblue: #DEFDFF; */
+$tan: #FFF6E3;
+$darktan: #D1B379;
+$link: $textblue;
+$text: $textblue;
+$border: $textblue;
+
+$family-sans-serif: Muli, BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$family-monospace: 'IBM Plex Mono', Consolas, "Liberation Mono", Menlo, Courier, monospace;
+// $family-primary: Bitter, serif;
+$navbar-breakpoint: 600px;
+$scheme-main: $lightblue;
+$navbar-background-color: $textblue;
+$navbar-item-color: $white;
+$button-color: $text;
+$button-background-color: transparent;
+
+@import "bulma";
+
+// from Scriptor theme https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme
+// Font.
+$font: (
+  primary: ("Lato","Helvetica Neue",Helvetica,sans-serif),
+  secondary: ("Noto Serif",Georgia,serif)
+);
+
+// Palette.
+{% assign accent = site.accent_color | default: '#2d72d9' %}
+$palette: (
+  accent:    {{ accent }},
+  primary:   #6b747a,
+  secondary: #2c343c,
+  meta:      #9ba6ad,
+  border:    #d7d7d7,
+  bg:        #fbfbfb
+);
+@import "functions";
+@import "icons";
+@import "content";
+@import "site-footer";
+
+#navbar {
+  padding: 0px 1rem;
+}
+.level-item {
+  height: 330px;
+  padding: 12px;
+
+  h1 {
+    font-size: 30pt;
+  }
+
+  h2 {
+    padding: 0.2rem;
+    font-size: 18pt;
+  }
+}
+
+.hero .level-item {
+  max-width: 550px
+}
+
+.stacked .level-item {
+  max-width: 960px
+}
+
+.hero-logo {
+  background: linear-gradient(90deg, $blue 30%, $darkblue 70%);
+}
+
+// from 'general':
+/* Text meant only for screen readers */
+.screen-reader-text {
+  border: 0 none;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+}
+
+/* https://blog.koley.in/2019/339-bytes-of-responsive-css */
+.content {
+  line-height: 1.6;
+  color: #222;
+  padding: 2rem;
+  margin: auto;
+}
+
+pre.citation {
+  font-size: 1em;
+  white-space:pre-wrap;
+  word-wrap:break-word;
+}
+
+.markup {
+  max-width: 40rem;
+}
+
+.navbar-item img.logo {
+ max-height: inherit;
+}
+
+.biglogo {
+  height: 10rem;
+}
+
+.logo {
+  width: 10rem;
+}
+
+
+.washed {
+  background-color: $blue;
+}
+
+.lightblue {
+  background-color: $lightblue;
+}
+
+.site-footer {
+  text-align: center;
+}
