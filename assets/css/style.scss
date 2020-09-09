@@ -10,14 +10,17 @@ Logo Dark Grey: #383838
 (Background) Light Green: #E8FDE3
 (Background) Tan: #FFF6E3
 */
-$black: #30373F;
+$black: #4A5053;
 $white: #FFFFFF;
-$beige: #FFFBF5;
-$darkblue: #91DDFF;
-$blue: #E2F3FA;
-$lightblue: #F1F9FF;
+$beige: #F7FFFE;
+$blue:  #00D2D9;
+$lightblue: #A4F7F8;
+
+$textblue: $blue;
+/* $darkblue: #91DDFF;
 $textblue: #167394;
 $dark: $textblue;
+*/
 
 $gray: #454C52;
 $red: #DB0000;
@@ -28,18 +31,18 @@ $yellow: #FFD45E;
 $tan: #FFF6E3;
 $darktan: #D1B379;
 $link: $textblue;
-$text: $textblue;
+$text: $black;
 $border: $textblue;
 
-$family-sans-serif: Muli, BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$family-sans-serif: "Open Sans", BlinkMacSystemFont, -apple-system, "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $family-monospace: 'IBM Plex Mono', Consolas, "Liberation Mono", Menlo, Courier, monospace;
 // $family-primary: Bitter, serif;
 $navbar-breakpoint: 600px;
-$scheme-main: $lightblue;
-$navbar-background-color: $textblue;
+$scheme-main: $beige;
+$navbar-background-color: $black;
 $navbar-item-color: $white;
-$button-color: $text;
-$button-background-color: transparent;
+$button-color: $white;
+$button-background-color: $blue;
 
 @import "bulma";
 
@@ -82,8 +85,20 @@ $palette: (
   }
 }
 
+.top h1 {
+  font-size: 45pt;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  line-height: .9;
+}
+
+.top h1+h1 {
+  color: $blue;
+  border-bottom: 2px solid $blue;
+}
+
 .hero .level-item {
-  max-width: 550px
+  max-width: 550px;
 }
 
 .stacked .level-item {
@@ -91,7 +106,6 @@ $palette: (
 }
 
 .hero-logo {
-  background: linear-gradient(90deg, $blue 30%, $darkblue 70%);
 }
 
 // from 'general':
@@ -138,7 +152,7 @@ pre.citation {
 
 
 .washed {
-  background-color: $blue;
+  background-color: $white;
 }
 
 .lightblue {
