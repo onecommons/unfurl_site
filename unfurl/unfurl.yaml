@@ -1,0 +1,3 @@
+apiVersion: unfurl/v1alpha1
+kind: Project
++?include: local/unfurl.yaml
