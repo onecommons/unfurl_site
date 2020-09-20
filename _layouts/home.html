@@ -4,6 +4,39 @@
   <body>
 
 <div>
+  <nav id="navbar" class="navbar has-shadow has-text-weight-bold" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/images/unfurl-logo.svg" alt="Unfurl" width="112" height="28">
+      </a>
+
+      <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuIndex">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navMenuIndex" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="https://onecommons.org/unfurl">
+          <span class="is-hidden-touch is-hidden-widescreen">
+            Docs
+          </span>
+          <span class="is-hidden-desktop-only">
+            Documentation
+          </span>
+        </a>
+      </div>
+      <div class="navbar-end">
+        <a class=navbar-item href="https://github.com/onecommons/unfurl" title="Go to the Github project">
+               <i class="fa fab fa-github fa-3x"></i>
+        </a>
+     </div>
+    </div>
+    </div>
+  </nav>
   {{ content }}
 </div>
       {% include footer.html %}

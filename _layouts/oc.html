@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+<head>
+  <meta charset="UTF-8">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title | default: site.github.repository_name }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | default: site.github.project_tagline | strip_html | normalize_whitespace | truncate: 160 | escape }}"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="{{ page.url | replace:'index.html', '' | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }} Feed"
+    href="{{ '/feed.xml' | absolute_url }}">
+  <meta name="theme-color" content="#EDFCFA">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/oc.css?v=' | append: site.github.build_revision | relative_url }}">
+  <link rel="shortcut icon" type="image/png" href="/favicon.png">
+</head>
+  <body>
+    <nav id="navbar" class="navbar has-shadow has-text-weight-bold" role="navigation" aria-label="main navigation">
+      <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img class='logo' alt="OneCommons Home" width=110  height=54 src="/images/onecommons_logo.svg" />
+        </a>
+
+        <div role="button" aria-label="menu" aria-expanded="false" id="navbarBurger" class="navbar-burger burger" data-target="navMenuIndex">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </div>
+      </div>
+
+
+      <div id="navMenuIndex" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href='/blog'>
+            Blog
+          </a>
+          <a class="navbar-item" href='/about'>
+            About
+          </a>
+        </div>
+      </div>
+    </div>
+    </nav>
+
+  {{ content }}
+
+      {% include footer.html %}
+
+    {% if site.google_analytics %}
+      <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '{{ site.google_analytics }}', 'auto');
+        ga('send', 'pageview');
+      </script>
+    {% endif %}
+  </body>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+      // Add a click event on each of them
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+        });
+      });
+    }
+  });
+  </script>
+</html>

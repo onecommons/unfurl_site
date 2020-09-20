@@ -1,19 +1,13 @@
 ---
 ---
 
-/*
-Logo Red: #DB0000
-Logo Dark Grey: #383838
-(Button or Section) Dark Blue: #214862
+$black: #656F6C;
+$blue: #3CB8EF;
 
-(Background) Light Blue: #DEFDFF
-(Background) Light Green: #E8FDE3
-(Background) Tan: #FFF6E3
-*/
-$black: #4A5053;
 $white: #F7FFFE;
-$beige: #EDFCFA;
-$blue:  #00D2D9;
+$beige: #FAFDFC;
+$unfurlbeige: #EDFCFA;
+$unfurlblue:  #00D2D9;
 $lightblue: #A4F7F8;
 
 $textblue: $blue;
@@ -39,12 +33,11 @@ $family-monospace: 'IBM Plex Mono', Consolas, "Liberation Mono", Menlo, Courier,
 // $family-primary: Bitter, serif;
 $navbar-breakpoint: 600px;
 $scheme-main: $beige;
-$navbar-background-color: $black;
-$navbar-item-color: $white;
 $button-color: $white;
 $button-background-color: $blue;
 
 @import "bulma";
+
 
 // from Scriptor theme https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme
 // Font.
@@ -68,9 +61,66 @@ $palette: (
 @import "content";
 @import "site-footer";
 
+.top {
+  height: 75vh;
+  background-image: url(/images/oc_hero.svg);
+  background-attachment: fixed;
+  background-position: cover;
+  background-repeat: no-repeat;
+  .container {
+    left: 10vw;
+  }
+}
+
+.top-cta {
+  color: $white;
+  padding: .2rem 2rem;
+  background: linear-gradient(to right, $blue, $white 75%);
+  font-style: italic;
+  font-weight: bold;
+  font-size: max(3vw, 1rem);
+}
+
+@include mobile {
+   .top-cta {
+     background: $blue;
+   }
+
+   .top {
+     background-image: url(/images/oc_hero_mobile.svg);
+     .container {
+     }
+  }
+}
+
+.project {
+  .htitle {
+    color: $red;
+    font-weight: bold;
+  }
+  .hero {
+    padding: 2rem;
+  }
+}
+
+.projects {
+  .older-projects {
+    margin-bottom: 2rem;
+  }
+}
+
+.gridpattern {
+  background-color: $body-background-color;
+  background-image: url(/images/gridpattern.svg);
+  height: 10rem;
+  width: 100%;
+}
+
 #navbar {
   padding: 0px 1rem;
+  text-transform: uppercase;
 }
+
 .level-item {
   height: 330px;
   padding: 12px;
@@ -85,33 +135,16 @@ $palette: (
   }
 }
 
-.topXXX {
-  background-image: url(/assets/images/highlight-bg.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-
-}
-
-.top {
-  background-image: url(/images/unfurl_hero_pattern.png);
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: repeat-y;
-}
-
 .top h1 {
-  font-size: 42pt;
+  font-size: 45pt;
   padding: 0;
   font-family: 'Open Sans Condensed', sans-serif;
-  line-height: 1.1;
-  text-align: justify;
+  line-height: .9;
 }
 
 .top h1+h1 {
   color: $blue;
   border-bottom: 2px solid $blue;
-  letter-spacing: .08em;
 }
 
 .hero .level-item {
@@ -156,17 +189,12 @@ pre.citation {
 }
 
 .navbar-item img.logo {
- max-height: inherit;
+ max-height: 3rem;
 }
 
 .biglogo {
-  height: 10rem;
+  height: 3rem;
 }
-
-.logo {
-  width: 10rem;
-}
-
 
 .washed {
   background-color: $white;
