@@ -2,19 +2,37 @@ apiVersion: unfurl/v1alpha1
 kind: Ensemble
 spec:
   service_template:
+    imports:
+    - repository: unfurl
+      file: configurators/docker-template.yaml
     topology_template:
+      inputs:
+        hostport:
+          type: integer
+          default: 4000
+      outputs:
+        site_url:
+          value: 'http://localhost:{{"::jekyll::hostport" | eval }}/'
+
       node_templates:
-        # nodeExample:
-        #   type: tosca.nodes.Root
-        #   properties:
-        #     # you can add define adhoc properties here:
-        #     # example: "example"
-        #   interfaces:
-        #     Standard:
-        #       operations:
-        #         create:
-        #           implementation: unfurl.configurators.ansible.AnsibleConfigurator
-        #           inputs:
-        #             playbook:
-        #               q: # quote so that jinja2 expressions aren't evaluated util later by ansible
-        #                  # define an ansible playbook here, it will run a OPERATION_HOST (default: localhost)
+        jekyll:
+          type: unfurl.nodes.Container.Application.Docker
+          properties:
+            hostport: {get_input: hostport}
+          artifacts:
+            image:
+              type: tosca.artifacts.Deployment.Image.Container.Docker
+              # official jekyllrb image: https://github.com/envygeeks/jekyll-docker/blob/master/README.md
+              file: jekyll/jekyll
+          interfaces:
+            defaults:
+              inputs:
+                configuration:
+                  command: jekyll serve -P 4000 -t --incremental
+                  published_ports:
+                    - "{{ SELF.hostport }}:4000" # host:container
+                  volumes:
+                    # unfurl project is a child of the main repo
+                    - '{{ ".." | abspath("spec") }}:/srv/jekyll'
+                    # map cache folder so we don't need to download gems every time:
+                    - '{{ "vendor/bundle" | abspath("spec.local") }}:/usr/local/bundle'
