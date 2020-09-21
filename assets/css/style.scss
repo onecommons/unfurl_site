@@ -93,26 +93,81 @@ $palette: (
 
 }
 
-.top {
+.topX {
   background-image: url(/images/unfurl_hero_pattern.png);
   background-attachment: fixed;
   background-position: center;
   background-repeat: repeat-y;
 }
 
+.top {
+  background: transparent linear-gradient(90deg, $white 0%, $lightblue 600%) 0% 0% no-repeat padding-box;
+  padding:90px 0 0 0;
+}
+.top [class*="top-"] {
+  display: inline-block;
+  @include until($desktop) {
+    display: block;
+  }
+}
+.top .top-logo {
+  margin-bottom: -17px;
+  img {
+    margin:-23px auto 0px;
+    display: block;
+  }
+  @include until($desktop) {
+    margin:0;
+  }
+}
+.top .top-head {
+  background: transparent url(/images/GradientGridDotPattern.svg) -10px 6px no-repeat padding-box;
+  padding-left:368px;
+  margin:-20px 0 0 -10px;
+  @include until($desktop) {
+    background: none;
+    padding:0;
+    margin:0;
+  }
+}
+.top .top-subhead {
+  width: 800px;
+  margin: -16px 0 0 100px;
+  text-align: left;
+  @include until($desktop) {
+    margin: 0 20px;
+    width: calc(100% - 40px);
+    text-align: center;
+  }
+}
+.top .top-buttons {
+  float: right;
+  @include until($desktop) {
+    float:none;
+  }
+}
 .top h1 {
-  font-size: 42pt;
+  font-size: 50px;
   padding: 0;
   font-family: 'Open Sans Condensed', sans-serif;
-  line-height: 1.1;
-  text-align: justify;
+  line-height: 0.9;
 }
-
-.top h1+h1 {
+.top h1 + h1 {
   color: $blue;
-  border-bottom: 2px solid $blue;
   letter-spacing: .08em;
 }
+.top .top-subhead h2 {
+  display:inline-block;
+  margin-bottom: 1rem;
+}
+.top hr {
+  border-bottom: 3px solid $blue;
+  margin:23px 0 14px 0;
+  @include until($desktop) {
+    border-width: 2px;
+  }
+}
+
 
 .hero .level-item {
   max-width: 550px;
