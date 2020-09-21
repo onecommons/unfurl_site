@@ -10,6 +10,9 @@ spec:
         hostport:
           type: integer
           default: 4000
+        container_name:
+          type: string
+          default: jekyll
       outputs:
         site_url:
           value: 'http://localhost:{{"::jekyll::hostport" | eval }}/'
@@ -18,6 +21,7 @@ spec:
         jekyll:
           type: unfurl.nodes.Container.Application.Docker
           properties:
+            name:  {get_input: container_name}
             hostport: {get_input: hostport}
           artifacts:
             image:
