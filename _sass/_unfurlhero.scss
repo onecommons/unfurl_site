@@ -1,0 +1,76 @@
+.unfurl-hero {
+  background: transparent linear-gradient(90deg, $white 0%, $unfurllightblue 600%) 0% 0% no-repeat padding-box;
+  padding:90px 0 0 0;
+}
+.unfurl-hero [class*="top-"] {
+  display: inline-block;
+  @include until($tablet) {
+    display: block;
+  }
+}
+.unfurl-hero .top-logo {
+  margin-bottom: -17px;
+  img {
+    margin:-23px auto 0px;
+    display: block;
+  }
+  @include until($tablet) {
+    margin:0;
+  }
+}
+.unfurl-hero .top-head {
+  background: transparent url(/images/GradientGridDotPattern.svg) -10px 6px no-repeat padding-box;
+  margin:-20px 0 0 -10px;
+  position: relative;
+  padding-left: 23%;
+  &:after {
+    content:'';
+    position: absolute;
+    left: -368px;
+    top:0;
+    background: transparent url(/images/GradientGridDotPattern.svg) -10px 6px no-repeat padding-box;
+  }
+  @include until($tablet) {
+    background: none;
+    padding:0;
+    margin:0;
+  }
+}
+.unfurl-hero .top-subhead {
+  width: calc(420px + 23%);
+  margin: -16px 0 0 100px;
+  text-align: left;
+  @include until($tablet) {
+    margin: 0 20px;
+    width: calc(100% - 40px);
+    text-align: center;
+  }
+}
+.unfurl-hero .top-buttons {
+  float: right;
+  @include until($tablet) {
+    float:none;
+  }
+}
+.unfurl-hero h1 {
+  font-size: 50px;
+  padding: 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+  line-height: 0.9;
+  background-color: #EFFEFD;
+}
+.unfurl-hero h1 + h1 {
+  color: $unfurlblue;
+  letter-spacing: .08em;
+}
+.unfurl-hero .top-subhead h2 {
+  display:inline-block;
+  margin-bottom: 1rem;
+}
+.unfurl-hero hr {
+  border-bottom: 3px solid $unfurlblue;
+  margin:23px 0 14px 0;
+  @include until($tablet) {
+    border-width: 2px;
+  }
+}
