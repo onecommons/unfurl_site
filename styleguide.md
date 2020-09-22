@@ -1,6 +1,3 @@
----
-layout: oc
----
 {::options parse_block_html="true" /}
 <section class="content markup">
 # H1 Title
