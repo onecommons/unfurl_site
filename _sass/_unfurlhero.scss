@@ -1,6 +1,10 @@
+
 .unfurl-hero {
-  background: transparent linear-gradient(90deg, $white 0%, $unfurllightblue 600%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(90deg, #FFFFFF 0%, $beige 100%) 0% 0% no-repeat padding-box;
   padding:90px 0 0 0;
+  .button {
+    margin-bottom: 1rem;
+  }
 }
 .unfurl-hero [class*="top-"] {
   display: inline-block;
@@ -16,7 +20,11 @@
     display: block;
   }
   @include until($tablet) {
-    margin:0;
+    margin:-4rem 0 4rem;
+    img {
+      width: 220px;
+      height: 143px;
+    }
   }
 }
 .unfurl-hero .top-head {
@@ -25,17 +33,10 @@
   position: relative;
   padding-left: 23%;
   width: auto;
-  &:after {
-    content:'';
-    position: absolute;
-    left: -368px;
-    top:0;
-    background: transparent url(/images/GradientGridDotPattern.svg) -10px 6px no-repeat padding-box;
-  }
   @include until($tablet) {
-    background: none;
-    padding:0;
-    margin:0;
+    background: transparent url(/images/Unfurl_Mobile_GridDotPatternwgradient.png) center top repeat-x;
+    padding:125px 0 0 0;
+    margin:-80px 0 0 0;
   }
 }
 .unfurl-hero .top-subhead {
@@ -52,6 +53,7 @@
   width: auto;
   float: right;
   @include until($tablet) {
+    margin-top: 1rem;
     float:none;
   }
 }
@@ -60,7 +62,7 @@
   padding: 0;
   font-family: 'Open Sans Condensed', sans-serif;
   line-height: 0.9;
-  background-color: #EFFEFD;
+  background: transparent linear-gradient(90deg, #FFFFFF 0%, $beige 100%) 0% 0% no-repeat padding-box;
 }
 .unfurl-hero h1 + h1 {
   color: $unfurlblue;
@@ -69,11 +71,15 @@
 .unfurl-hero .top-subhead h2 {
   display:inline-block;
   margin-bottom: 1rem;
+  @include until($tablet) {
+    line-height: 2rem;
+  }
 }
 .unfurl-hero hr {
-  border-bottom: 3px solid $unfurlblue;
+  border-bottom: 2px solid $unfurlblue;
   margin:23px 0 14px 0;
   @include until($tablet) {
-    border-width: 2px;
+    width: 14em;
+    margin:0.5rem auto 1rem;
   }
 }
