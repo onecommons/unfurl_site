@@ -9,6 +9,7 @@
   }
 }
 .unfurl-hero .top-logo {
+  width: auto;
   margin-bottom: -17px;
   img {
     margin:-23px auto 0px;
@@ -23,6 +24,7 @@
   margin:-20px 0 0 -10px;
   position: relative;
   padding-left: 23%;
+  width: auto;
   &:after {
     content:'';
     position: absolute;
@@ -47,6 +49,7 @@
   }
 }
 .unfurl-hero .top-buttons {
+  width: auto;
   float: right;
   @include until($tablet) {
     float:none;
