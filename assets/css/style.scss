@@ -97,9 +97,6 @@ $palette: (
   max-width: 960px
 }
 
-.hero-logo {
-}
-
 // from 'general':
 /* Text meant only for screen readers */
 .screen-reader-text {
@@ -118,7 +115,69 @@ $palette: (
   color: #222;
   padding: 2rem;
   margin: auto;
+
+  h1, h3.callout {
+    margin-top: 40px;
+    font: normal normal bold 44px/60px Open Sans;
+    padding: 10px;
+    height: 80px;
+    color: white;
+    &:after {
+      content:'';
+      position: absolute;
+      left: 0;
+      height: 80px;
+      width: 100%;
+      background-color: $blue;
+      z-index: -1;
+      margin-top: -10px;
+    }
+  }
+  h3 {
+    margin-top: 20px;
+    font: normal normal bold 24px/34px Open Sans;
+    height: 40px;
+    color: $white;
+    background-color: $blue;
+    padding: 0.3rem 0.6rem 2.4rem;
+    margin: 0 -0.6rem 0.6rem;
+    &.callout {
+      margin-top: 20px;
+      font: normal normal bold 24px/34px Open Sans;
+      height: 40px;
+      background-color: inherit;
+      &:after {
+        height: 40px;
+        margin-top: -5px;
+        width: 40%;
+      }
+    }
+  }
+  h2,h4,h5 {
+    font: normal normal bold 36px/46px Open Sans;
+    color: $black;
+  }
+  h4 {
+    font: normal normal bold 24px/34px Open Sans;
+  }
+  h5 {
+    font: normal normal bold 20px/34px Open Sans
+  }
+
+  table {
+    border: 1px solid $blue;
+    thead {
+      th {
+        background-color: $blue;
+        color: $white;
+      }
+    }
+    td {
+      border: 1px solid $blue;
+    }
+  }
 }
+
 
 pre.citation {
   font-size: 1em;
@@ -154,3 +213,4 @@ pre.citation {
 .site-footer {
   text-align: center;
 }
+
