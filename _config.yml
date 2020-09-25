@@ -34,7 +34,7 @@ plugins:
   - jekyll-seo-tag
 
 footer:
-  content: "&copy; Adam Souzis all rights reserved."
+  content: "&copy; 2020 onecommons.org"
   has_social: true
 
 # Exclude from processing.
