@@ -13,6 +13,7 @@ Logo Dark Grey: #383838
 $black: #4A5053;
 $white: #F7FFFE;
 $beige: #EDFCFA;
+$unfurlbeige: $beige;
 $unfurlblue:  #00D2D9;
 $unfurllightblue: #A4F7F8;
 $blue: $unfurlblue;
@@ -70,6 +71,24 @@ $palette: (
 @import "content";
 @import "site-footer";
 
+.intro {
+  background-color: $unfurlblue;
+}
+
+.intro-left {
+  color: $white;
+  padding: 0 5%;
+  letter-spacing: 0px;
+  font: normal normal 600 20pt/26pt Open Sans;
+  .strong {
+    font-weight: 800;
+    color: $white;
+  }
+}
+
+.intro-right {
+}
+
 #navbar {
   padding: 0px 1rem;
 }
@@ -109,10 +128,13 @@ $palette: (
   width: 1px;
 }
 
-/* https://blog.koley.in/2019/339-bytes-of-responsive-css */
+h2, h3 {
+  font-weight: 600;
+}
+
 .content {
+  /* next 2 lines inspired by https://blog.koley.in/2019/339-bytes-of-responsive-css */
   line-height: 1.6;
-  color: #222;
   padding: 2rem;
   margin: auto;
 
@@ -215,4 +237,3 @@ pre.citation {
 .site-footer {
   text-align: center;
 }
-
