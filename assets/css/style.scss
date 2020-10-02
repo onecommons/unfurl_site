@@ -71,6 +71,10 @@ $palette: (
 @import "content";
 @import "site-footer";
 
+.content-hero {
+  text-align: center
+}
+
 .intro {
   background-color: $unfurlblue;
 }

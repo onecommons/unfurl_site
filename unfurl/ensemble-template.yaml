@@ -7,6 +7,9 @@ spec:
       file: configurators/docker-template.yaml
     topology_template:
       inputs:
+        host:
+          type: string
+          default: 127.0.0.1
         hostport:
           type: integer
           default: 4000
@@ -15,7 +18,7 @@ spec:
           default: jekyll
       outputs:
         site_url:
-          value: 'http://localhost:{{"::jekyll::hostport" | eval }}/'
+          value: 'http://{{"::jekyll::host" | eval }}:{{"::jekyll::hostport" | eval }}/'
 
       node_templates:
         jekyll:
@@ -23,6 +26,7 @@ spec:
           properties:
             name:  {get_input: container_name}
             hostport: {get_input: hostport}
+            host: {get_input: host}
           artifacts:
             image:
               type: tosca.artifacts.Deployment.Image.Container.Docker
@@ -34,7 +38,7 @@ spec:
                 configuration:
                   command: jekyll serve -P 4000 -t --incremental
                   published_ports:
-                    - "{{ SELF.hostport }}:4000" # host:container
+                    - "{{ SELF.host }}:{{ SELF.hostport }}:4000" # host:container
                   volumes:
                     # unfurl project is a child of the main repo
                     - '{{ ".." | abspath("spec") }}:/srv/jekyll'
