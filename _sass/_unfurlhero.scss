@@ -39,7 +39,7 @@ $herobreak: $tablet;
   width: auto;
   @include until($herobreak) {
     background: transparent url(/images/Unfurl_Mobile_GridDotPatternwgradient.png) center top repeat-x;
-    padding:125px 0 0 0;
+    padding:160px 0 0 0;
     margin:-80px 0 0 0;
   }
 }
@@ -48,7 +48,7 @@ $herobreak: $tablet;
   margin: -16px 0 0 100px;
   text-align: left;
   @include until($herobreak) {
-    margin: 0 20px;
+    margin: 0 20px 40px 0;
     width: calc(100% - 40px);
     text-align: center;
   }
@@ -61,6 +61,7 @@ $herobreak: $tablet;
     float:none;
   }
 }
+
 .unfurl-hero h1 {
   font-size: 50px;
   padding: 0;
