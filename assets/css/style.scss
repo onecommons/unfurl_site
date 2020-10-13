@@ -301,6 +301,8 @@ pre.citation {
     display:inline-block;
   }
   .site-info {
+    font-size: 12px;
+    color: darken(desaturate($beige, 20%), 30%);
     display:inline-block;
   }
 }
