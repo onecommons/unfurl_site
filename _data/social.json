@@ -1,0 +1,19 @@
+{
+  "links": [
+    {
+      "title": "Twitter",
+      "icon": "fa-twitter",
+      "url": "https://twitter.com/onecommons"
+    },
+    {
+      "title": "GitHub",
+      "icon": "fa-github",
+      "url": "https://github.com/onecommons/unfurl"
+    },
+    {
+      "title": "LinkedIn",
+      "icon": "fa-linkedin",
+      "url": "https://www.linkedin.com/company/onecommons/"
+    }
+  ]
+}
