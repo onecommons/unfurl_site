@@ -292,9 +292,17 @@ pre.citation {
 }
 
 .site-footer {
+  padding: 1rem;
   background-color: $black;
   color: $white;
   text-align: center;
+  .offsite-links {
+    margin: 0;
+    display:inline-block;
+  }
+  .site-info {
+    display:inline-block;
+  }
 }
 
 .grid-container {
