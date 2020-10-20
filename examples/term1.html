@@ -1,0 +1,42 @@
+<html>
+    <head>
+    <link rel="stylesheet" href="/assets/css/xterm.css" />
+    <script src="/assets/js/xterm.js"></script>
+    <script src="/assets/js/xterm-addon-fit.js"></script>
+    <script src="/assets/js/xterm-player.js"></script>
+    <style>
+    #scrubber {
+      width: 100px;
+    }
+    #speed {
+      width: 50px;
+    }
+    </style>
+    </head>
+    <body>
+        <div id="terminal"></div>
+        <div id='controls' style='display: none'>
+          <input type="button" value="Play/Pause" onclick="pause(false);" />
+          <input type="button" value="Restart" onclick="restart(1);" />
+          <span id="beforeScrubberText"></span>
+          <input id="scrubber" type="range" value="0" min=0 max=100
+                 onmousedown="pause(true);" onmouseup="scrub();" />
+          <span id="afterScrubberText"></span>
+          -5x <input id="speed" type="range" value="0" min=-5 max=5
+                 onmouseup="setSpeed();" /> +5x
+        </div>
+        <script src="example1-session.js"></script>
+        <script>
+        if (location.hash.includes("showcontrols"))
+            document.getElementById("controls").style.display="block";
+        if (location.hash.includes("fast")) {
+            document.getElementById('speed').value = 5;
+            setSpeed();
+        }
+        if (!location.hash.includes("dontrun")) {
+            // run the default termData set in example1-session.js
+            run(termData);
+        }
+        </script>
+    </body>
+    </html>
