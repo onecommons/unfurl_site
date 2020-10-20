@@ -45,6 +45,7 @@ $navbar-breakpoint: 600px;
 $scheme-main: $beige;
 $navbar-background-color: $black;
 $navbar-item-color: $white;
+$navbar-item-active-background-color: $white;
 $button-color: $white;
 $button-background-color: $blue;
 
@@ -108,12 +109,12 @@ html {
   .strong {
     color: $white;
   }
-  p+p { 
+  p+p {
     padding-top: 2rem;
   }
 }
 .intro-right {
-  
+
 }
 
 .home {
@@ -182,6 +183,14 @@ h2, h3 {
   font-weight: 600;
 }
 
+/* compensate for the height of the fixed nav bar */
+:target::before {
+  content: "";
+  display: block;
+  height: 50px; /* fixed header height*/
+  margin: -50px 0 0; /* negative fixed header height */
+}
+
 .content {
   /* next 2 lines inspired by https://blog.koley.in/2019/339-bytes-of-responsive-css */
   line-height: 1.6;
@@ -196,7 +205,8 @@ h2, h3 {
     border-image: url("/images/GradientGridDotPattern.svg") 25% round;
   }
 
-  h1.callout, h3.callout {
+
+  .callout h1, h3.callout {
     margin-top: 20px;
     font: normal normal bold 44px/60px Open Sans;
     padding: 10px;
@@ -302,7 +312,7 @@ pre.citation {
   }
   .site-info {
     font-size: 12px;
-    color: darken(desaturate($beige, 20%), 30%);
+    color: _palette(primary);
     display:inline-block;
   }
 }
@@ -383,7 +393,7 @@ pre.citation {
   }
 }
 
-.deploy-text { 
+.deploy-text {
   padding: 3rem 3rem;
   max-width: 60vw;
 }
@@ -413,14 +423,14 @@ pre.citation {
       }
     }
   }
-  .cloud-as-code { 
+  .cloud-as-code {
     padding-top: 100px;
-    grid-area: 5 / 1 / 5 / 1; 
+    grid-area: 5 / 1 / 5 / 1;
   }
-  .deploy-image { 
-    grid-area: 3 / 1 / 3 / 1; 
+  .deploy-image {
+    grid-area: 3 / 1 / 3 / 1;
   }
-  .deploy-text { 
+  .deploy-text {
     grid-area:  4 / 1 / 4 / 1;
     max-width: 100%;
     padding: 3rem 1rem 4rem;
@@ -431,7 +441,7 @@ pre.citation {
         width: 100%;
         margin: 2rem 0 0;
       }
-    } 
+    }
   }
 }
 
@@ -455,8 +465,7 @@ pre.citation {
   .cloud-as-code {
     grid-area: 3 / 1 / 3 / 3;
   }
-  .deploy-text { 
+  .deploy-text {
     padding: 3rem 3rem 3rem 4rem;
   }
 }
-

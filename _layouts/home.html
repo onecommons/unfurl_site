@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   {% include head.html %}
-  <body>
+  <body class="has-navbar-fixed-top">
 
 <div>
-  <nav id="navbar" class="navbar has-shadow has-text-weight-bold" role="navigation" aria-label="main navigation">
+  <nav id="navbar" class="navbar is-fixed-top has-shadow has-text-weight-bold" role="navigation" aria-label="main navigation">
     <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
@@ -20,13 +20,11 @@
 
     <div id="navMenuIndex" class="navbar-menu">
       <div class="navbar-start">
+        <a class="navbar-item" href="/howitworks">
+          How it works
+        </a>
         <a class="navbar-item" href="https://onecommons.org/unfurl">
-          <span class="is-hidden-touch is-hidden-widescreen">
-            Docs
-          </span>
-          <span class="is-hidden-desktop-only">
-            Documentation
-          </span>
+          Documentation
         </a>
       </div>
       <div class="navbar-end">
@@ -55,6 +53,10 @@
   </body>
   <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.navbar-start .navbar-item').forEach( (item) => {
+      if (new URL(item.href).pathname == window.location.pathname)
+          item.classList.add('is-active');
+    });
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
     // Check if there are any navbar burgers
