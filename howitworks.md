@@ -7,13 +7,42 @@ It tracks configuration changes, keeping a history of exactly how you did it and
 
 Unfurl integrates with the deployment tools you are already using, like Ansible, Terraform and Helm, organizing their usage into Ensembles, shareable abstractions that ease migrations to new environments as well as share and reuse your work.
 
-# Create or clone an unfurl project.
+## Key Concepts
+
+#### Ensemble manifest
+
+At the core of Unfurl is an Ensemble manifest, a YAML file that includes:
+
+* A model of the cloud resources it manages (using the OASIS’s TOSCA 1.3 (“Topology and Orchestration Specification for Cloud Applications”) standard)
+
+* Implementations of operations and workflows that can be applied to those resources.
+
+* A record of the operational status of those resources.
+
+#### Unfurl projects
+
 An unfurl project is directory that consists of:
 * A project file "unfurl.yaml" that describes the `contexts` that the ensembles in the project will run in.
 * `Ensemble templates`, which contain a declarative model of your cloud infrastructure and how to invoke operations for creating and managing it.
 * One or more ensembles, which are folders containing a `ensemble.yaml` -- a manifest describing the instantiation of an Ensemble template, including the status and state of the cloud resources it manages and a precise record of the artifacts and source repositories used. 
 
-`unfurl` can automatically commit any changes to the project to one or more git repositories. Unfurl provides flexibility on how to map this layout to git repositories: Each ensemble can be in a separate git repository (useful for testing or ephemeral instances), a project can be a stand-alone repository or part of a source repository. 
+#### .unfurl_home
+
+Creates ".unfurl_home" project and bootstrap your local environment
+
+The unfurl home directory contains configuration settings you want shared by all your projects on that device as a local manifest that represents the device. By updating and deploying that local manifest you can discover and configure local settings and resources (such as cloud provider accounts or client software) that your Unfurl projects can utilize.
+
+#### Unfurl repositories
+
+`unfurl` can automatically commit any changes to the project to one or more git repositories. Unfurl provides flexibility on how to map this layout to git repositories, supporting both "monorepo" and "polyrepo" arrangements. Each ensemble can be in a separate git repository (useful for testing or ephemeral instances), a project can be a stand-alone repository or part of a source repository. 
+
+## Steps to build your ensemble
+
+1. [Organize and isolate](#1-organize-your-deployment-environment)
+2. [Model](#model)
+3. [Implement](#implement)
+4. [Activate](#implement)
+5. [Publish and Remix](#implement)
 
 ## 1. Organize your deployment environment
 
@@ -115,7 +144,7 @@ Unfurl excels at "day two" operations such as backups, repairs and upgrades:
 * Intelligent and fast incremental updates: Because Unfurl maintains a history of configuration changes and live operational state it can more employ more effective incremental update strategies.
 * Maintaining an operational history makes it easier to diagnose and rollback problems.
 
-## 5. Relocate, Share, Clone and Remix 
+## 5. Share, Clone and Remix 
 
 <div class="has-text-centered">
 
@@ -123,8 +152,21 @@ Unfurl excels at "day two" operations such as backups, repairs and upgrades:
 
 </div>
 
-* Clone and redeploy
-* Clone and fork 
-* Manage operations through collaborative, agile engineering practices such as pull requests, integrate CI/CD and unit tests in a secure, cloud-agnostic way. (+ chatbots, metrics and monitoring)
-* Manage environment and integrate ensembles: match external ensembles and resources by type and constraints
-* automated deployment: build isolation and boundaries
+You can share and clone Unfurl projects and ensembles just like you share and clone git repositories. Because Unfurl cleanly separates secrets and local settings Unfurl repositories are self-contained and location independent.
+
+Like a git repository your Unfurl repository can be private or public, but either way, when you publish your ensemble the real power of Unfurl kicks in. Now other Unfurl projects can import and reference it, much like you import a module or package in a software program. 
+
+Once imported, other ensembles can reference the ensemble's exported api endpoints, network resources or artifacts in their models, selecting them based on their type and other declared constraints.
+
+### Cloud agnostic and location independent
+
+And because Ensembles maintain a persistent identity you can maintain these relationships as their internal implementations change -- even if their locations change, even if they migrate to different cloud providers using a very different implementations. Or not: these explicit relationships between published ensembles also enable you to catch potential errors if those changes violate the declared contracts between them. 
+
+### Cloud as code
+
+Because Ensembles not just contain configuration but also reflects the state of live instances you can use the same development processes you for coding to also manage your IT infrastructure, for example:
+
+* use pull requests and sign-offs to manage change requests
+* use feature branches and forks to manage deployment strategies
+* use CI/CD tests to validate changes
+* git web hooks that trigger automated deployment to enable secure resource isolation
