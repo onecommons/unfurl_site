@@ -43,4 +43,4 @@ spec:
                     # unfurl project is a child of the main repo
                     - '{{ ".." | abspath("spec") }}:/srv/jekyll'
                     # map cache folder so we don't need to download gems every time:
-                    - '{{ "vendor/bundle" | abspath("spec.local") }}:/usr/local/bundle'
+                    - '{{ "vendor/bundle/" | abspath("spec.local") }}:/usr/local/bundle'
