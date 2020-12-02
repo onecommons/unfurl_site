@@ -34,15 +34,15 @@ The unfurl home directory contains configuration settings you want shared by all
 
 #### Unfurl repositories
 
-`unfurl` can automatically commit any changes to the project to one or more git repositories. Unfurl provides flexibility on how to map this layout to git repositories, supporting both "monorepo" and "polyrepo" arrangements. Each ensemble can be in a separate git repository (useful for testing or ephemeral instances), a project can be a stand-alone repository or part of a source repository. 
+`unfurl` can automatically commit any changes to the project to one or more git repositories. Unfurl provides flexibility on how to map this layout to git repositories, supporting both "monorepo" and "polyrepo" arrangements. An ensemble can keep instance data and specifications in  separate git repositories (useful for testing or ephemeral instances) and a project can live in a dedicated repository or be part of a source repository.
 
 ## Steps to build your ensemble
 
 1. [Organize and isolate](#1-organize-your-deployment-environment)
-2. [Model](#model)
-3. [Implement](#implement)
-4. [Activate](#implement)
-5. [Publish and Remix](#implement)
+2. [Model](#2-model-your-cloud-infrastructure)
+3. [Implement](#3-implement-your-model)
+4. [Activate](#4-activate-and-manage)
+5. [Publish and Remix](#5-share-clone-and-remix)
 
 ## 1. Organize your deployment environment
 
@@ -122,7 +122,7 @@ Inputs and outputs from these implementations integration
 * Mark values and files as sensitive so they can be treated as secrets.
 * Files used by the implementations are automatically committed to the repository and changes are included in dependency analysis.
 
-## 4. Deploy and Record
+## 4. Activate and Manage
 
 <div class="has-text-centered">
 
@@ -133,7 +133,7 @@ Inputs and outputs from these implementations integration
 Now you are ready to deploy your model -- run "unfurl deploy" from the command line and it will execute a plan. As it is running it tracks changes resource attributes and status and when it is complete it commits that to a Git repository. 
 mirror not just the configuration but the state and status of live running services.
 
-If you are already have deployed Unfurl supports "discover" and "check" workflows for detecting and syncing resources and operational state.
+If you are already have live resources Unfurl supports "discover" and "check" workflows for detecting and syncing resources and operational state.
 
 Unfurl supports incremental deployment and has a repair mode which can greatly accelerate development and testing development. 
 
@@ -160,13 +160,13 @@ Once imported, other ensembles can reference the ensemble's exported api endpoin
 
 ### Cloud agnostic and location independent
 
-And because Ensembles maintain a persistent identity you can maintain these relationships as their internal implementations change -- even if their locations change, even if they migrate to different cloud providers using a very different implementations. Or not: these explicit relationships between published ensembles also enable you to catch potential errors if those changes violate the declared contracts between them. 
+And because Ensembles maintain a persistent identity you can maintain these relationships as their internal implementations change -- even if their locations change, even if they migrate to different cloud providers using a very different implementations. Or not: these references can also detect changes that violate the declared contracts between ensembles.
 
 ### Cloud as code
 
 Because Ensembles not just contain configuration but also reflects the state of live instances you can use the same development processes you for coding to also manage your IT infrastructure, for example:
 
-* use pull requests and sign-offs to manage change requests
+* use pull requests and sign-offs to manage updates and changes.
 * use feature branches and forks to manage deployment strategies
 * use CI/CD tests to validate changes
-* git web hooks that trigger automated deployment to enable secure resource isolation
+* use git web hooks to trigger automated deployment to enable secure resource isolation
