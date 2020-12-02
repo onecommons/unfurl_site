@@ -23,6 +23,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://unfurl.run"
 twitter_username: onecommons
 github_username:  onecommons
+repository: onecommons/unfurl_site
 
 # Build settings
 markdown: kramdown
@@ -37,6 +38,11 @@ footer:
   content: "&copy; 2020 onecommons.org"
   has_social: true
 
+include:
+- _sources
+- _static
+- _images
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
@@ -45,8 +51,7 @@ exclude:
   - Gemfile.lock
   - README.md
   - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - vendor
   - unfurl
+  - unused
+  - _release
