@@ -1,0 +1,702 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>Ensembles &#8212; Unfurl Documentation</title>
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" href="_static/bootstrap-4.3.1-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script src="_static/sphinxbootstrap4.js"></script>
+    <link rel="shortcut icon" href="_static/favicon32.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Unfurl Projects" href="projects.html" />
+    <link rel="prev" title="Getting Started" href="get-started-step-by-step.html" /> 
+  </head><body>
+  <nav class="navbar navbar-expand-md  fixed-top navbar-dark bg-dark flex-wrap">
+    <button class="navbar-toggler ml-auto py-2" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+      &#9776;
+    </button>
+      <div class="navbar-collapse collapse" id="exCollapsingNavbar2">
+           <a class="navbar-brand py-1" href="index.html">
+              <img class="logo" src="_static/unfurl_logo.svg" alt="Unfurl"/>
+          </a>
+          <ul class="navbar-nav mr-auto">
+          
+              <li class="nav-item dropdown d-none d-sm-block" id="navbar-pages">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                  <ul class="dropdown-menu">
+                  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="README.html#design">Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#goals">Goals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#features">Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#installation">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="README.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#developing">Developing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="README.html#running-unit-tests">Running unit tests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#getting-started">Getting Started</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-started-step-by-step.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-started-step-by-step.html#configure-your-home-environment">1. Configure your home environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="get-started-step-by-step.html#a-do-nothing-and-use-your-system-s-current-environment">A) Do nothing and use your system’s current environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get-started-step-by-step.html#b-explicitly-create-and-edit-your-home-project">B) Explicitly create and edit your home project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="get-started-step-by-step.html#create-a-project">2. Create a project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get-started-step-by-step.html#create-a-service-template">3. Create a service template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get-started-step-by-step.html#implementing-an-operation">4. Implementing an operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get-started-step-by-step.html#activate-your-ensemble">4 Activate your ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get-started-step-by-step.html#publish-your-project">5. Publish your project</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ensembles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#repositories-and-history">Repositories and History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#isolation-and-reproducibility">Isolation and Reproducibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uris">URIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anatomy-of-a-manifest">Anatomy of a Manifest</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Unfurl Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="projects.html#contexts">Contexts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#runtime">Runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#environment">Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#locals">Locals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#secrets">Secrets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#external">External</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#inheritance-and-precedence">Inheritance and precedence</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html#external-ensembles">External ensembles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html#project-defaults">Project defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html#runtimes">Runtimes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secrets.html">Managing Secrets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secrets.html#sensitive-values">Sensitive Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secrets.html#creating-secrets">Creating secrets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tosca.html">TOSCA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tosca.html#extensions">Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tosca.html#not-yet-implemented-and-non-conformance-with-the-tosca-1-3-specification">Not yet implemented and non-conformance with the TOSCA 1.3 specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tosca.html#extensions-to-built-in-definitions">Extensions to built-in definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jobs.html">Jobs and Workflows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jobs.html#job-lifecycle">Job Lifecycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jobs.html#operational-status-and-state">Operational status and state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jobs.html#changeids">ChangeIds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="runtime.html">Runtime Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="runtime.html#connections">Connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="runtime.html#environment-variables">Environment Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configurators.html">Configurators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#ansible">Ansible</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#inputs">Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#other-implementation-keys">Other <code class="docutils literal notranslate"><span class="pre">implementation</span></code> keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#execution-environment">Execution environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#inventory">Inventory</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#delegate">Delegate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#id1">Inputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#shell">Shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#id2">Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#result-template-variables">Result template variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#template">Template</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#id3">Inputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#terraform">Terraform</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#id4">Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#id5">Other <code class="docutils literal notranslate"><span class="pre">implementation</span></code> keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#environment-variables">Environment Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#note-on-hcl-in-yaml">Note on HCL in YAML</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configurators.html#installers">Installers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#docker">Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#id7">Inputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#helm">Helm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-helmrelease">unfurl.nodes.HelmRelease</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#requirements">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#properties">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id8">Inputs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-helmrepository">unfurl.nodes.HelmRepository</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id9">Properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#kubernetes">Kubernetes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#supervisor">Supervisor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="processing.html">YAML Merge directives</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="processing.html#restoring-merge-directives">Restoring merge directives</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="processing.html#ansible-jinja2-templates">Ansible Jinja2 Templates</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="processing.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="processing.html#lookup-plugins">Lookup plugins</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="expressions.html">Eval Expressions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html#expression-query-syntax">Expression Query Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html#expression-function-syntax">Expression Function Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html#tosca-functions-and-other-stand-alone-functions">TOSCA functions and other stand-alone functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#concat">concat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#get-artifact">get_artifact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#get-attribute">get_attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#get-env">get_env</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#get-input">get_input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#get-nodes-of-type">get_nodes_of_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#get-property">get_property</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#has-env">has_env</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#join">join</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#q">q</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#token">token</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html#expression-functions">Expression Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#abspath">abspath</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#and">and</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#eq">eq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#external">external</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#file">file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#get-dir">get_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#if">if</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#lookup">lookup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#local">local</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#or">or</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#not">not</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#secret">secret</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#sensitive">sensitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#tempfile">tempfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#template">template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#validate">validate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html#semantics">Semantics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html#special-keys">Special keys</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#unfurl">unfurl</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-check">check</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-clone">clone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-commit">commit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-deploy">deploy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-discover">discover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-git">git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-help">help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-home">home</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-init">init</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-plan">plan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-run">run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-status">status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-stop">stop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-undeploy">undeploy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-version">version</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jsonschema.html">Configuration Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jsonschema.html#files">Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#ensemble-yaml">ensemble.yaml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id1">ensemble.yaml</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#job-yaml">job.yaml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#changelog-yaml">changelog.yaml</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#unfurl-yaml">unfurl.yaml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id2">unfurl.yaml</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jsonschema.html#sections">Sections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#context">context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#instance">Instance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#external">External</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#status">Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#job-record">Job Record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#task-record">Task Record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#implementation-definition">implementation definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#changes">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jsonschema.html#definitions">Definitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#enums-and-simple-types">Enums and Simple Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#readystate">readyState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#state">state</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#changeid">changeId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#timestamp">Timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#generic-version-identifier">Generic Version Identifier</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#reusable-helper-definitions">Reusable helper definitions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#instances">instances</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#attributes">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#atomic">atomic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#namedobject">namedObject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#schema">schema</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#tosca-terminology">TOSCA Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#unfurl-specific">Unfurl specific</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Python API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-unfurl.configurator">API for writing configurators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#module-unfurl.runtime">Runtime</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-unfurl.localenv">APIs for controlling Unfurl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-unfurl.eval">Utility classes and functions</a></li>
+</ul>
+</li>
+</ul>
+
+                  </ul>
+              </li>
+          </ul>
+          <div class="dropdown-divider d-block d-sm-none mb-4"></div>
+             
+<form class="form-inline" action="search.html" method="get">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <!--<div class="row hidden-sm-up">
+          <div class="collapse navbar-toggleable-xs container" id="exCollapsingNavbar2">
+              <div class="container">
+             　　 <a class="navbar-brand" href="index.html">
+                      <img class="logo" src="_static/unfurl_logo.svg" alt="Unfurl"/>
+                  </a>
+              </div>
+              <ul class="nav navbar-nav">
+              </ul>
+              <div class="dropdown-divider"></div>
+              <div class="navbar-text">search<div>
+              
+<form class="form-inline" action="search.html" method="get">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          </div>
+      </div>-->
+    </nav>
+  </div>
+
+    <div class="related d-flex justify-content-between bg-light flex-wrap" role="navigation" aria-label="related navigation">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Unfurl Documentation</a></li>
+            <li class="breadcrumb-item active">Ensembles</li>
+        </ol>
+       <div>
+          <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+               <a href="get-started-step-by-step.html" title="Previous Chapter: Getting Started" class="btn btn-primary" role="botton" accesskey="P">
+                   &laquo; Getting Started
+               </a>
+               <a href="projects.html" title="Next Chapter: Unfurl Projects" class="btn btn-primary" role="botton" accesskey="N">
+                   Unfurl Projects &raquo;
+               </a>
+           </div>
+       </div>
+    </div>
+
+  <div class="main container-fluid">
+    <div class="row"> 
+      <div class="sphinxsidebar d-none d-md-block">
+        <div class="sphinxsidebarwrapper">          
+            <h4>Table Of Contents</h4>
+            
+            
+              <div class="sidebartoctree">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="README.html#design">Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#goals">Goals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#features">Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#installation">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="README.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#developing">Developing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="README.html#running-unit-tests">Running unit tests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#getting-started">Getting Started</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-started-step-by-step.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-started-step-by-step.html#configure-your-home-environment">1. Configure your home environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="get-started-step-by-step.html#a-do-nothing-and-use-your-system-s-current-environment">A) Do nothing and use your system’s current environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get-started-step-by-step.html#b-explicitly-create-and-edit-your-home-project">B) Explicitly create and edit your home project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="get-started-step-by-step.html#create-a-project">2. Create a project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get-started-step-by-step.html#create-a-service-template">3. Create a service template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get-started-step-by-step.html#implementing-an-operation">4. Implementing an operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get-started-step-by-step.html#activate-your-ensemble">4 Activate your ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get-started-step-by-step.html#publish-your-project">5. Publish your project</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ensembles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#repositories-and-history">Repositories and History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#isolation-and-reproducibility">Isolation and Reproducibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uris">URIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anatomy-of-a-manifest">Anatomy of a Manifest</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Unfurl Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="projects.html#contexts">Contexts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#runtime">Runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#environment">Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#locals">Locals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#secrets">Secrets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#external">External</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#inheritance-and-precedence">Inheritance and precedence</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html#external-ensembles">External ensembles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html#project-defaults">Project defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html#runtimes">Runtimes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secrets.html">Managing Secrets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secrets.html#sensitive-values">Sensitive Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secrets.html#creating-secrets">Creating secrets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tosca.html">TOSCA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tosca.html#extensions">Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tosca.html#not-yet-implemented-and-non-conformance-with-the-tosca-1-3-specification">Not yet implemented and non-conformance with the TOSCA 1.3 specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tosca.html#extensions-to-built-in-definitions">Extensions to built-in definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jobs.html">Jobs and Workflows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jobs.html#job-lifecycle">Job Lifecycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jobs.html#operational-status-and-state">Operational status and state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jobs.html#changeids">ChangeIds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="runtime.html">Runtime Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="runtime.html#connections">Connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="runtime.html#environment-variables">Environment Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configurators.html">Configurators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#ansible">Ansible</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#inputs">Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#other-implementation-keys">Other <code class="docutils literal notranslate"><span class="pre">implementation</span></code> keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#execution-environment">Execution environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#inventory">Inventory</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#delegate">Delegate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#id1">Inputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#shell">Shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#id2">Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#result-template-variables">Result template variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#template">Template</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#id3">Inputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#terraform">Terraform</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#id4">Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#id5">Other <code class="docutils literal notranslate"><span class="pre">implementation</span></code> keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#environment-variables">Environment Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#note-on-hcl-in-yaml">Note on HCL in YAML</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configurators.html#installers">Installers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#docker">Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#id7">Inputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#helm">Helm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-helmrelease">unfurl.nodes.HelmRelease</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#requirements">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#properties">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id8">Inputs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-helmrepository">unfurl.nodes.HelmRepository</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id9">Properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#kubernetes">Kubernetes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#supervisor">Supervisor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="processing.html">YAML Merge directives</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="processing.html#restoring-merge-directives">Restoring merge directives</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="processing.html#ansible-jinja2-templates">Ansible Jinja2 Templates</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="processing.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="processing.html#lookup-plugins">Lookup plugins</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="expressions.html">Eval Expressions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html#expression-query-syntax">Expression Query Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html#expression-function-syntax">Expression Function Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html#tosca-functions-and-other-stand-alone-functions">TOSCA functions and other stand-alone functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#concat">concat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#get-artifact">get_artifact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#get-attribute">get_attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#get-env">get_env</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#get-input">get_input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#get-nodes-of-type">get_nodes_of_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#get-property">get_property</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#has-env">has_env</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#join">join</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#q">q</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#token">token</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html#expression-functions">Expression Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#abspath">abspath</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#and">and</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#eq">eq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#external">external</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#file">file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#get-dir">get_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#if">if</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#lookup">lookup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#local">local</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#or">or</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#not">not</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#secret">secret</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#sensitive">sensitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#tempfile">tempfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#template">template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions.html#validate">validate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html#semantics">Semantics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html#special-keys">Special keys</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#unfurl">unfurl</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-check">check</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-clone">clone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-commit">commit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-deploy">deploy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-discover">discover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-git">git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-help">help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-home">home</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-init">init</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-plan">plan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-run">run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-status">status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-stop">stop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-undeploy">undeploy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-version">version</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jsonschema.html">Configuration Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jsonschema.html#files">Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#ensemble-yaml">ensemble.yaml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id1">ensemble.yaml</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#job-yaml">job.yaml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#changelog-yaml">changelog.yaml</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#unfurl-yaml">unfurl.yaml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id2">unfurl.yaml</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jsonschema.html#sections">Sections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#context">context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#instance">Instance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#external">External</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#status">Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#job-record">Job Record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#task-record">Task Record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#implementation-definition">implementation definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#changes">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jsonschema.html#definitions">Definitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#enums-and-simple-types">Enums and Simple Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#readystate">readyState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#state">state</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#changeid">changeId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#timestamp">Timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#generic-version-identifier">Generic Version Identifier</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jsonschema.html#reusable-helper-definitions">Reusable helper definitions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#instances">instances</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#attributes">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#atomic">atomic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#namedobject">namedObject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#schema">schema</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#tosca-terminology">TOSCA Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#unfurl-specific">Unfurl specific</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Python API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-unfurl.configurator">API for writing configurators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#module-unfurl.runtime">Runtime</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-unfurl.localenv">APIs for controlling Unfurl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-unfurl.eval">Utility classes and functions</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            
+          
+        </div>
+      </div> 
+
+      <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="ensembles">
+<h1>Ensembles<a class="headerlink" href="#ensembles" title="Permalink to this headline">¶</a></h1>
+<p>The core concept of Unfurl is that of a <code class="docutils literal notranslate"><span class="pre">Ensemble</span></code>, a representation of an isolated collections of resources. An ensemble’s identity is independent of the location or implementation of the resources it entails. Ensembles maintain an ordered set of <code class="xref any docutils literal notranslate"><span class="pre">ChangeRecords</span></code> that represent the current operational state of those resources – both their configuration and their internal state. For example, if an ensemble contained a database, its <a class="reference internal" href="api.html#unfurl.result.ChangeRecord" title="unfurl.result.ChangeRecord"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ChangeRecord</span></code></a> might be tied to changes to the data in that database.</p>
+<p>Like objects in a computer program, ensembles expose abstract, typed interfaces that encapsulates an internal implementation. They can create, delete, and modify resources and, with proper configuration, act as a secure gateway for managing those resources.</p>
+<p>The key capability unlocked by ensembles is to provide a uniform encapsulation of applications and services across technologies and protocol layers. For example, consider the status quo: while a sophisticated engineering team could implement a dynamic service mesh on Kubernetes, have reproducible builds using Bazel and declarative infrastructure using Terraform, coordination between these technologies is still ad-hoc and bespoke.</p>
+<p>Crucial semantics such as versioning or capability between components,
+persistent and historical state, public URLs and identifiers that need to be maintained or propagated are cross-cutting concerns. Indeed an analysis of postmortems of failed deployments will show that a majority of stem from configuration mismatches like this.</p>
+<p>By encapsulating ad-hoc processes with a uniform interface built around widely used and understood development tools such as git, it becomes dramatically easier to integrate and manage applications and services across organizational boundaries, whether engineering teams or business entities.</p>
+<div class="section" id="repositories-and-history">
+<h2>Repositories and History<a class="headerlink" href="#repositories-and-history" title="Permalink to this headline">¶</a></h2>
+<p>Changes to an ensemble’s configuration or operational state are committed to a git repository, enabling a turnkey GitOps workflow. Git’s immutable history helps guarantee integrity and reproducible playback as well as provide an auditable history of changes.</p>
+<p><a class="reference internal" href="cli.html#unfurl"><span class="std std-ref">unfurl</span></a> can automatically commit any changes to the project to one or more git repositories. Unfurl provides flexibility on how to map this layout to git repositories, supporting both “monorepo” and “polyrepo” arrangements. An ensemble can keep instance data and specifications in  separate git repositories (useful for testing or ephemeral instances) and a project can live in a dedicated repository or be part of a source repository.</p>
+</div>
+<div class="section" id="isolation-and-reproducibility">
+<h2>Isolation and Reproducibility<a class="headerlink" href="#isolation-and-reproducibility" title="Permalink to this headline">¶</a></h2>
+<img alt="ensembles diagram" src="_images/diagram1.svg" /><p>Reproducibility deployments is a major goal of Unfurl but because live service are non-deterministic in any number of ways, its concept of reproducibility is necessarily partial. It is like a function in a compute program: given inputs that meet some set of constraints, an ensemble should consistently produce outputs that conforms to some set of invariants.</p>
+<p>As the above diagram illustrates, if we execute the Unfurl engine within a clean, isolated environment and have it target a well-defined, isolated cloud environment it is a lot easier to create consistent, reproducible deployments.
+Then we can view it as an atomic entity and treat them much like we would a container and apply similar operations such as clone, migrate, pause and snapshot.</p>
+<p>The deployment environment is set by specifying the <a class="reference internal" href="runtime.html"><span class="doc">Runtime Environment</span></a> that Unfurl runs in. It can be a Docker container or local isolation achieved through separate executables, environment variables, and Python virtual environment.</p>
+<p>The cloud environment is more variable – dependent on the application, for example, the isolation boundary could be a cloud provider account, a Kubernetes cluster, or a Kubernetes namespace. But any of those resources can be marked as a boundary, enabling Unfurl to apply the appropriate semantics and optimizations.</p>
+</div>
+<div class="section" id="uris">
+<h2>URIs<a class="headerlink" href="#uris" title="Permalink to this headline">¶</a></h2>
+<p>Each ensemble should declare an unique <code class="xref any docutils literal notranslate"><span class="pre">uri</span></code> to establish its identity.
+Ensembles can also have multiple <code class="xref any docutils literal notranslate"><span class="pre">aliases</span></code>, additional URIs that are unique to that ensemble.
+This enables ensembles to be renamed while still maintaining compatibility with references to the old URI. An Ensemble’s identity is established by its <code class="docutils literal notranslate"><span class="pre">uri</span></code> not by its contents.</p>
+<p>If you change an ensemble’s <code class="xref any docutils literal notranslate"><span class="pre">uri</span></code> along with any <code class="xref any docutils literal notranslate"><span class="pre">aliases</span></code> it you are essentially forking
+that ensemble because it will now be treated as a different ensemble.</p>
+<p>Ensemble URI don’t need to be resolvable or memorable but it is useful if they are. When you create a new ensemble Unfurl will autogenerate a URL that is the path to itself in the git repository it appears in. <code class="xref any docutils literal notranslate"><span class="pre">Aliases</span></code> can point to alternative locations or capabilities for the ensemble, for example a <code class="docutils literal notranslate"><span class="pre">ssh</span></code> URL to the git repository for clients with access for committing to the repository.</p>
+<p>If you clone an ensemble into the same project or if the ensemble is in a standalone local repository (an ensemble that isn’t in a project repository or in a repository that is a git submodule of a project repository) Unfurl will generate a new URI and remove any aliases. Otherwise, it won’t change the URI and so the cloned ensemble will be treated as a copy of the source ensemble.</p>
+</div>
+<div class="section" id="anatomy-of-a-manifest">
+<h2>Anatomy of a Manifest<a class="headerlink" href="#anatomy-of-a-manifest" title="Permalink to this headline">¶</a></h2>
+<p>At the core of Unfurl is an <code class="xref any docutils literal notranslate"><span class="pre">Ensemble</span></code> manifest, a YAML file that includes:</p>
+<ul class="simple">
+<li><p>A model of the cloud resources it manages (using the OASIS’s <a class="reference internal" href="tosca.html#tosca"><span class="std std-ref">TOSCA</span></a> 1.3 (“Topology and Orchestration Specification for Cloud Applications”) standard)</p></li>
+<li><p>Implementations of operations and workflows that can be applied to those resources (via <a class="reference internal" href="configurators.html"><span class="doc">Configurators</span></a>)</p></li>
+<li><p>A record of the operational status of those resources.</p></li>
+<li><p>A record of the state of the repositories, artifacts, and runtime environment that were used during deployment.</p></li>
+</ul>
+<p>Ensembles can be part of an Unfurl project that manages one or more git repositories which contain code, artifacts, configuration and operational history.</p>
+<p>The main job of Unfurl is apply the workflows in the Ensemble and record the results. It creates a change log tracking which operations were applied to which resources and how those resources where changed. These changes can be committed to <a class="reference internal" href="cli.html#unfurl-git"><span class="std std-ref">git</span></a> automatically so that each commit represents an update to the state of the system.</p>
+<p>While the implementation of operations can be specified natively in Unfurl, it is primarily intended as a coordinator of existing build and deployments tools, and in particular <a class="reference internal" href="configurators.html#terraform"><span class="std std-ref">Terraform</span></a> and <a class="reference internal" href="configurators.html#ansible"><span class="std std-ref">Ansible</span></a>. As such, Unfurl lets you mix and match both declarative and imperative approaches in the same project, and carefully designed, fine-grained models can live alongside course-grained objects  with ad-hoc metadata and dynamically generated configuration.</p>
+<p>The status is presented as a hierarchy of the operational status and attributes of the live resources that were created, modified or observed while running a job.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="clearer"></div>
+      </div>
+    </div>
+<footer class="footer d-flex justify-content-between flex-wrap">
+    <div class="copyright">
+        <div>&copy; Copyright 2020, Adam Souzis.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.3.1 using <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a> 0.6.0.</div>
+    </div>
+    <div>
+        <a href="#" class="btn btn-primary btn-sm" role="botton">Back to top</a>
+    </div>
+</footer>
+  </body>
+</html>
