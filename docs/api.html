@@ -20,7 +20,7 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <script src="_static/custom.js"></script>
     <script src="_static/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
     <script src="_static/sphinxbootstrap4.js"></script>
     <link rel="shortcut icon" href="_static/favicon32.png"/>
@@ -83,6 +83,7 @@
 <li class="toctree-l3"><a class="reference internal" href="projects.html#environment">Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#locals">Locals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#secrets">Secrets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#connections">Connections</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#external">External</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#inheritance-and-precedence">Inheritance and precedence</a></li>
 </ul>
@@ -110,6 +111,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="runtime.html">Runtime Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="runtime.html#job-variables">Job Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="runtime.html#task-keys"><code class="docutils literal notranslate"><span class="pre">task</span></code> Keys</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html#connections">Connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html#environment-variables">Environment Variables</a></li>
 </ul>
@@ -146,6 +151,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="configurators.html#installers">Installers</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="configurators.html#docker">Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-container-application-docker">unfurl.nodes.Container.Application.Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#artifacts">artifacts</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="configurators.html#id7">Inputs</a></li>
 </ul>
 </li>
@@ -162,8 +171,48 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configurators.html#kubernetes">Kubernetes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configurators.html#supervisor">Supervisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#kubernetes">Kubernetes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8scluster">unfurl.nodes.K8sCluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#attributes">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8snamespace">unfurl.nodes.K8sNamespace</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id10">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id11">Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8sresource">unfurl.nodes.K8sResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id12">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id13">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id14">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8ssecretresource">unfurl.nodes.K8sSecretResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id15">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id16">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id17">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8srawresource">unfurl.nodes.K8sRawResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id18">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id19">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id20">Attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#supervisor">Supervisor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-supervisor">unfurl.nodes.Supervisor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id22">properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-processcontroller-supervisor">unfurl.nodes.ProcessController.Supervisor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id23">requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id24">properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="processing.html">YAML Merge directives</a><ul>
@@ -230,6 +279,7 @@
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-init">init</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-plan">plan</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-run">run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-runtime">runtime</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-status">status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-stop">stop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-undeploy">undeploy</a></li>
@@ -245,11 +295,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="jsonschema.html#job-yaml">job.yaml</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#changelog-yaml">changelog.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id2">job.yaml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="jsonschema.html#unfurl-yaml">unfurl.yaml</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id2">unfurl.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id3">unfurl.yaml</a></li>
 </ul>
 </li>
 </ul>
@@ -287,7 +337,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#tosca-terminology">TOSCA Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#terminology-from-tosca">Terminology from TOSCA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#unfurl-specific">Unfurl specific</a></li>
 </ul>
 </li>
@@ -400,6 +450,7 @@
 <li class="toctree-l3"><a class="reference internal" href="projects.html#environment">Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#locals">Locals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#secrets">Secrets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#connections">Connections</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#external">External</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#inheritance-and-precedence">Inheritance and precedence</a></li>
 </ul>
@@ -427,6 +478,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="runtime.html">Runtime Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="runtime.html#job-variables">Job Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="runtime.html#task-keys"><code class="docutils literal notranslate"><span class="pre">task</span></code> Keys</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html#connections">Connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html#environment-variables">Environment Variables</a></li>
 </ul>
@@ -463,6 +518,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="configurators.html#installers">Installers</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="configurators.html#docker">Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-container-application-docker">unfurl.nodes.Container.Application.Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#artifacts">artifacts</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="configurators.html#id7">Inputs</a></li>
 </ul>
 </li>
@@ -479,8 +538,48 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configurators.html#kubernetes">Kubernetes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configurators.html#supervisor">Supervisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#kubernetes">Kubernetes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8scluster">unfurl.nodes.K8sCluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#attributes">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8snamespace">unfurl.nodes.K8sNamespace</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id10">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id11">Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8sresource">unfurl.nodes.K8sResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id12">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id13">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id14">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8ssecretresource">unfurl.nodes.K8sSecretResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id15">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id16">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id17">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8srawresource">unfurl.nodes.K8sRawResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id18">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id19">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id20">Attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#supervisor">Supervisor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-supervisor">unfurl.nodes.Supervisor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id22">properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-processcontroller-supervisor">unfurl.nodes.ProcessController.Supervisor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id23">requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id24">properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="processing.html">YAML Merge directives</a><ul>
@@ -547,6 +646,7 @@
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-init">init</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-plan">plan</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-run">run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-runtime">runtime</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-status">status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-stop">stop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-undeploy">undeploy</a></li>
@@ -562,11 +662,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="jsonschema.html#job-yaml">job.yaml</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#changelog-yaml">changelog.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id2">job.yaml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="jsonschema.html#unfurl-yaml">unfurl.yaml</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id2">unfurl.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id3">unfurl.yaml</a></li>
 </ul>
 </li>
 </ul>
@@ -604,7 +704,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#tosca-terminology">TOSCA Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#terminology-from-tosca">Terminology from TOSCA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#unfurl-specific">Unfurl specific</a></li>
 </ul>
 </li>
@@ -702,6 +802,14 @@ on the <code class="xref py py-obj docutils literal notranslate"><span class="pr
 or a <code class="xref py py-class docutils literal notranslate"><span class="pre">ConfiguratorResult</span></code> when done</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="unfurl.configurator.Configurator.shortName">
+<code class="sig-name descname">shortName</code><em class="property"> = None</em><a class="headerlink" href="#unfurl.configurator.Configurator.shortName" title="Permalink to this definition">¶</a></dt>
+<dd><p>shortName can be used to customize the “short name” of the configurator
+as an alternative to using the full name (“module.class”) when setting the implementation on an operation.
+(Titlecase recommended)</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1141,8 +1249,8 @@ return that repository and a path relative to it</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="unfurl.localenv.LocalEnv.getEngine">
-<code class="sig-name descname">getEngine</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unfurl.localenv.LocalEnv.getEngine" title="Permalink to this definition">¶</a></dt>
+<dt id="unfurl.localenv.LocalEnv.getExternalManifest">
+<code class="sig-name descname">getExternalManifest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="headerlink" href="#unfurl.localenv.LocalEnv.getExternalManifest" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1168,6 +1276,11 @@ return that repository and a path relative to it</p>
 <dl class="py method">
 <dt id="unfurl.localenv.LocalEnv.getRepos">
 <code class="sig-name descname">getRepos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unfurl.localenv.LocalEnv.getRepos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="unfurl.localenv.LocalEnv.getRuntime">
+<code class="sig-name descname">getRuntime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unfurl.localenv.LocalEnv.getRuntime" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1214,6 +1327,11 @@ one or more ensemble.yaml files which maybe optionally organized into one or mor
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="unfurl.localenv.Project.findGitRepoFromRepository">
+<code class="sig-name descname">findGitRepoFromRepository</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">repoSpec</span></em><span class="sig-paren">)</span><a class="headerlink" href="#unfurl.localenv.Project.findGitRepoFromRepository" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="unfurl.localenv.Project.findOrClone">
 <code class="sig-name descname">findOrClone</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">repo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#unfurl.localenv.Project.findOrClone" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1230,11 +1348,6 @@ one or more ensemble.yaml files which maybe optionally organized into one or mor
 <dd><p>If the given path is part of the working directory of a git repository
 return that repository and a path relative to it</p>
 </dd></dl>
-
-<dl class="py method">
-<dt id="unfurl.localenv.Project.findRepository">
-<code class="sig-name descname">findRepository</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">repoSpec</span></em><span class="sig-paren">)</span><a class="headerlink" href="#unfurl.localenv.Project.findRepository" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt id="unfurl.localenv.Project.getAsdfPaths">
@@ -1418,17 +1531,6 @@ but the local repository names will remain the same.</p>
 </table>
 </dd></dl>
 
-<dl class="py function">
-<dt id="unfurl.init.createProjectRepo">
-<code class="sig-prename descclassname">unfurl.init.</code><code class="sig-name descname">createProjectRepo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">projectdir</span></em>, <em class="sig-param"><span class="n">repo</span></em>, <em class="sig-param"><span class="n">mono</span></em>, <em class="sig-param"><span class="n">addDefaults</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">projectConfigTemplate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">templateDir</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">submodule</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#unfurl.init.createProjectRepo" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a folder named <code class="xref any docutils literal notranslate"><span class="pre">projectdir</span></code> with a git repository with the following files:</p>
-<p>unfurl.yaml
-local/unfurl.yaml
-ensemble-template.yaml
-ensemble/ensemble.yaml</p>
-<p>Returns the absolute path to unfurl.yaml</p>
-</dd></dl>
-
 </div>
 <div class="section" id="module-unfurl.eval">
 <span id="utility-classes-and-functions"></span><h2><a class="toc-backref" href="#id4">Utility classes and functions</a><a class="headerlink" href="#module-unfurl.eval" title="Permalink to this headline">¶</a></h2>
@@ -1547,7 +1649,7 @@ in the returned dict, otherwise only variables added by <code class="xref any do
 <footer class="footer d-flex justify-content-between flex-wrap">
     <div class="copyright">
         <div>&copy; Copyright 2020, Adam Souzis.</div>
-      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.3.1 using <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a> 0.6.0.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.4.2 using <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a> 0.6.0.</div>
     </div>
     <div>
         <a href="#" class="btn btn-primary btn-sm" role="botton">Back to top</a>

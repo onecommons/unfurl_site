@@ -20,7 +20,7 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <script src="_static/custom.js"></script>
     <script src="_static/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
     <script src="_static/sphinxbootstrap4.js"></script>
     <link rel="shortcut icon" href="_static/favicon32.png"/>
@@ -84,6 +84,7 @@
 <li class="toctree-l3"><a class="reference internal" href="projects.html#environment">Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#locals">Locals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#secrets">Secrets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#connections">Connections</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#external">External</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#inheritance-and-precedence">Inheritance and precedence</a></li>
 </ul>
@@ -111,6 +112,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="runtime.html">Runtime Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="runtime.html#job-variables">Job Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="runtime.html#task-keys"><code class="docutils literal notranslate"><span class="pre">task</span></code> Keys</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html#connections">Connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html#environment-variables">Environment Variables</a></li>
 </ul>
@@ -147,6 +152,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#installers">Installers</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#docker">Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unfurl-nodes-container-application-docker">unfurl.nodes.Container.Application.Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#artifacts">artifacts</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#id7">Inputs</a></li>
 </ul>
 </li>
@@ -163,8 +172,48 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#kubernetes">Kubernetes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#supervisor">Supervisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kubernetes">Kubernetes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unfurl-nodes-k8scluster">unfurl.nodes.K8sCluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#attributes">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unfurl-nodes-k8snamespace">unfurl.nodes.K8sNamespace</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unfurl-nodes-k8sresource">unfurl.nodes.K8sResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unfurl-nodes-k8ssecretresource">unfurl.nodes.K8sSecretResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id15">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unfurl-nodes-k8srawresource">unfurl.nodes.K8sRawResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id18">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">Attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#supervisor">Supervisor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unfurl-nodes-supervisor">unfurl.nodes.Supervisor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id22">properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unfurl-nodes-processcontroller-supervisor">unfurl.nodes.ProcessController.Supervisor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id23">requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id24">properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="processing.html">YAML Merge directives</a><ul>
@@ -231,6 +280,7 @@
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-init">init</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-plan">plan</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-run">run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-runtime">runtime</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-status">status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-stop">stop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-undeploy">undeploy</a></li>
@@ -246,11 +296,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="jsonschema.html#job-yaml">job.yaml</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#changelog-yaml">changelog.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id2">job.yaml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="jsonschema.html#unfurl-yaml">unfurl.yaml</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id2">unfurl.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id3">unfurl.yaml</a></li>
 </ul>
 </li>
 </ul>
@@ -288,7 +338,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#tosca-terminology">TOSCA Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#terminology-from-tosca">Terminology from TOSCA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#unfurl-specific">Unfurl specific</a></li>
 </ul>
 </li>
@@ -404,6 +454,7 @@
 <li class="toctree-l3"><a class="reference internal" href="projects.html#environment">Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#locals">Locals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#secrets">Secrets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#connections">Connections</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#external">External</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#inheritance-and-precedence">Inheritance and precedence</a></li>
 </ul>
@@ -431,6 +482,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="runtime.html">Runtime Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="runtime.html#job-variables">Job Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="runtime.html#task-keys"><code class="docutils literal notranslate"><span class="pre">task</span></code> Keys</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html#connections">Connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html#environment-variables">Environment Variables</a></li>
 </ul>
@@ -467,6 +522,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#installers">Installers</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#docker">Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unfurl-nodes-container-application-docker">unfurl.nodes.Container.Application.Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#artifacts">artifacts</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#id7">Inputs</a></li>
 </ul>
 </li>
@@ -483,8 +542,48 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#kubernetes">Kubernetes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#supervisor">Supervisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kubernetes">Kubernetes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unfurl-nodes-k8scluster">unfurl.nodes.K8sCluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#attributes">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unfurl-nodes-k8snamespace">unfurl.nodes.K8sNamespace</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unfurl-nodes-k8sresource">unfurl.nodes.K8sResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unfurl-nodes-k8ssecretresource">unfurl.nodes.K8sSecretResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id15">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unfurl-nodes-k8srawresource">unfurl.nodes.K8sRawResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id18">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">Attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#supervisor">Supervisor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unfurl-nodes-supervisor">unfurl.nodes.Supervisor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id22">properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unfurl-nodes-processcontroller-supervisor">unfurl.nodes.ProcessController.Supervisor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id23">requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id24">properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="processing.html">YAML Merge directives</a><ul>
@@ -551,6 +650,7 @@
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-init">init</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-plan">plan</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-run">run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-runtime">runtime</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-status">status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-stop">stop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-undeploy">undeploy</a></li>
@@ -566,11 +666,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="jsonschema.html#job-yaml">job.yaml</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#changelog-yaml">changelog.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id2">job.yaml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="jsonschema.html#unfurl-yaml">unfurl.yaml</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id2">unfurl.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id3">unfurl.yaml</a></li>
 </ul>
 </li>
 </ul>
@@ -608,7 +708,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#tosca-terminology">TOSCA Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#terminology-from-tosca">Terminology from TOSCA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#unfurl-specific">Unfurl specific</a></li>
 </ul>
 </li>
@@ -637,21 +737,22 @@
   <div class="section" id="configurators">
 <h1>Configurators<a class="headerlink" href="#configurators" title="Permalink to this headline">¶</a></h1>
 <p>To use a configurator, set it as the <code class="docutils literal notranslate"><span class="pre">implementation</span></code> field of an <code class="xref any docutils literal notranslate"><span class="pre">operation</span></code>
-and set its inputs as documented below.</p>
+and set its inputs as documented below. Configurator names are case-sensitive;
+if a configurator name isn’t found it is treated as an external command.</p>
 <p>If you set an external command line directly as the <code class="docutils literal notranslate"><span class="pre">implementation</span></code>, Unfurl will choose the appropriate one to use.
 If <code class="docutils literal notranslate"><span class="pre">operation_host</span></code> is local it will use the <a class="reference internal" href="#shell"><span class="std std-ref">Shell</span></a> configurator, if it is remote,
 it will use the <code class="docutils literal notranslate"><span class="pre">Ansible</span></code> configurator and generate a playbook that invokes it on the remote machine.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#ansible" id="id10">Ansible</a></p></li>
-<li><p><a class="reference internal" href="#delegate" id="id11">Delegate</a></p></li>
-<li><p><a class="reference internal" href="#shell" id="id12">Shell</a></p></li>
-<li><p><a class="reference internal" href="#template" id="id13">Template</a></p></li>
-<li><p><a class="reference internal" href="#terraform" id="id14">Terraform</a></p></li>
+<li><p><a class="reference internal" href="#ansible" id="id25">Ansible</a></p></li>
+<li><p><a class="reference internal" href="#delegate" id="id26">Delegate</a></p></li>
+<li><p><a class="reference internal" href="#shell" id="id27">Shell</a></p></li>
+<li><p><a class="reference internal" href="#template" id="id28">Template</a></p></li>
+<li><p><a class="reference internal" href="#terraform" id="id29">Terraform</a></p></li>
 </ul>
 </div>
 <div class="section" id="ansible">
-<h2><a class="toc-backref" href="#id10">Ansible</a><a class="headerlink" href="#ansible" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id25">Ansible</a><a class="headerlink" href="#ansible" title="Permalink to this headline">¶</a></h2>
 <p>The Ansible configurator executes the given playbook.</p>
 <p>Unfurl uses <a class="reference external" href="https://docs.ansible.com/ansible/2.9/index.html">Ansible 2.9</a>  as a library.
 These <a class="reference external" href="https://docs.ansible.com/ansible/2.9/modules/modules_by_category.html">Ansible modules</a> are available by default.</p>
@@ -726,7 +827,7 @@ the group’s name will be added as an ansible group along with the contents of 
 </div>
 </div>
 <div class="section" id="delegate">
-<h2><a class="toc-backref" href="#id11">Delegate</a><a class="headerlink" href="#delegate" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id26">Delegate</a><a class="headerlink" href="#delegate" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">delegate</span></code> configurator will delegate the current operation to the specified one.</p>
 <div class="section" id="id1">
 <h3>Inputs<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
@@ -743,7 +844,7 @@ the group’s name will be added as an ansible group along with the contents of 
 </div>
 </div>
 <div class="section" id="shell">
-<h2><a class="toc-backref" href="#id12">Shell</a><a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id27">Shell</a><a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">Shell</span></code> configurator executes a shell command.</p>
 <div class="section" id="id2">
 <h3>Inputs<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
@@ -773,7 +874,7 @@ should be echod to Unfurl’s stdout while the command is being run.
 <dt class="field-even">keeplines</dt>
 <dd class="field-even"><p></p></dd>
 <dt class="field-odd">done</dt>
-<dd class="field-odd"><p>As as <a class="reference internal" href="api.html#unfurl.configurator.TaskView.done" title="unfurl.configurator.TaskView.done"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">done</span></code></a> defined by the <a class="reference internal" href="expressions.html#template"><span class="std std-ref">template</span></a> configurator.</p>
+<dd class="field-odd"><p>As as <a class="reference internal" href="api.html#unfurl.configurator.TaskView.done" title="unfurl.configurator.TaskView.done"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">done</span></code></a> defined by the <a class="reference internal" href="#template"><span class="std std-ref">Template</span></a> configurator.</p>
 </dd>
 <dt class="field-even">resultTemplate</dt>
 <dd class="field-even"><p>A Jinja2 template that is processed after shell command completes, it will have the following template variables:</p>
@@ -810,7 +911,7 @@ should be echod to Unfurl’s stdout while the command is being run.
 </div>
 </div>
 <div class="section" id="template">
-<h2><a class="toc-backref" href="#id13">Template</a><a class="headerlink" href="#template" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id28">Template</a><a class="headerlink" href="#template" title="Permalink to this headline">¶</a></h2>
 <p>The template configurator lets you implement an operation entirely within the template.</p>
 <div class="section" id="id3">
 <h3>Inputs<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
@@ -833,7 +934,7 @@ should be echod to Unfurl’s stdout while the command is being run.
 </div>
 </div>
 <div class="section" id="terraform">
-<h2><a class="toc-backref" href="#id14">Terraform</a><a class="headerlink" href="#terraform" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id29">Terraform</a><a class="headerlink" href="#terraform" title="Permalink to this headline">¶</a></h2>
 <p>The Terraform configurator will be invoked on any <code class="xref any docutils literal notranslate"><span class="pre">node</span> <span class="pre">template</span></code> with the type <code class="xref any docutils literal notranslate"><span class="pre">unfurl.nodes.Installer.Terraform</span></code>.
 It can also be used to implement any operation regardless of the node type by setting the <code class="xref any docutils literal notranslate"><span class="pre">implementation</span></code> to <code class="xref any docutils literal notranslate"><span class="pre">unfurl.configurators.terraform.TerraformConfigurator</span></code>.
 It will invoke the appropriate terraform command (e.g “apply” or “destroy”) based on the job’s workflow.</p>
@@ -948,37 +1049,36 @@ See the Terraform providers’ schema documentation for details but top-level ke
 </div>
 <div class="section" id="installers">
 <h1>Installers<a class="headerlink" href="#installers" title="Permalink to this headline">¶</a></h1>
-<p>Installation types don’t need configurators because they already have Interface defaults defined.
+<p>Installation types already have operations defined.
 You just need to import the service template containing the TOSCA type definitions and
-declare node templates with the needed properties and inputs.</p>
+declare node templates with the needed properties and operation inputs.</p>
 <div class="contents local topic" id="id6">
 <ul class="simple">
-<li><p><a class="reference internal" href="#docker" id="id15">Docker</a></p></li>
-<li><p><a class="reference internal" href="#helm" id="id16">Helm</a></p></li>
-<li><p><a class="reference internal" href="#kubernetes" id="id17">Kubernetes</a></p></li>
-<li><p><a class="reference internal" href="#supervisor" id="id18">Supervisor</a></p></li>
+<li><p><a class="reference internal" href="#docker" id="id30">Docker</a></p></li>
+<li><p><a class="reference internal" href="#helm" id="id31">Helm</a></p></li>
+<li><p><a class="reference internal" href="#kubernetes" id="id32">Kubernetes</a></p></li>
+<li><p><a class="reference internal" href="#supervisor" id="id33">Supervisor</a></p></li>
 </ul>
 </div>
 <div class="section" id="docker">
-<h2><a class="toc-backref" href="#id15">Docker</a><a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h2>
-<dl class="simple">
-<dt>imports:</dt><dd><ul class="simple">
-<li><p>repository: unfurl
-file: configurators/docker-template.yaml</p></li>
-</ul>
+<h2><a class="toc-backref" href="#id30">Docker</a><a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h2>
+<p>Required TOSCA import: <code class="docutils literal notranslate"><span class="pre">configurators/docker-template.yaml</span></code> (in the <code class="docutils literal notranslate"><span class="pre">unfurl</span></code> repository)</p>
+<div class="section" id="unfurl-nodes-container-application-docker">
+<h3>unfurl.nodes.Container.Application.Docker<a class="headerlink" href="#unfurl-nodes-container-application-docker" title="Permalink to this headline">¶</a></h3>
+<p>TOSCA node type that represents a Docker container.</p>
+<div class="section" id="artifacts">
+<h4>artifacts<a class="headerlink" href="#artifacts" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">image</dt>
+<dd class="field-odd"><p>(<em>required</em>) An artifact of type <code class="docutils literal notranslate"><span class="pre">tosca.artifacts.Deployment.Image.Container.Docker</span></code></p>
 </dd>
 </dl>
-<p>unfurl.nodes.Container.Application.Docker</p>
-<dl class="simple">
-<dt>artifacts:</dt><dd><dl class="simple">
-<dt>image:</dt><dd><p>type: tosca.artifacts.Deployment.Image.Container.Docker
-file: busybox</p>
-</dd>
-</dl>
-</dd>
-</dl>
+</div></blockquote>
 <p>By default, the configurator will assume the image is in <a class="reference external" href="https://registry.hub.docker.com">https://registry.hub.docker.com</a>.
 If the image is in a different registry you can declare it as a repository and have the <code class="docutils literal notranslate"><span class="pre">image</span></code> artifact reference that repository.</p>
+</div>
+</div>
 <div class="section" id="id7">
 <h3>Inputs<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <blockquote>
@@ -992,13 +1092,13 @@ They are enumerated <a class="reference external" href="https://docs.ansible.com
 </div>
 </div>
 <div class="section" id="helm">
-<h2><a class="toc-backref" href="#id16">Helm</a><a class="headerlink" href="#helm" title="Permalink to this headline">¶</a></h2>
-<p>The service template <code class="docutils literal notranslate"><span class="pre">configurators/helm-template.yaml</span></code> defines the node types for Helm releases and repositories.
-Releases supports the <code class="docutils literal notranslate"><span class="pre">discover</span></code> workflow and will add to the ensemble any Kubernetes resources that a pre-existing release created.
-Requires Helm 3, which will be installed automatically if the default <code class="docutils literal notranslate"><span class="pre">.unfurl_home</span></code> ensemble is deployed.</p>
+<h2><a class="toc-backref" href="#id31">Helm</a><a class="headerlink" href="#helm" title="Permalink to this headline">¶</a></h2>
+<p>Requires Helm 3, which will be installed automatically if the default <code class="docutils literal notranslate"><span class="pre">.unfurl_home</span></code> ensemble is deployed.</p>
+<p>Required TOSCA import: <code class="docutils literal notranslate"><span class="pre">configurators/helm-template.yaml</span></code> (in the <code class="docutils literal notranslate"><span class="pre">unfurl</span></code> repository)</p>
 <div class="section" id="unfurl-nodes-helmrelease">
 <h3>unfurl.nodes.HelmRelease<a class="headerlink" href="#unfurl-nodes-helmrelease" title="Permalink to this headline">¶</a></h3>
-<p>Represents a Helm release.</p>
+<p>TOSCA type that represents a Helm release.
+Deploying or discovering a Helm release will add to the ensemble any Kubernetes resources managed by that release.</p>
 <div class="section" id="requirements">
 <h4>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h4>
 <blockquote>
@@ -1031,24 +1131,24 @@ Requires Helm 3, which will be installed automatically if the default <code clas
 <div class="section" id="id8">
 <h4>Inputs<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div><dl class="field-list simple">
+<div><p>All operations can be passed the following input parameters:</p>
+<dl class="field-list simple">
 <dt class="field-odd">flags</dt>
 <dd class="field-odd"><p>A list of flags to pass to the <code class="docutils literal notranslate"><span class="pre">helm</span></code> command</p>
 </dd>
 </dl>
 </div></blockquote>
-<p>Deploying or discovering a Helm release will add any Kubernetes resources it created to the ensemble.</p>
 </div>
 </div>
 <div class="section" id="unfurl-nodes-helmrepository">
 <h3>unfurl.nodes.HelmRepository<a class="headerlink" href="#unfurl-nodes-helmrepository" title="Permalink to this headline">¶</a></h3>
-<p>Represents a Helm repository.</p>
+<p>TOSCA node type that represents a Helm repository.</p>
 <div class="section" id="id9">
 <h4>Properties<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">name</dt>
-<dd class="field-odd"><p>The name of the repostitory (default: the instance name)</p>
+<dd class="field-odd"><p>The name of the repository (default: the instance name)</p>
 </dd>
 <dt class="field-even">url</dt>
 <dd class="field-even"><p>(<em>required</em>) The URL of the repository</p>
@@ -1059,12 +1159,210 @@ Requires Helm 3, which will be installed automatically if the default <code clas
 </div>
 </div>
 <div class="section" id="kubernetes">
-<h2><a class="toc-backref" href="#id17">Kubernetes</a><a class="headerlink" href="#kubernetes" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id32">Kubernetes</a><a class="headerlink" href="#kubernetes" title="Permalink to this headline">¶</a></h2>
+<p>Use these types to manage Kubernetes resources.</p>
+<div class="section" id="unfurl-nodes-k8scluster">
+<h3>unfurl.nodes.K8sCluster<a class="headerlink" href="#unfurl-nodes-k8scluster" title="Permalink to this headline">¶</a></h3>
+<p>TOSCA type that represents a Kubernetes cluster. Its attributes are set by introspecting the current Kubernetes connection (<code class="docutils literal notranslate"><span class="pre">unfurl.relationships.ConnectsTo.K8sCluster</span></code>).
+There are no default implementations defined for creating or destroying a cluster.</p>
+<div class="section" id="attributes">
+<h4>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">apiServer</dt>
+<dd class="field-odd"><p>The url used to connect to the cluster’s api server.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="unfurl-nodes-k8snamespace">
+<h3>unfurl.nodes.K8sNamespace<a class="headerlink" href="#unfurl-nodes-k8snamespace" title="Permalink to this headline">¶</a></h3>
+<p>Represents a Kubernetes namespace. Destroying a namespace deletes any resources in it.
+Derived from <code class="docutils literal notranslate"><span class="pre">unfurl.nodes.K8sRawResource</span></code>.</p>
+<div class="section" id="id10">
+<h4>Requirements<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">host</dt>
+<dd class="field-odd"><p>A node template of type <code class="docutils literal notranslate"><span class="pre">unfurl.nodes.K8sCluster</span></code></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="id11">
+<h4>Properties<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">name</dt>
+<dd class="field-odd"><p>The name of the namespace.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="unfurl-nodes-k8sresource">
+<h3>unfurl.nodes.K8sResource<a class="headerlink" href="#unfurl-nodes-k8sresource" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h4>Requirements<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">host</dt>
+<dd class="field-odd"><p>A node template of type <code class="docutils literal notranslate"><span class="pre">unfurl.nodes.K8sNamespace</span></code></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="id13">
+<h4>Properties<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">definition</dt>
+<dd class="field-odd"><p>(map or string) The YAML definition for the Kubernetes resource.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="id14">
+<h4>Attributes<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">apiResource</dt>
+<dd class="field-odd"><p>(map) The YAML representation for the resource as retrieved from the Kubernetes cluster.</p>
+</dd>
+<dt class="field-even">name</dt>
+<dd class="field-even"><p>(string) The Kubernetes name of the resource.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="unfurl-nodes-k8ssecretresource">
+<h3>unfurl.nodes.K8sSecretResource<a class="headerlink" href="#unfurl-nodes-k8ssecretresource" title="Permalink to this headline">¶</a></h3>
+<p>Represents a Kubernetes secret. Derived from <code class="docutils literal notranslate"><span class="pre">unfurl.nodes.K8sResource</span></code>.</p>
+<div class="section" id="id15">
+<h4>Requirements<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">host</dt>
+<dd class="field-odd"><p>A node template of type <code class="docutils literal notranslate"><span class="pre">unfurl.nodes.K8sNamespace</span></code></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="id16">
+<h4>Properties<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">data</dt>
+<dd class="field-odd"><p>(map) Name/value pairs that define the secret. Values will be marked as sensitive.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="id17">
+<h4>Attributes<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">apiResource</dt>
+<dd class="field-odd"><p>(map) The YAML representation for the resource as retrieved from the Kubernetes cluster.  Data values will be marked as sensitive.</p>
+</dd>
+<dt class="field-even">name</dt>
+<dd class="field-even"><p>(string) The Kubernetes name of the resource.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="unfurl-nodes-k8srawresource">
+<h3>unfurl.nodes.K8sRawResource<a class="headerlink" href="#unfurl-nodes-k8srawresource" title="Permalink to this headline">¶</a></h3>
+<p>A Kubernetes resource that isn’t part of a namespace.</p>
+<div class="section" id="id18">
+<h4>Requirements<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">host</dt>
+<dd class="field-odd"><p>A node template of type <code class="docutils literal notranslate"><span class="pre">unfurl.nodes.K8sCluster</span></code></p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="id19">
+<h4>Properties<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">definition</dt>
+<dd class="field-odd"><p>(map or string) The YAML definition for the Kubernetes resource.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="id20">
+<h4>Attributes<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">apiResource</dt>
+<dd class="field-odd"><p>(map) The YAML representation for the resource as retrieved from the Kubernetes cluster.</p>
+</dd>
+<dt class="field-even">name</dt>
+<dd class="field-even"><p>(string) The Kubernetes name of the resource.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
 </div>
 <div class="section" id="supervisor">
-<h2><a class="toc-backref" href="#id18">Supervisor</a><a class="headerlink" href="#supervisor" title="Permalink to this headline">¶</a></h2>
-<p>Supervisor is a light-weight process manager that is useful when you want to run a local development instance of server applications.
-The supervisor configurator will.</p>
+<h2><a class="toc-backref" href="#id33">Supervisor</a><a class="headerlink" href="#supervisor" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://supervisord.org">Supervisor</a> is a light-weight process manager that is useful when you want to run local development instances of server applications.</p>
+<p>Required TOSCA import: <code class="docutils literal notranslate"><span class="pre">configurators/supervisor-template.yaml</span></code> (in the <code class="docutils literal notranslate"><span class="pre">unfurl</span></code> repository)</p>
+<div class="section" id="unfurl-nodes-supervisor">
+<h3>unfurl.nodes.Supervisor<a class="headerlink" href="#unfurl-nodes-supervisor" title="Permalink to this headline">¶</a></h3>
+<p>TOSCA type that represents an instance of Supervisor process manager. Derived from <code class="docutils literal notranslate"><span class="pre">tosca.nodes.SoftwareComponent</span></code>.</p>
+<div class="section" id="id22">
+<h4>properties<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">homeDir</dt>
+<dd class="field-odd"><p>(string) The location the Supervisor configuration directory (default: <code class="docutils literal notranslate"><span class="pre">{get_dir:</span> <span class="pre">local}</span></code>)</p>
+</dd>
+<dt class="field-even">confFile</dt>
+<dd class="field-even"><p>(string) Name of the confiration file to create (default: <code class="docutils literal notranslate"><span class="pre">supervisord.conf</span></code>)</p>
+</dd>
+<dt class="field-odd">conf</dt>
+<dd class="field-odd"><p>(string) The <a class="reference external" href="http://supervisord.org/configuration.html">supervisord configuration</a>. A default one will be generated if omitted.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="unfurl-nodes-processcontroller-supervisor">
+<h3>unfurl.nodes.ProcessController.Supervisor<a class="headerlink" href="#unfurl-nodes-processcontroller-supervisor" title="Permalink to this headline">¶</a></h3>
+<p>TOSCA type that represents a process (“program” in supervisord terminology) that is managed by a Supervisor instance. Derived from <code class="docutils literal notranslate"><span class="pre">unfurl.nodes.ProcessController</span></code>.</p>
+<div class="section" id="id23">
+<h4>requirements<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">host</dt>
+<dd class="field-odd"><p>A node template of type <code class="docutils literal notranslate"><span class="pre">unfurl.nodes.Supervisor</span></code>.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="id24">
+<h4>properties<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">name</dt>
+<dd class="field-odd"><p>(string) The name of this program.</p>
+</dd>
+<dt class="field-even">program</dt>
+<dd class="field-even"><p>(map) A map of <a class="reference external" href="http://supervisord.org/configuration.html#program-x-section-values">settings</a> for this program.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
 </div>
 </div>
 
@@ -1079,7 +1377,7 @@ The supervisor configurator will.</p>
 <footer class="footer d-flex justify-content-between flex-wrap">
     <div class="copyright">
         <div>&copy; Copyright 2020, Adam Souzis.</div>
-      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.3.1 using <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a> 0.6.0.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.4.2 using <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a> 0.6.0.</div>
     </div>
     <div>
         <a href="#" class="btn btn-primary btn-sm" role="botton">Back to top</a>

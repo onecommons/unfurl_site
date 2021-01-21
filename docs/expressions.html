@@ -20,7 +20,7 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <script src="_static/custom.js"></script>
     <script src="_static/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
     <script src="_static/sphinxbootstrap4.js"></script>
     <link rel="shortcut icon" href="_static/favicon32.png"/>
@@ -84,6 +84,7 @@
 <li class="toctree-l3"><a class="reference internal" href="projects.html#environment">Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#locals">Locals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#secrets">Secrets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#connections">Connections</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#external">External</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#inheritance-and-precedence">Inheritance and precedence</a></li>
 </ul>
@@ -111,6 +112,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="runtime.html">Runtime Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="runtime.html#job-variables">Job Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="runtime.html#task-keys"><code class="docutils literal notranslate"><span class="pre">task</span></code> Keys</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html#connections">Connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html#environment-variables">Environment Variables</a></li>
 </ul>
@@ -147,6 +152,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="configurators.html#installers">Installers</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="configurators.html#docker">Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-container-application-docker">unfurl.nodes.Container.Application.Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#artifacts">artifacts</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="configurators.html#id7">Inputs</a></li>
 </ul>
 </li>
@@ -163,8 +172,48 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configurators.html#kubernetes">Kubernetes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configurators.html#supervisor">Supervisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#kubernetes">Kubernetes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8scluster">unfurl.nodes.K8sCluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#attributes">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8snamespace">unfurl.nodes.K8sNamespace</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id10">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id11">Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8sresource">unfurl.nodes.K8sResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id12">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id13">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id14">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8ssecretresource">unfurl.nodes.K8sSecretResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id15">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id16">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id17">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8srawresource">unfurl.nodes.K8sRawResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id18">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id19">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id20">Attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#supervisor">Supervisor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-supervisor">unfurl.nodes.Supervisor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id22">properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-processcontroller-supervisor">unfurl.nodes.ProcessController.Supervisor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id23">requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id24">properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="processing.html">YAML Merge directives</a><ul>
@@ -231,6 +280,7 @@
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-init">init</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-plan">plan</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-run">run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-runtime">runtime</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-status">status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-stop">stop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-undeploy">undeploy</a></li>
@@ -246,11 +296,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="jsonschema.html#job-yaml">job.yaml</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#changelog-yaml">changelog.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id2">job.yaml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="jsonschema.html#unfurl-yaml">unfurl.yaml</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id2">unfurl.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id3">unfurl.yaml</a></li>
 </ul>
 </li>
 </ul>
@@ -288,7 +338,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#tosca-terminology">TOSCA Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#terminology-from-tosca">Terminology from TOSCA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#unfurl-specific">Unfurl specific</a></li>
 </ul>
 </li>
@@ -404,6 +454,7 @@
 <li class="toctree-l3"><a class="reference internal" href="projects.html#environment">Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#locals">Locals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#secrets">Secrets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#connections">Connections</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#external">External</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#inheritance-and-precedence">Inheritance and precedence</a></li>
 </ul>
@@ -431,6 +482,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="runtime.html">Runtime Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="runtime.html#job-variables">Job Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="runtime.html#task-keys"><code class="docutils literal notranslate"><span class="pre">task</span></code> Keys</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html#connections">Connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html#environment-variables">Environment Variables</a></li>
 </ul>
@@ -467,6 +522,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="configurators.html#installers">Installers</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="configurators.html#docker">Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-container-application-docker">unfurl.nodes.Container.Application.Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#artifacts">artifacts</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="configurators.html#id7">Inputs</a></li>
 </ul>
 </li>
@@ -483,8 +542,48 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configurators.html#kubernetes">Kubernetes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configurators.html#supervisor">Supervisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#kubernetes">Kubernetes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8scluster">unfurl.nodes.K8sCluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#attributes">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8snamespace">unfurl.nodes.K8sNamespace</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id10">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id11">Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8sresource">unfurl.nodes.K8sResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id12">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id13">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id14">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8ssecretresource">unfurl.nodes.K8sSecretResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id15">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id16">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id17">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8srawresource">unfurl.nodes.K8sRawResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id18">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id19">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id20">Attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#supervisor">Supervisor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-supervisor">unfurl.nodes.Supervisor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id22">properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-processcontroller-supervisor">unfurl.nodes.ProcessController.Supervisor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id23">requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id24">properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="processing.html">YAML Merge directives</a><ul>
@@ -551,6 +650,7 @@
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-init">init</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-plan">plan</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-run">run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-runtime">runtime</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-status">status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-stop">stop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-undeploy">undeploy</a></li>
@@ -566,11 +666,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="jsonschema.html#job-yaml">job.yaml</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#changelog-yaml">changelog.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id2">job.yaml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="jsonschema.html#unfurl-yaml">unfurl.yaml</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id2">unfurl.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jsonschema.html#id3">unfurl.yaml</a></li>
 </ul>
 </li>
 </ul>
@@ -608,7 +708,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#tosca-terminology">TOSCA Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#terminology-from-tosca">Terminology from TOSCA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#unfurl-specific">Unfurl specific</a></li>
 </ul>
 </li>
@@ -635,58 +735,58 @@
           <div class="body">
             
   <div class="section" id="eval-expressions">
-<h1><a class="toc-backref" href="#id29">Eval Expressions</a><a class="headerlink" href="#eval-expressions" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id3">Eval Expressions</a><a class="headerlink" href="#eval-expressions" title="Permalink to this headline">¶</a></h1>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#eval-expressions" id="id29">Eval Expressions</a></p>
+<li><p><a class="reference internal" href="#eval-expressions" id="id3">Eval Expressions</a></p>
 <ul>
-<li><p><a class="reference internal" href="#expression-query-syntax" id="id30">Expression Query Syntax</a></p></li>
-<li><p><a class="reference internal" href="#expression-function-syntax" id="id31">Expression Function Syntax</a></p></li>
-<li><p><a class="reference internal" href="#tosca-functions-and-other-stand-alone-functions" id="id32">TOSCA functions and other stand-alone functions</a></p>
+<li><p><a class="reference internal" href="#expression-query-syntax" id="id4">Expression Query Syntax</a></p></li>
+<li><p><a class="reference internal" href="#expression-function-syntax" id="id5">Expression Function Syntax</a></p></li>
+<li><p><a class="reference internal" href="#tosca-functions-and-other-stand-alone-functions" id="id6">TOSCA functions and other stand-alone functions</a></p>
 <ul>
-<li><p><a class="reference internal" href="#concat" id="id33">concat</a></p></li>
-<li><p><a class="reference internal" href="#get-artifact" id="id34">get_artifact</a></p></li>
-<li><p><a class="reference internal" href="#get-attribute" id="id35">get_attribute</a></p></li>
-<li><p><a class="reference internal" href="#get-env" id="id36">get_env</a></p></li>
-<li><p><a class="reference internal" href="#get-input" id="id37">get_input</a></p></li>
-<li><p><a class="reference internal" href="#get-nodes-of-type" id="id38">get_nodes_of_type</a></p></li>
-<li><p><a class="reference internal" href="#get-property" id="id39">get_property</a></p></li>
-<li><p><a class="reference internal" href="#has-env" id="id40">has_env</a></p></li>
-<li><p><a class="reference internal" href="#join" id="id41">join</a></p></li>
-<li><p><a class="reference internal" href="#q" id="id42">q</a></p></li>
-<li><p><a class="reference internal" href="#token" id="id43">token</a></p></li>
+<li><p><a class="reference internal" href="#concat" id="id7">concat</a></p></li>
+<li><p><a class="reference internal" href="#get-artifact" id="id8">get_artifact</a></p></li>
+<li><p><a class="reference internal" href="#get-attribute" id="id9">get_attribute</a></p></li>
+<li><p><a class="reference internal" href="#get-env" id="id10">get_env</a></p></li>
+<li><p><a class="reference internal" href="#get-input" id="id11">get_input</a></p></li>
+<li><p><a class="reference internal" href="#get-nodes-of-type" id="id12">get_nodes_of_type</a></p></li>
+<li><p><a class="reference internal" href="#get-property" id="id13">get_property</a></p></li>
+<li><p><a class="reference internal" href="#has-env" id="id14">has_env</a></p></li>
+<li><p><a class="reference internal" href="#join" id="id15">join</a></p></li>
+<li><p><a class="reference internal" href="#q" id="id16">q</a></p></li>
+<li><p><a class="reference internal" href="#token" id="id17">token</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#expression-functions" id="id44">Expression Functions</a></p>
+<li><p><a class="reference internal" href="#expression-functions" id="id18">Expression Functions</a></p>
 <ul>
-<li><p><a class="reference internal" href="#abspath" id="id45">abspath</a></p></li>
-<li><p><a class="reference internal" href="#and" id="id46">and</a></p></li>
-<li><p><a class="reference internal" href="#eq" id="id47">eq</a></p></li>
-<li><p><a class="reference internal" href="#external" id="id48">external</a></p></li>
-<li><p><a class="reference internal" href="#file" id="id49">file</a></p></li>
-<li><p><a class="reference internal" href="#get-dir" id="id50">get_dir</a></p></li>
-<li><p><a class="reference internal" href="#if" id="id51">if</a></p></li>
-<li><p><a class="reference internal" href="#lookup" id="id52">lookup</a></p></li>
-<li><p><a class="reference internal" href="#local" id="id53">local</a></p></li>
-<li><p><a class="reference internal" href="#or" id="id54">or</a></p></li>
-<li><p><a class="reference internal" href="#not" id="id55">not</a></p></li>
-<li><p><a class="reference internal" href="#secret" id="id56">secret</a></p></li>
-<li><p><a class="reference internal" href="#sensitive" id="id57">sensitive</a></p></li>
-<li><p><a class="reference internal" href="#tempfile" id="id58">tempfile</a></p></li>
-<li><p><a class="reference internal" href="#template" id="id59">template</a></p></li>
-<li><p><a class="reference internal" href="#validate" id="id60">validate</a></p></li>
+<li><p><a class="reference internal" href="#abspath" id="id19">abspath</a></p></li>
+<li><p><a class="reference internal" href="#and" id="id20">and</a></p></li>
+<li><p><a class="reference internal" href="#eq" id="id21">eq</a></p></li>
+<li><p><a class="reference internal" href="#external" id="id22">external</a></p></li>
+<li><p><a class="reference internal" href="#file" id="id23">file</a></p></li>
+<li><p><a class="reference internal" href="#get-dir" id="id24">get_dir</a></p></li>
+<li><p><a class="reference internal" href="#if" id="id25">if</a></p></li>
+<li><p><a class="reference internal" href="#lookup" id="id26">lookup</a></p></li>
+<li><p><a class="reference internal" href="#local" id="id27">local</a></p></li>
+<li><p><a class="reference internal" href="#or" id="id28">or</a></p></li>
+<li><p><a class="reference internal" href="#not" id="id29">not</a></p></li>
+<li><p><a class="reference internal" href="#secret" id="id30">secret</a></p></li>
+<li><p><a class="reference internal" href="#sensitive" id="id31">sensitive</a></p></li>
+<li><p><a class="reference internal" href="#tempfile" id="id32">tempfile</a></p></li>
+<li><p><a class="reference internal" href="#template" id="id33">template</a></p></li>
+<li><p><a class="reference internal" href="#validate" id="id34">validate</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#semantics" id="id61">Semantics</a></p></li>
-<li><p><a class="reference internal" href="#special-keys" id="id62">Special keys</a></p></li>
+<li><p><a class="reference internal" href="#semantics" id="id35">Semantics</a></p></li>
+<li><p><a class="reference internal" href="#special-keys" id="id36">Special keys</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <p>When jobs are run Unfurl expressions that appear in the YAML configuration files are processed.</p>
 <div class="section" id="expression-query-syntax">
-<h2><a class="toc-backref" href="#id30">Expression Query Syntax</a><a class="headerlink" href="#expression-query-syntax" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">Expression Query Syntax</a><a class="headerlink" href="#expression-query-syntax" title="Permalink to this headline">¶</a></h2>
 <pre>
 <strong id="grammar-token-expr">expr   </strong> ::=  segment? (&quot;::&quot; segment)*
 <strong id="grammar-token-segment">segment</strong> ::=  [key] (&quot;[&quot; filter &quot;]&quot;)* [&quot;?&quot;]
@@ -697,7 +797,7 @@
 </pre>
 </div>
 <div class="section" id="expression-function-syntax">
-<h2><a class="toc-backref" href="#id31">Expression Function Syntax</a><a class="headerlink" href="#expression-function-syntax" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">Expression Function Syntax</a><a class="headerlink" href="#expression-function-syntax" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><table class="docutils align-default">
 <colgroup>
@@ -737,7 +837,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="tosca-functions-and-other-stand-alone-functions">
-<h2><a class="toc-backref" href="#id32">TOSCA functions and other stand-alone functions</a><a class="headerlink" href="#tosca-functions-and-other-stand-alone-functions" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">TOSCA functions and other stand-alone functions</a><a class="headerlink" href="#tosca-functions-and-other-stand-alone-functions" title="Permalink to this headline">¶</a></h2>
 <p>Stand-alone functions don’t need to be wrapped in an “eval”</p>
 <blockquote>
 <div><table class="docutils align-default">
@@ -751,10 +851,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="#concat1"><span class="std std-ref">concat</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#concat"><span class="std std-ref">concat</span></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">string*</span> <span class="pre">]</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#get-artifact1"><span class="std std-ref">get_artifact</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#get-artifact"><span class="std std-ref">get_artifact</span></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">instance_name,</span> <span class="pre">artifact_name]</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#get-attribute"><span class="std std-ref">get_attribute</span></a></p></td>
@@ -788,30 +888,30 @@
 </table>
 </div></blockquote>
 <div class="section" id="concat">
-<span id="concat1"></span><h3><a class="toc-backref" href="#id33">concat</a><a class="headerlink" href="#concat" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id7">concat</a><a class="headerlink" href="#concat" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>The concat function is used to concatenate two or more string values. See <a class="reference external" href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.3/os/TOSCA-Simple-Profile-YAML-v1.3-os.html#_Toc454458585">concat</a>.</p>
 </div></blockquote>
 </div>
 <div class="section" id="get-artifact">
-<span id="get-artifact1"></span><h3><a class="toc-backref" href="#id34">get_artifact</a><a class="headerlink" href="#get-artifact" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">get_artifact</a><a class="headerlink" href="#get-artifact" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>The get_artifact function is used to retrieve artifact location between modelable entities defined in the same service template.</p>
 <p>If the artifact is a Docker image, return the image name in the form of
 “registry/repository/name:tag” or “registry/repository/name&#64;sha256:digest”</p>
 <p>If entity_name or artifact_name is not found return <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
-<p>See <a class="reference external" href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.3/os/TOSCA-Simple-Profile-YAML-v1.3-os.html#_Toc26969460">get_artifact</a></p>
+<p>See <a class="reference external" href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.3/os/TOSCA-Simple-Profile-YAML-v1.3-os.html#_Toc26969460">get_artifact</a>.</p>
 </div></blockquote>
 </div>
 <div class="section" id="get-attribute">
-<span id="id3"></span><h3><a class="toc-backref" href="#id35">get_attribute</a><a class="headerlink" href="#get-attribute" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id9">get_attribute</a><a class="headerlink" href="#get-attribute" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>The get_attribute function is used to retrieve the values of named attributes declared by the referenced node or relationship template name.
-See <a class="reference external" href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.3/os/TOSCA-Simple-Profile-YAML-v1.3-os.html#_Toc26969456">TOSCA Attribute Functions</a></p>
+See <a class="reference external" href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.3/os/TOSCA-Simple-Profile-YAML-v1.3-os.html#_Toc26969456">TOSCA Attribute Functions</a>.</p>
 </div></blockquote>
 </div>
 <div class="section" id="get-env">
-<span id="id4"></span><h3><a class="toc-backref" href="#id36">get_env</a><a class="headerlink" href="#get-env" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">get_env</a><a class="headerlink" href="#get-env" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Returns the value of the given environment variable name.
 If NAME is not present in the environment, return the given default value if supplied or return None.</p>
@@ -820,39 +920,39 @@ If NAME is not present in the environment, return the given default value if sup
 </div></blockquote>
 </div>
 <div class="section" id="get-input">
-<span id="id5"></span><h3><a class="toc-backref" href="#id37">get_input</a><a class="headerlink" href="#get-input" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id11">get_input</a><a class="headerlink" href="#get-input" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>The get_input function is used to retrieve the values of properties declared within the inputs section of a TOSCA Service Template.
-See <a class="reference external" href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.3/os/TOSCA-Simple-Profile-YAML-v1.3-os.html#_Toc26969456">TOSCA Property Functions</a></p>
+See :tosca_spec:<a href="#id1"><span class="problematic" id="id2">``</span></a>TOSCA Property Functions &lt;_Toc26969456&gt;`</p>
 </div></blockquote>
 </div>
 <div class="section" id="get-nodes-of-type">
-<span id="id6"></span><h3><a class="toc-backref" href="#id38">get_nodes_of_type</a><a class="headerlink" href="#get-nodes-of-type" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">get_nodes_of_type</a><a class="headerlink" href="#get-nodes-of-type" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>The get_nodes_of_type function can be used to retrieve a list of all known instances of nodes of the declared Node Type.</p>
 </div></blockquote>
 </div>
 <div class="section" id="get-property">
-<span id="id7"></span><h3><a class="toc-backref" href="#id39">get_property</a><a class="headerlink" href="#get-property" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">get_property</a><a class="headerlink" href="#get-property" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>The get_property function is used to retrieve property values between modelable entities defined in the same service template.
 See <a class="reference external" href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.3/os/TOSCA-Simple-Profile-YAML-v1.3-os.html#_Toc26969456">TOSCA Property Functions</a></p>
 </div></blockquote>
 </div>
 <div class="section" id="has-env">
-<span id="id9"></span><h3><a class="toc-backref" href="#id40">has_env</a><a class="headerlink" href="#has-env" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">has_env</a><a class="headerlink" href="#has-env" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>The <code class="docutils literal notranslate"><span class="pre">has_env</span></code> function returns a boolean indicating whether the given variable is found in the current environment.</p>
 </div></blockquote>
 </div>
 <div class="section" id="join">
-<span id="id10"></span><h3><a class="toc-backref" href="#id41">join</a><a class="headerlink" href="#join" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id15">join</a><a class="headerlink" href="#join" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>The join function is used to join an array of strings into a single string with optional delimiter. See</p>
 </div></blockquote>
 </div>
 <div class="section" id="q">
-<span id="id11"></span><h3><a class="toc-backref" href="#id42">q</a><a class="headerlink" href="#q" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id16">q</a><a class="headerlink" href="#q" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Quote the given value without evaluating it.
 For example:</p>
@@ -870,14 +970,14 @@ For example:</p>
 </div></blockquote>
 </div>
 <div class="section" id="token">
-<span id="id12"></span><h3><a class="toc-backref" href="#id43">token</a><a class="headerlink" href="#token" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id17">token</a><a class="headerlink" href="#token" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>The token function is used on a string to parse out (tokenize) substrings separated by one or more token characters within a larger string.</p>
 </div></blockquote>
 </div>
 </div>
 <div class="section" id="expression-functions">
-<h2><a class="toc-backref" href="#id44">Expression Functions</a><a class="headerlink" href="#expression-functions" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id18">Expression Functions</a><a class="headerlink" href="#expression-functions" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><table class="docutils align-default">
 <colgroup>
@@ -945,7 +1045,7 @@ For example:</p>
 </table>
 </div></blockquote>
 <div class="section" id="abspath">
-<span id="id13"></span><h3><a class="toc-backref" href="#id45">abspath</a><a class="headerlink" href="#abspath" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id19">abspath</a><a class="headerlink" href="#abspath" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">name</dt>
@@ -957,23 +1057,23 @@ Also available as a jinja2 filter.</p>
 </div></blockquote>
 </div>
 <div class="section" id="and">
-<span id="id14"></span><h3><a class="toc-backref" href="#id46">and</a><a class="headerlink" href="#and" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id20">and</a><a class="headerlink" href="#and" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Evaluates each expression in the list until an expression evaluates as false and
 returns the result of the last expression evaluated.</p>
 </div></blockquote>
 </div>
 <div class="section" id="eq">
-<span id="id15"></span><h3><a class="toc-backref" href="#id47">eq</a><a class="headerlink" href="#eq" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id21">eq</a><a class="headerlink" href="#eq" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="external">
-<span id="id16"></span><h3><a class="toc-backref" href="#id48">external</a><a class="headerlink" href="#external" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">external</a><a class="headerlink" href="#external" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Return an instance</p>
 </div></blockquote>
 </div>
 <div class="section" id="file">
-<span id="id17"></span><h3><a class="toc-backref" href="#id49">file</a><a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id23">file</a><a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Read or write a file
 <code class="docutils literal notranslate"><span class="pre">encoding</span></code> can be “binary”, “vault”, “json”, “yaml” or an encoding registered with the Python codec registry</p>
@@ -1013,7 +1113,7 @@ encoding</p>
 </div></blockquote>
 </div>
 <div class="section" id="get-dir">
-<span id="id18"></span><h3><a class="toc-backref" href="#id50">get_dir</a><a class="headerlink" href="#get-dir" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id24">get_dir</a><a class="headerlink" href="#get-dir" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Return an absolute path to the given named folder where <code class="docutils literal notranslate"><span class="pre">name</span></code> is one of:</p>
 <dl class="field-list simple">
@@ -1046,7 +1146,7 @@ encoding</p>
 </div></blockquote>
 </div>
 <div class="section" id="if">
-<span id="id19"></span><h3><a class="toc-backref" href="#id51">if</a><a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id25">if</a><a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><table class="docutils align-default">
 <colgroup>
@@ -1085,7 +1185,7 @@ encoding</p>
 </div></blockquote>
 </div>
 <div class="section" id="lookup">
-<span id="id20"></span><h3><a class="toc-backref" href="#id52">lookup</a><a class="headerlink" href="#lookup" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id26">lookup</a><a class="headerlink" href="#lookup" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><table class="docutils align-default">
 <colgroup>
@@ -1121,31 +1221,31 @@ kwargs*: value}</p></td>
 </div></blockquote>
 </div>
 <div class="section" id="local">
-<span id="id21"></span><h3><a class="toc-backref" href="#id53">local</a><a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id27">local</a><a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="or">
-<span id="id22"></span><h3><a class="toc-backref" href="#id54">or</a><a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id28">or</a><a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Evaluates each item until an item evaluates as true, returns that value or false.</p>
 </div></blockquote>
 </div>
 <div class="section" id="not">
-<span id="id23"></span><h3><a class="toc-backref" href="#id55">not</a><a class="headerlink" href="#not" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id29">not</a><a class="headerlink" href="#not" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="secret">
-<span id="id24"></span><h3><a class="toc-backref" href="#id56">secret</a><a class="headerlink" href="#secret" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id30">secret</a><a class="headerlink" href="#secret" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Return the value of the given secret. It will be marked as sensitive.</p>
 </div></blockquote>
 </div>
 <div class="section" id="sensitive">
-<span id="id25"></span><h3><a class="toc-backref" href="#id57">sensitive</a><a class="headerlink" href="#sensitive" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id31">sensitive</a><a class="headerlink" href="#sensitive" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Mark the given value as sensitive.</p>
 </div></blockquote>
 </div>
 <div class="section" id="tempfile">
-<span id="id26"></span><h3><a class="toc-backref" href="#id58">tempfile</a><a class="headerlink" href="#tempfile" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id32">tempfile</a><a class="headerlink" href="#tempfile" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Create local, temporary file with the specified content.
 It will be deleted after <code class="docutils literal notranslate"><span class="pre">unfurl</span></code> process exits.</p>
@@ -1182,20 +1282,20 @@ if neither is specified, the encoding will be determined by the content, either 
 </div></blockquote>
 </div>
 <div class="section" id="template">
-<span id="id27"></span><h3><a class="toc-backref" href="#id59">template</a><a class="headerlink" href="#template" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id33">template</a><a class="headerlink" href="#template" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Evaluate contents as an Ansible-flavored Jinja2 template</p>
 </div></blockquote>
 </div>
 <div class="section" id="validate">
-<span id="id28"></span><h3><a class="toc-backref" href="#id60">validate</a><a class="headerlink" href="#validate" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id34">validate</a><a class="headerlink" href="#validate" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Return true if the first argument conforms to the JSON schema supplied as the second argument.</p>
 </div></blockquote>
 </div>
 </div>
 <div class="section" id="semantics">
-<h2><a class="toc-backref" href="#id61">Semantics</a><a class="headerlink" href="#semantics" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id35">Semantics</a><a class="headerlink" href="#semantics" title="Permalink to this headline">¶</a></h2>
 <p>Each segment specifies a key in a resource or JSON/YAML object.
 “::” is used as the segment delimitated to allow for keys that contain “.” and “/”</p>
 <p>Path expressions evaluations always start with a list of one or more Resources.
@@ -1246,7 +1346,7 @@ If you want preserve structure (e.g. to know which values are part
 of which parent value or resource) use a less deep path and iterate over results.)</p>
 </div>
 <div class="section" id="special-keys">
-<h2><a class="toc-backref" href="#id62">Special keys</a><a class="headerlink" href="#special-keys" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id36">Special keys</a><a class="headerlink" href="#special-keys" title="Permalink to this headline">¶</a></h2>
 <p>Built-in keys start with a leading <strong>.</strong>:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -1265,6 +1365,18 @@ of which parent value or resource) use a less deep path and iterate over results
 </tr>
 <tr class="row-even"><td><p>.type</p></td>
 <td><p>name of instance’s TOSCA type</p></td>
+</tr>
+<tr class="row-odd"><td><p>.tosca_id</p></td>
+<td><p>unique id of this instance</p></td>
+</tr>
+<tr class="row-even"><td><p>.tosca_name</p></td>
+<td><p>name of the instance’s TOSCA template</p></td>
+</tr>
+<tr class="row-odd"><td><p>.status</p></td>
+<td><p>the instance’s <a class="reference internal" href="api.html#unfurl.support.Status" title="unfurl.support.Status"><code class="xref py py-class docutils literal notranslate"><span class="pre">unfurl.support.Status</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>.state</p></td>
+<td><p>the instance’s <a class="reference internal" href="api.html#unfurl.support.NodeState" title="unfurl.support.NodeState"><code class="xref py py-class docutils literal notranslate"><span class="pre">unfurl.support.NodeState</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p>.parents</p></td>
 <td><p>list of parents</p></td>
@@ -1309,7 +1421,7 @@ of which parent value or resource) use a less deep path and iterate over results
 <footer class="footer d-flex justify-content-between flex-wrap">
     <div class="copyright">
         <div>&copy; Copyright 2020, Adam Souzis.</div>
-      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.3.1 using <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a> 0.6.0.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.4.2 using <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a> 0.6.0.</div>
     </div>
     <div>
         <a href="#" class="btn btn-primary btn-sm" role="botton">Back to top</a>

@@ -20,7 +20,7 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <script src="_static/custom.js"></script>
     <script src="_static/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
     <script src="_static/sphinxbootstrap4.js"></script>
     <link rel="shortcut icon" href="_static/favicon32.png"/>
@@ -84,6 +84,7 @@
 <li class="toctree-l3"><a class="reference internal" href="projects.html#environment">Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#locals">Locals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#secrets">Secrets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#connections">Connections</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#external">External</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#inheritance-and-precedence">Inheritance and precedence</a></li>
 </ul>
@@ -111,6 +112,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="runtime.html">Runtime Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="runtime.html#job-variables">Job Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="runtime.html#task-keys"><code class="docutils literal notranslate"><span class="pre">task</span></code> Keys</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html#connections">Connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html#environment-variables">Environment Variables</a></li>
 </ul>
@@ -147,6 +152,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="configurators.html#installers">Installers</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="configurators.html#docker">Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-container-application-docker">unfurl.nodes.Container.Application.Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#artifacts">artifacts</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="configurators.html#id7">Inputs</a></li>
 </ul>
 </li>
@@ -163,8 +172,48 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configurators.html#kubernetes">Kubernetes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configurators.html#supervisor">Supervisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#kubernetes">Kubernetes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8scluster">unfurl.nodes.K8sCluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#attributes">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8snamespace">unfurl.nodes.K8sNamespace</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id10">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id11">Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8sresource">unfurl.nodes.K8sResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id12">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id13">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id14">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8ssecretresource">unfurl.nodes.K8sSecretResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id15">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id16">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id17">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8srawresource">unfurl.nodes.K8sRawResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id18">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id19">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id20">Attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#supervisor">Supervisor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-supervisor">unfurl.nodes.Supervisor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id22">properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-processcontroller-supervisor">unfurl.nodes.ProcessController.Supervisor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id23">requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id24">properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="processing.html">YAML Merge directives</a><ul>
@@ -231,6 +280,7 @@
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-init">init</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-plan">plan</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-run">run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-runtime">runtime</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-status">status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-stop">stop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-undeploy">undeploy</a></li>
@@ -246,11 +296,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#job-yaml">job.yaml</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#changelog-yaml">changelog.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">job.yaml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#unfurl-yaml">unfurl.yaml</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id2">unfurl.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">unfurl.yaml</a></li>
 </ul>
 </li>
 </ul>
@@ -288,7 +338,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#tosca-terminology">TOSCA Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#terminology-from-tosca">Terminology from TOSCA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#unfurl-specific">Unfurl specific</a></li>
 </ul>
 </li>
@@ -404,6 +454,7 @@
 <li class="toctree-l3"><a class="reference internal" href="projects.html#environment">Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#locals">Locals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#secrets">Secrets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#connections">Connections</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#external">External</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html#inheritance-and-precedence">Inheritance and precedence</a></li>
 </ul>
@@ -431,6 +482,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="runtime.html">Runtime Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="runtime.html#job-variables">Job Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="runtime.html#task-keys"><code class="docutils literal notranslate"><span class="pre">task</span></code> Keys</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html#connections">Connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html#environment-variables">Environment Variables</a></li>
 </ul>
@@ -467,6 +522,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="configurators.html#installers">Installers</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="configurators.html#docker">Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-container-application-docker">unfurl.nodes.Container.Application.Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#artifacts">artifacts</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="configurators.html#id7">Inputs</a></li>
 </ul>
 </li>
@@ -483,8 +542,48 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configurators.html#kubernetes">Kubernetes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configurators.html#supervisor">Supervisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#kubernetes">Kubernetes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8scluster">unfurl.nodes.K8sCluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#attributes">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8snamespace">unfurl.nodes.K8sNamespace</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id10">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id11">Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8sresource">unfurl.nodes.K8sResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id12">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id13">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id14">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8ssecretresource">unfurl.nodes.K8sSecretResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id15">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id16">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id17">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-k8srawresource">unfurl.nodes.K8sRawResource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id18">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id19">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id20">Attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configurators.html#supervisor">Supervisor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-supervisor">unfurl.nodes.Supervisor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id22">properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configurators.html#unfurl-nodes-processcontroller-supervisor">unfurl.nodes.ProcessController.Supervisor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id23">requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configurators.html#id24">properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="processing.html">YAML Merge directives</a><ul>
@@ -551,6 +650,7 @@
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-init">init</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-plan">plan</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-run">run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-runtime">runtime</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-status">status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-stop">stop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli.html#unfurl-undeploy">undeploy</a></li>
@@ -566,11 +666,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#job-yaml">job.yaml</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#changelog-yaml">changelog.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">job.yaml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#unfurl-yaml">unfurl.yaml</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id2">unfurl.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">unfurl.yaml</a></li>
 </ul>
 </li>
 </ul>
@@ -608,7 +708,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#tosca-terminology">TOSCA Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#terminology-from-tosca">Terminology from TOSCA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#unfurl-specific">Unfurl specific</a></li>
 </ul>
 </li>
@@ -695,15 +795,15 @@
       <span class="n">readyState</span><span class="p">:</span>
         <span class="n">effective</span><span class="p">:</span>
         <span class="n">local</span><span class="p">:</span>
-        <span class="n">lastConfigChange</span><span class="p">:</span> <span class="n">changeId</span>
-        <span class="n">lastStateChange</span><span class="p">:</span> <span class="n">changeId</span>
+        <span class="n">lastConfigChange</span><span class="p">:</span> <span class="n">A0AP4P9C0002</span>
+        <span class="n">lastStateChange</span><span class="p">:</span> <span class="n">A0AP4P9C0001</span>
     <span class="n">instances</span><span class="p">:</span>
       <span class="n">child1</span><span class="p">:</span> <span class="p">{}</span>
         <span class="c1"># ...</span>
 <span class="n">changeLog</span><span class="p">:</span> <span class="n">changes</span><span class="o">.</span><span class="n">yaml</span>
 <span class="n">lastJob</span><span class="p">:</span>
   <span class="n">changeId</span><span class="p">:</span> <span class="n">A0AP4P9C0001</span>
-  <span class="n">previousId</span><span class="p">:</span>
+  <span class="n">previousId</span><span class="p">:</span> <span class="n">A0AP4P9C0001</span>
   <span class="n">startCommit</span><span class="p">:</span>
   <span class="n">startTime</span><span class="p">:</span>
   <span class="n">specDigest</span><span class="p">:</span>
@@ -730,18 +830,24 @@
 </tr>
 <tr class="row-even"><td colspan="6"><p>properties</p></td>
 </tr>
-<tr class="row-odd"><td><ul class="simple">
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
 <li><p><strong>apiVersion</strong></p></li>
 </ul>
 </td>
-<td><p>const</p></td>
+<td><p>type</p></td>
+<td colspan="4"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td><p>const</p></td>
 <td colspan="4"><p>“unfurl/v1alpha1”</p></td>
 </tr>
-<tr class="row-even"><td><ul class="simple">
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
 <li><p><strong>kind</strong></p></li>
 </ul>
 </td>
-<td><p>enum</p></td>
+<td><p>type</p></td>
+<td colspan="4"><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td><p>enum</p></td>
 <td colspan="4"><p>Manifest, Ensemble</p></td>
 </tr>
 <tr class="row-odd"><td rowspan="8"><ul class="simple">
@@ -939,8 +1045,8 @@
       <span class="o">-</span><span class="n">var</span><span class="o">-</span><span class="n">file</span><span class="o">=/</span><span class="n">Users</span><span class="o">/</span><span class="n">adam</span><span class="o">/</span><span class="n">_dev</span><span class="o">/</span><span class="n">unfurl</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">my_server</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">vars</span><span class="o">.</span><span class="n">tfvars</span><span class="o">.</span><span class="n">json</span>
 </pre></div>
 </div>
-<div class="section" id="changelog-yaml">
-<h4>changelog.yaml<a class="headerlink" href="#changelog-yaml" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id2">
+<h4>job.yaml<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1007,97 +1113,159 @@
       <span class="n">context</span><span class="p">:</span> <span class="n">production</span> <span class="c1"># &quot;defaults&quot; context is used if not specified</span>
 </pre></div>
 </div>
-<div class="section" id="id2">
-<h4>unfurl.yaml<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h4>unfurl.yaml<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td colspan="5"><p>Unfurl configuration file</p></td>
+<tr class="row-odd"><td colspan="7"><p>Unfurl configuration file</p></td>
 </tr>
 <tr class="row-even"><td><p>type</p></td>
-<td colspan="4"><p><em>object</em></p></td>
+<td colspan="6"><p><em>object</em></p></td>
 </tr>
-<tr class="row-odd"><td colspan="5"><p>properties</p></td>
+<tr class="row-odd"><td colspan="7"><p>properties</p></td>
 </tr>
 <tr class="row-even"><td><ul class="simple">
 <li><p><strong>apiVersion</strong></p></li>
 </ul>
 </td>
 <td><p>const</p></td>
-<td colspan="3"><p>“unfurl/v1alpha1”</p></td>
+<td colspan="5"><p>“unfurl/v1alpha1”</p></td>
 </tr>
 <tr class="row-odd"><td><ul class="simple">
 <li><p><strong>kind</strong></p></li>
 </ul>
 </td>
 <td><p>const</p></td>
-<td colspan="3"><p>“Project”</p></td>
+<td colspan="5"><p>“Project”</p></td>
 </tr>
 <tr class="row-even"><td rowspan="7"><ul class="simple">
 <li><p>manifests</p></li>
 </ul>
 </td>
 <td><p>type</p></td>
-<td colspan="3"><p><em>array</em></p></td>
+<td colspan="5"><p><em>array</em></p></td>
 </tr>
-<tr class="row-odd"><td colspan="4"><p>items</p></td>
+<tr class="row-odd"><td colspan="6"><p>items</p></td>
 </tr>
 <tr class="row-even"><td rowspan="5"><ul class="simple">
 <li></li>
 </ul>
 </td>
 <td><p>type</p></td>
-<td colspan="2"><p><em>object</em></p></td>
+<td colspan="4"><p><em>object</em></p></td>
 </tr>
-<tr class="row-odd"><td colspan="3"><p>properties</p></td>
+<tr class="row-odd"><td colspan="5"><p>properties</p></td>
 </tr>
 <tr class="row-even"><td><ul class="simple">
 <li><p><strong>file</strong></p></li>
 </ul>
 </td>
 <td><p>type</p></td>
-<td><p><em>string</em></p></td>
+<td colspan="3"><p><em>string</em></p></td>
 </tr>
 <tr class="row-odd"><td><ul class="simple">
 <li><p>default</p></li>
 </ul>
 </td>
 <td><p>type</p></td>
-<td><p><em>boolean</em></p></td>
+<td colspan="3"><p><em>boolean</em></p></td>
 </tr>
 <tr class="row-even"><td><ul class="simple">
 <li><p>context</p></li>
 </ul>
 </td>
 <td><p>type</p></td>
-<td><p><em>string</em></p></td>
+<td colspan="3"><p><em>string</em></p></td>
 </tr>
 <tr class="row-odd"><td rowspan="3"><ul class="simple">
 <li><p>contexts</p></li>
 </ul>
 </td>
 <td><p>type</p></td>
-<td colspan="3"><p><em>object</em></p></td>
+<td colspan="5"><p><em>object</em></p></td>
 </tr>
 <tr class="row-even"><td rowspan="2"><p>allOf</p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td colspan="2"><p><a class="reference internal" href="##/definitions/namedobjects"><span class="std std-ref">namedObject</span></a></p></td>
+<td colspan="4"><p><a class="reference internal" href="##/definitions/namedobjects"><span class="std std-ref">namedObject</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><ul class="simple">
 <li></li>
 </ul>
 </td>
 <td><p>additionalProperties</p></td>
-<td><p><a class="reference internal" href="##/definitions/context"><span class="std std-ref">context</span></a></p></td>
+<td colspan="3"><p><a class="reference internal" href="##/definitions/context"><span class="std std-ref">context</span></a></p></td>
+</tr>
+<tr class="row-even"><td rowspan="8"><ul class="simple">
+<li><p>projects</p></li>
+</ul>
+</td>
+<td><p>type</p></td>
+<td colspan="5"><p><em>object</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="7"><p>allOf</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td colspan="4"><p><a class="reference internal" href="##/definitions/namedobjects"><span class="std std-ref">namedObject</span></a></p></td>
+</tr>
+<tr class="row-even"><td rowspan="6"><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td rowspan="6"><p>additionalProperties</p></td>
+<td><p>type</p></td>
+<td colspan="2"><p><em>object</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p>properties</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><ul class="simple">
+<li><p>url</p></li>
+</ul>
+</td>
+<td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>format</p></td>
+<td><p>uri</p></td>
+</tr>
+<tr class="row-even"><td><ul class="simple">
+<li><p>initial</p></li>
+</ul>
+</td>
+<td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td><ul class="simple">
+<li><p>file</p></li>
+</ul>
+</td>
+<td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>localRepositories</p></li>
+</ul>
+</td>
+<td colspan="6"><p>Map of file paths located outside of the project</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="5"><p><em>object</em></p></td>
+</tr>
+<tr class="row-even"><td><p>additionalProperties</p></td>
+<td colspan="5"><p><span class="xref std std-ref">./manifest-schema.json#/definitions/repositories</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -1153,21 +1321,27 @@
 </td>
 <td colspan="4"><p><a class="reference internal" href="##/definitions/external"><span class="std std-ref">External</span></a></p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="simple">
+<tr class="row-even"><td><ul class="simple">
+<li><p>connections</p></li>
+</ul>
+</td>
+<td colspan="4"><p><a class="reference internal" href="##/definitions/namedobjects"><span class="std std-ref">namedObject</span></a></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
 <li><p>external</p></li>
 </ul>
 </td>
 <td><p>type</p></td>
 <td colspan="3"><p><em>object</em></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><p>allOf</p></td>
+<tr class="row-even"><td rowspan="2"><p>allOf</p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
 <td colspan="2"><p><a class="reference internal" href="##/definitions/namedobjects"><span class="std std-ref">namedObject</span></a></p></td>
 </tr>
-<tr class="row-even"><td><ul class="simple">
+<tr class="row-odd"><td><ul class="simple">
 <li></li>
 </ul>
 </td>
@@ -1252,90 +1426,77 @@
 <span id="#/definitions/external"></span><h3>External<a class="headerlink" href="#external" title="Permalink to this headline">¶</a></h3>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td colspan="5"><p>Declare external instances imported from another manifest.</p></td>
+<tr class="row-odd"><td colspan="4"><p>Declare external instances imported from another manifest.</p></td>
 </tr>
 <tr class="row-even"><td><p>type</p></td>
-<td colspan="4"><p><em>object</em></p></td>
+<td colspan="3"><p><em>object</em></p></td>
 </tr>
-<tr class="row-odd"><td colspan="5"><p>properties</p></td>
+<tr class="row-odd"><td colspan="4"><p>properties</p></td>
 </tr>
-<tr class="row-even"><td rowspan="4"><ul class="simple">
+<tr class="row-even"><td rowspan="5"><ul class="simple">
 <li><p>manifest</p></li>
 </ul>
 </td>
 <td><p>type</p></td>
-<td colspan="3"><p><em>object</em></p></td>
+<td colspan="2"><p><em>object</em></p></td>
 </tr>
-<tr class="row-odd"><td colspan="4"><p>properties</p></td>
+<tr class="row-odd"><td colspan="3"><p>properties</p></td>
 </tr>
 <tr class="row-even"><td><ul class="simple">
 <li><p>file</p></li>
 </ul>
 </td>
 <td><p>type</p></td>
-<td colspan="2"><p><em>string</em></p></td>
+<td><p><em>string</em></p></td>
 </tr>
 <tr class="row-odd"><td><ul class="simple">
 <li><p>repository</p></li>
 </ul>
 </td>
 <td><p>type</p></td>
-<td colspan="2"><p><em>string</em></p></td>
+<td><p><em>string</em></p></td>
 </tr>
-<tr class="row-even"><td rowspan="2"><ul class="simple">
+<tr class="row-even"><td><ul class="simple">
+<li><p>project</p></li>
+</ul>
+</td>
+<td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
 <li><p>uri</p></li>
 </ul>
 </td>
 <td><p>type</p></td>
-<td colspan="3"><p><em>string</em></p></td>
+<td colspan="2"><p><em>string</em></p></td>
 </tr>
-<tr class="row-odd"><td><p>format</p></td>
-<td colspan="3"><p>uri</p></td>
+<tr class="row-even"><td><p>format</p></td>
+<td colspan="2"><p>uri</p></td>
 </tr>
-<tr class="row-even"><td><ul class="simple">
+<tr class="row-odd"><td><ul class="simple">
 <li><p>instance</p></li>
 </ul>
 </td>
 <td><p>type</p></td>
-<td colspan="3"><p><em>string</em></p></td>
-</tr>
-<tr class="row-odd"><td rowspan="2"><ul class="simple">
-<li><p>connections</p></li>
-</ul>
-</td>
-<td rowspan="2"><p>anyOf</p></td>
-<td><ul class="simple">
-<li></li>
-</ul>
-</td>
-<td><p>const</p></td>
-<td><p>“*”</p></td>
+<td colspan="2"><p><em>string</em></p></td>
 </tr>
 <tr class="row-even"><td><ul class="simple">
-<li></li>
-</ul>
-</td>
-<td><p>type</p></td>
-<td><p><em>object</em></p></td>
-</tr>
-<tr class="row-odd"><td><ul class="simple">
 <li><p>schema</p></li>
 </ul>
 </td>
-<td colspan="4"><p><a class="reference internal" href="##/definitions/attributes"><span class="std std-ref">attributes</span></a></p></td>
+<td colspan="3"><p><a class="reference internal" href="##/definitions/attributes"><span class="std std-ref">attributes</span></a></p></td>
 </tr>
-<tr class="row-even"><td><ul class="simple">
+<tr class="row-odd"><td><ul class="simple">
 <li><p>attributes</p></li>
 </ul>
 </td>
-<td colspan="4"><p><a class="reference internal" href="##/definitions/attributes"><span class="std std-ref">attributes</span></a></p></td>
+<td colspan="3"><p><a class="reference internal" href="##/definitions/attributes"><span class="std std-ref">attributes</span></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1381,26 +1542,29 @@
 </td>
 <td><p><a class="reference internal" href="##/definitions/state"><span class="std std-ref">state</span></a></p></td>
 </tr>
-<tr class="row-even"><td><ul class="simple">
+<tr class="row-even"><td rowspan="2"><ul class="simple">
 <li><p>priority</p></li>
 </ul>
 </td>
-<td><p>enum</p></td>
+<td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>enum</p></td>
 <td><p>ignore, optional, required</p></td>
 </tr>
-<tr class="row-odd"><td><ul class="simple">
+<tr class="row-even"><td><ul class="simple">
 <li><p>lastStateChange</p></li>
 </ul>
 </td>
 <td colspan="2"><p><a class="reference internal" href="##/definitions/changeid"><span class="std std-ref">changeId</span></a></p></td>
 </tr>
-<tr class="row-even"><td><ul class="simple">
+<tr class="row-odd"><td><ul class="simple">
 <li><p>lastConfigChange</p></li>
 </ul>
 </td>
 <td colspan="2"><p><a class="reference internal" href="##/definitions/changeid"><span class="std std-ref">changeId</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>additionalProperties</p></td>
+<tr class="row-even"><td><p>additionalProperties</p></td>
 <td colspan="2"><p>True</p></td>
 </tr>
 </tbody>
@@ -1711,18 +1875,21 @@
 </tr>
 <tr class="row-odd"><td colspan="4"><p>items</p></td>
 </tr>
-<tr class="row-even"><td rowspan="2"><ul class="simple">
+<tr class="row-even"><td rowspan="3"><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td rowspan="2"><p>anyOf</p></td>
+<td><p>type</p></td>
+<td colspan="2"><p><em>object</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>anyOf</p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
 <td><p><a class="reference internal" href="##/definitions/job"><span class="std std-ref">Job Record</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><ul class="simple">
+<tr class="row-even"><td><ul class="simple">
 <li></li>
 </ul>
 </td>
@@ -1746,7 +1913,10 @@
 <tbody>
 <tr class="row-odd"><td colspan="2"><p>The operational status of the instance</p></td>
 </tr>
-<tr class="row-even"><td><p>enum</p></td>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>enum</p></td>
 <td><p>unknown, ok, degraded, error, pending, absent</p></td>
 </tr>
 </tbody>
@@ -1762,7 +1932,10 @@
 <tbody>
 <tr class="row-odd"><td colspan="2"><p>the operational state of the instance</p></td>
 </tr>
-<tr class="row-even"><td><p>enum</p></td>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>enum</p></td>
 <td><p>initial, creating, created, configuring, configured, starting, started, stopping, stopped, deleting, deleted, error</p></td>
 </tr>
 </tbody>
@@ -1843,14 +2016,17 @@
 <col style="width: 25%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td rowspan="2"><p>allOf</p></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>allOf</p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
 <td colspan="2"><p><a class="reference internal" href="##/definitions/namedobjects"><span class="std std-ref">namedObject</span></a></p></td>
 </tr>
-<tr class="row-even"><td><ul class="simple">
+<tr class="row-odd"><td><ul class="simple">
 <li></li>
 </ul>
 </td>
@@ -1868,10 +2044,13 @@
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>default</p></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p><em>object</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
 <td><p>{}</p></td>
 </tr>
-<tr class="row-even"><td colspan="2"><p><a class="reference internal" href="##/definitions/namedobjects"><span class="std std-ref">namedObject</span></a></p></td>
+<tr class="row-odd"><td colspan="2"><p><a class="reference internal" href="##/definitions/namedobjects"><span class="std std-ref">namedObject</span></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1944,7 +2123,7 @@
 <footer class="footer d-flex justify-content-between flex-wrap">
     <div class="copyright">
         <div>&copy; Copyright 2020, Adam Souzis.</div>
-      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.3.1 using <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a> 0.6.0.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.4.2 using <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a> 0.6.0.</div>
     </div>
     <div>
         <a href="#" class="btn btn-primary btn-sm" role="botton">Back to top</a>

@@ -43,6 +43,10 @@ By default `unfurl` creates a virtual Python environment to run in so it only in
 
 `pip install unfurl[full]`
 
+python3 -m venv tutorial-env
+source tutorial-env/bin/activate
+
+
 ### Requirements
 
 Linux or MacOs
