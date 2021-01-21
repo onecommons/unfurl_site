@@ -18,4 +18,15 @@
   <link rel="shortcut icon" sizes="196x196" href="/images/Unfurl_favicon_196px.png">
   <link rel="apple-touch-icon" href="/images/Unfurl_favicon_152px.png" sizes="152x152">
   <link rel="apple-touch-icon" href="/images/Unfurl_favicon_180px.png" sizes="180x180">
+  {% if jekyll.environment == "production" and site.google_analytics %}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+  {% endif %}
 </head>

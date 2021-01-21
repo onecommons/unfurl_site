@@ -26,14 +26,14 @@ repository: onecommons/unfurl_site
 # Build settings
 markdown: kramdown
 theme: jekyll-theme-tactile
-google_analytics: UA-139138613-1
+google_analytics: G-9RHXGH42Q2
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
 
 footer:
-  content: "&copy; 2020 onecommons.org"
+  content: "&copy; 2021 OneCommons Co."
   has_social: true
 
 include:
