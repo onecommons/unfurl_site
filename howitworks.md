@@ -28,9 +28,7 @@ An unfurl project is directory that consists of:
 
 #### .unfurl_home
 
-Creates ".unfurl_home" project and bootstrap your local environment
-
-The unfurl home directory contains configuration settings you want shared by all your projects on that device as a local manifest that represents the device. By updating and deploying that local manifest you can discover and configure local settings and resources (such as cloud provider accounts or client software) that your Unfurl projects can utilize.
+Unfurl creates a “home” project (by default in `~/.unfurl_home`) representing the local machine. It is used to bootstrap the local deployment environment and its configuration settings are inherited by each Unfurl project on that machine.
 
 #### Unfurl repositories
 
@@ -80,7 +78,7 @@ So you can use all its functionality to manage the local machine it is running o
 
 </div>
 
-Specify your servers, applications, network, etc. with a declarative model that describes resources and their properties, dependencies, and relationships using the OASIS's [TOSCA](tosca) ("Topology and Orchestration Specification for Cloud Applications") standard). Leverage the TOSCA ecosystem of existing model libraries and tools.
+Specify your servers, applications, network, etc. with a declarative model that describes resources and their properties, dependencies, and relationships using the OASIS's [TOSCA](/docs/tosca.html) ("Topology and Orchestration Specification for Cloud Applications") standard). Leverage the TOSCA ecosystem of existing model libraries and tools.
 
 TOSCA supports abstract type hierarchies and reusable templates for resources and relationships so your models can be truly cloud-agnostic. 
 
@@ -98,29 +96,26 @@ Models can be dynamically generated and updated as part of the deployment proces
 
 </div>
 
-Once you've specified the model, you can associate it with operations and workflows. 
+Once you've specified the model, you associate it with operations and workflows in YAML using plugins called "configurators", which integrate configuration tools, including:
 
-There are several ways you can implement an operation:
-
-* Shell scripts: apply templates to the response
-* Terraform: Embed Terraform modules, manages Terraform state and artifacts
-* Ansible: Embed playbooks, maps to TOSCA topology to Ansible inventories
-* Python: in virtual Python environment
+* [Shell scripts](docs/configurators.html#shell): Invoke scripts or invoke programs.
+* [Terraform](docs/configurators.html#terraform): Embed Terraform modules, manages Terraform state and artifacts.
+* [Ansible](docs/configurators.html#ansible): Embed playbooks, map TOSCA instances to Ansible inventories
+* [Python](docs/api.html#module-unfurl.configurator): Execute Python code in a virtual Python environment. 
 
 Domain-specific configurators:
 
-* Docker: create and manage long running containers or run commands in ephemeral containers
-* Kubernetes: create and manage Kubernetes resources
-* Helm: Deploy Helm charts and manage Helm releases
-* Supervisor: Simple process control for local development
+* [Docker](docs/configurators.html#docker): create and manage long running containers or run commands in ephemeral containers
+* [Kubernetes](docs/configurators.html#kubernetes): create and manage Kubernetes resources
+* [Helm](docs/configurators.html#helm): Deploy Helm charts and manage Helm releases
+* [Supervisor](docs/configurators.html#supervisor): Simple process control for local development.
 
-Inputs and outputs from these implementations integration
+The YAML configuration language has several facilities for processing an operation's inputs and outputs, including:
 
-* YAML DSL with expression language for querying instances and configuration 
-- Path-based query DSL to express dynamic relationships between resources and configurations
-* Jinja2 templates with Ansible filters.
+* A path based expression language for querying resources and configuration 
+* Apply Jinja2 templates with Ansible filters.
 * Mark values and files as sensitive so they can be treated as secrets.
-* Files used by the implementations are automatically committed to the repository and changes are included in dependency analysis.
+* Files touched by the configurators are automatically committed to the repository and their changes are included in dependency analysis.
 
 ## 4. Activate and Manage
 

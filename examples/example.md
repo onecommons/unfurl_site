@@ -48,5 +48,3 @@ If you just installed `unfurl` this will take a few minutes as it creates your
 You can now visit ``http://127.0.0.1:4000/`` to see the website you just deployed.
 
 ``unfurl stop unfurl_site``
-
-The repository can also be used to deploy the site on AWS
