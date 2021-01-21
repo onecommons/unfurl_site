@@ -85,6 +85,23 @@ $palette: (
 
 html {
   background-color: $whitepure;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  > nav {
+    flex: 0 0 auto;
+  }
+  > .content {
+    flex: 1 0 auto;
+  }
+  > footer {
+    flex-shrink: 0;
+  }
 }
 
 .content-hero {
@@ -302,7 +319,7 @@ pre.citation {
 }
 
 .site-footer {
-  padding: 1rem;
+  padding: .25rem;
   background-color: $black;
   color: $white;
   text-align: center;
@@ -311,8 +328,6 @@ pre.citation {
     display:inline-block;
   }
   .site-info {
-    font-size: 12px;
-    color: _palette(primary);
     display:inline-block;
   }
 }
