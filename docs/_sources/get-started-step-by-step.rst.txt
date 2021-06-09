@@ -5,7 +5,12 @@ Getting Started
 Once you've installed `Unfurl`, you are ready to configure it and create your first Unfurl project.
 
 .. tip::
-  Before diving in, it is recommended that you read this high-level overview of `How it works`_.
+  Before diving in, it is recommended that you read this high-level overview of :ref:`How It Works<how_it_works>` section.
+
+.. `How it works`_.
+
+
+.. _configure:
 
 1. Configure your home environment
 ===================================
@@ -108,6 +113,8 @@ In the folder structure above:
     It includes ``ensemble-template.yaml``.
 - Private repository folders (like ``ensemble``) are listed in ``.git/info/exclude``
 
+.. _create_servicetemplate:
+
 3. Create a service template
 ============================
 
@@ -151,6 +158,8 @@ A couple of things to note:
 
   D. build-in types
   E. dependencies
+
+.. _implement_operation:
 
 4. Implementing an operation
 ============================
@@ -259,13 +268,15 @@ The ``resultTemplate`` (shared with ``create``) maps Google Compute ["status" en
 We can see that it uses TOSCA's functions with Ansible's Jinja2 expressions and filters, glued together using Unfurl's expression syntax (``eval``)
 https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html
 
-4 Activate your ensemble
+5 Activate your ensemble
 ========================
 
 1. Run deploy
 2. Commit your changes
 
-5. Publish your project
+.. _publish_project:
+
+6. Publish your project
 =======================
 
 You can publish and share your projects like any git repository.

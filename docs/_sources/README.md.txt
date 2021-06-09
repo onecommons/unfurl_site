@@ -35,7 +35,7 @@ Unfurl integrates with the deployment tools you are already using, like Ansible,
 
 # Installation
 
-`unfurl` is available on [PyPI](https://pypi.org/project/unfurl/). You can install using `pip`:
+`unfurl` is available on [PyPI](https://pypi.org/project/unfurl/). You can install using `pip` (or `pip3`):
 
 `pip install unfurl`
 
@@ -43,9 +43,9 @@ By default `unfurl` creates a virtual Python environment to run in so it only in
 
 `pip install unfurl[full]`
 
-python3 -m venv tutorial-env
-source tutorial-env/bin/activate
+You can also install `unfurl` directly from this repository to get the latest code:
 
+`pip3 install -e git+https://github.com/onecommons/unfurl.git#egg=unfurl`
 
 ### Requirements
 
@@ -53,13 +53,13 @@ Linux or MacOs
 
 Python (2.7, 3.7, 3.8, or 3.9); git
 
-Optional: docker
+Python 3.6 is not tested automatically but should work. However you should make sure you have the latest version of pip installed (`pip install -U pip`) and may need to have Rust installed for the [crytography library](https://github.com/pyca/cryptography/blob/main/docs/installation.rst).
 
-If needed, Unfurl will download and install local copies of the following: Ansible, Terraform, gCloud, Supervisor, Helm, and asdf.
+Optional: docker
 
 ## Developing
 
-Clone https://github.com/onecommons/unfurl
+`git clone --recurse-submodules https://github.com/onecommons/unfurl`
 
 To build documentation: Run `tox -e docs`.
 
@@ -69,7 +69,7 @@ To build a distribution package run:
 
 You can now install this package with pip, for example:
 
-`pip install ./dist/unfurl-0.0.1.dev183-py2.py3-none-any.whl`
+`pip install ./dist/unfurl-0.2.2.dev3-py2.py3-none-any.whl`
 
 ### Running unit tests
 
@@ -77,7 +77,7 @@ You can use `tox` to run the unit tests inside the supported python environments
 Install tox `pip install tox` and then run `tox` in source root. To install the dependencies you may need header files installed by the following OS packages: `python-dev`, `libcrypt-dev`, `openssl-dev`. (Note: if installation of a dependency fails, reinvoke `tox` with `-r` to recreate the test environment.)
 If you use ``asdf`` to manage multiple versions of Python, also install `tox-asdf`: `pip install tox-asdf`.
 
-Arguments after `--` are passed to the test runner, e.g. to run an individual test: `tox -- -p test_runtime.py`.
+Arguments after `--` are passed to the test runner, e.g. to run an individual test: `tox -- tests/test_runtime.py`.
 
 ## Getting Started
 

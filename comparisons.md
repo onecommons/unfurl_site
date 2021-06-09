@@ -27,7 +27,7 @@ Unlike other [TOSCA Orchestrators](https://github.com/oasis-open/tosca-community
 
 There are many tools that facilitate a GitOps development processes but each tool is specific infrastructure technology (mostly Kubernetes it seems) -- some are listed below. In contrast, Unfurl provides a generic solution with an uniform process regardless of the technology being deployed. Unlike other GitOps tools Unfurl also records the state and status of deployed resources in Git. 
 
-#### [Flux](https://fluxcd.io/)
+#### [Argo GitOps Engine](https://argoproj.io/) and [Flux GitOps Toolkit](https://fluxcd.io/)
 
 Syncs a Kubernetes cluster with a Github repository that contains manifests. Its primary functionality is to monitor a registry for updates to container images and update both the cluster and the repo with the updated images.
 

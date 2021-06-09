@@ -2,3 +2,101 @@ table.align-default {
     margin-left: inherit;
     margin-right: inherit;
 }
+
+.logo {
+    height: 3rem !important ;
+}
+
+/*Side nav bar text color*/
+
+.wy-menu-vertical a {
+
+    color: #4A5053;
+}
+
+/*Side nav bar search block background color*/
+
+.wy-side-nav-search {
+
+    background-color: #fcfcfc;
+
+    color: #4A5053;
+}
+
+
+.wy-side-nav-search .wy-dropdown>a, .wy-side-nav-search>a {
+    color: #4A5053;
+
+}
+
+/*Side nav bar on hover selection*/
+
+.wy-menu-vertical a:hover {
+    background-color: #00D2D9;
+
+}
+
+/*Side nav bar - section selected - top & bottom borders*/
+
+.wy-menu-vertical li.toctree-l1.current>a {
+    border-bottom: 1px solid #00d2d9;
+    border-top: 1px solid #00D2D9;
+}
+
+.wy-menu-vertical li.current>a, .wy-menu-vertical li.on a {
+    color: #00d2d9;
+
+    background: #fcfcfc;
+
+}
+
+
+.wy-nav-side {
+
+    color: #9b9b9b;
+    background: #fcfcfc; 
+
+}
+
+/*Side nav bar on hover selection*/
+
+a {
+    color: #00D2D9;
+
+}
+
+/*Main RST body content*/
+
+.wy-nav-content {
+
+    max-width: 850px;
+    margin-left: 7%;
+}
+
+
+/*Extra left background*/
+
+@media screen and (min-width: 1400px) {
+    .wy-nav-content-wrap {
+    background: #fcfcfc; 
+    }
+    .wy-nav-content {
+
+        background: #fcfcfc;
+    }
+}
+
+/*In line code color*/
+
+.rst-content code.literal, .rst-content tt.literal {
+    color: #bf8a11;
+}
+
+
+/* Mobile header color*/
+
+.wy-nav-top {
+
+    background: #00D2D9;
+
+}
