@@ -1,8 +1,60 @@
-<footer class="site-footer">
-  <div class="offsite-links">
-      {% include social.html %}
-  </div>
-    <div class="site-info">
-      {{ site.footer.content | markdownify }}
+<footer class="footer is-flex is-justify-content-center">
+  <div class="the-footer columns is-mobile is-gapless">
+    <div class="column">
+      <ul>
+        <li><img class="unfurl-logo" src="/images/unfurl-logo.svg" /></li>
+        <li class="mtop">
+          <a
+            class="footer-blue-font"
+            href="/jobs"
+            style="line-height: normal; white-space: nowrap"
+            >We're hiring!</a
+          >
+        </li>
+        <li><a class="privacy-terms" href="/privacypolicy"> Privacy</a></li>
+        <li><a class="privacy-terms" href="/terms">Terms</a></li>
+      </ul>
     </div>
+    <div class="column">
+      <p class="footer-content has-text-weight-semibold">
+        <span class="footer-span">A free and open </span
+        ><span class="footer-span">source project by</span>
+      </p>
+    </div>
+    <div class="column">
+      <ul>
+        <li>
+          <img class="onecommons-logo" src="/images/onecommon-logo-sm.svg" />
+        </li>
+        <li class="mtop">
+          <p class="has-text-center copyright has-text-weight-semibold">
+            &copy; 2021 OneCommons Co.
+          </p>
+        </li>
+        <li
+          class="is-flex is-justify-content-center has-text-center is-justify-content-center-mobile has-text-center-mobile"
+        >
+          <a class="icon-size" href="##" target="_blank" rel="noopener">
+            <img src="/images/facebook-gray.svg" alt="facebook icon" />
+          </a>
+          <a
+            class="icon-size"
+            href="https://twitter.com/onecommons"
+            target="_blank"
+            rel="noopener"
+          >
+            <img src="/images/twitter-gray.svg" alt="twitter icon" />
+          </a>
+          <a
+            class="icon-size"
+            href="https://www.linkedin.com/company/onecommons/"
+            target="_blank"
+            rel="noopener"
+          >
+            <img src="/images/linkedin-gray.svg" alt="linkedin icon" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </footer>

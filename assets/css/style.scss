@@ -118,7 +118,8 @@ body {
 
 .intro-left {
   color: $white;
-  background-color: $unfurlblue;
+ 
+  ;
   padding: 3rem;
   // padding: 0 5%;
   letter-spacing: 0px;
@@ -483,4 +484,215 @@ pre.citation {
   .deploy-text {
     padding: 3rem 3rem 3rem 4rem;
   }
+}
+
+
+.blue {
+  color: #00d2d9;
+
+  // line-height: 70.81px;
+}
+
+#blue {
+  background-color: #00d2d9;
+
+  // line-height: 70.81px;
+}
+
+.cloud {
+  height: 223px;
+  width: 365px;
+}
+
+.column-text {
+  margin-top: -140px;
+
+  @include mobile {
+    margin-top: 0px;
+  }
+  @include tablet {
+    margin-top: -100px;
+  }
+}
+
+.cloud {
+  margin-top: -60px;
+  @include mobile {
+    margin-top: 0px;
+  }
+}
+
+#bg {
+  background: transparent;
+}
+
+span.line {
+  display: inline-block;
+}
+
+$breakpoint-tablet: 320px;
+@media (max-width: $breakpoint-tablet) {
+  .mobile-font {
+    font-size: 38px;
+    @include mobile {
+      font-size: 28px;
+    }
+  }
+}
+
+.centered {
+  margin: 0 auto;
+  width: fit-content;
+  width: -moz-fit-content;
+}
+
+.threeup-image img {
+  // width: 128px;
+  height: 75px;
+}
+
+.centered,
+.threeup-image {
+  margin: 0 auto;
+  width: fit-content;
+  width: -moz-fit-content;
+}
+
+$brkpoint: 768px;
+@media (max-width: $brkpoint) {
+  .threeup-image {
+    height: 10rem;
+    width: 10rem;
+  }
+  .threeup-image {
+    min-width: 4rem;
+    max-height: 128px;
+    align-self: flex-start;
+  }
+  .image {
+    display: block;
+    position: relative;
+  }
+}
+.for-app-dev {
+  background-color: #edfcfa;
+  padding: 10rem;
+  @include mobile {
+    padding: 5rem 1rem;
+  }
+  .headline {
+    max-width: 640px;
+    padding-bottom: 4rem;
+  }
+  .columns {
+    max-width: 850px;
+  }
+}
+
+.light-green {
+  background-color: #edfcfa;
+}
+
+.content {
+  line-height: 1.6;
+  padding: 0 !important;
+  margin: auto;
+  font-size: 18px;
+}
+
+.simplicity-img{
+  width:70%;
+}
+.columns-top {
+  margin-top: 80px;
+}
+
+.subtxt-p {
+  @include mobile {
+    padding: 0 50px;
+  }
+}
+
+.footer {
+  justify-content: center;
+  background-color: #edfcfa;
+  font-size: 2vh;
+  padding: 2rem 1.5rem 3rem;
+  @include mobile {
+    font-size: 2vw;
+    padding: 1rem 0rem 1rem;
+  }
+}
+
+.footer-blue-font {
+  color: #00d2d9;
+}
+
+.privacy-terms {
+  color: #4a5053;
+}
+
+.the-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.unfurl-logo {
+  width: auto;
+
+  margin-top: 6px;
+  @include mobile {
+    width: 18vw;
+    height: 10vh;
+  }
+}
+.onecommons-logo {
+  width: auto;
+
+  margin-top: 4px;
+  @include mobile {
+    width: 18vw;
+    height: 10vh;
+  }
+}
+.copyright {
+  white-space: nowrap;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.icon-size {
+  margin: 10px 15px;
+
+  @include mobile {
+    margin: 10px 5px 0 5px;
+  }
+}
+
+.footer-content {
+  white-space: nowrap;
+  margin: 17px 5px 0px 5px;
+  @include mobile {
+    margin: 27px 5px;
+  }
+}
+
+.mtop {
+  margin-top: 20px;
+  @include mobile {
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 652px) {
+  .footer-span:last-of-type {
+    display: block;
+    color: black;
+  }
+}
+
+.margin-l {
+  margin-left: 40px;
 }

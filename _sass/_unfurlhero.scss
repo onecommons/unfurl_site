@@ -1,12 +1,14 @@
 $herobreak: $tablet;
 
 .unfurl-hero {
-  background: transparent linear-gradient(90deg, #FFFFFF 0%, $unfurlbeige 66%) 0% 0% no-repeat padding-box;
-  padding:90px 0 0 0;
+  background: transparent linear-gradient(90deg, #ffffff 0%, $unfurlbeige 66%)
+    0% 0% no-repeat padding-box;
+  padding: 90px 0 0 0;
   .button {
     margin-bottom: 1rem;
   }
-  h2, h3 {
+  h2,
+  h3 {
     font-weight: 600;
   }
 }
@@ -20,11 +22,11 @@ $herobreak: $tablet;
   width: auto;
   margin-bottom: -17px;
   img {
-    margin:-23px auto 0px;
+    margin: -23px auto 0px;
     display: block;
   }
   @include until($herobreak) {
-    margin:-4rem 0 4rem;
+    margin: -4rem 0 4rem;
     img {
       width: 220px;
       height: 143px;
@@ -32,17 +34,30 @@ $herobreak: $tablet;
   }
 }
 .unfurl-hero .top-head {
-  background: transparent url(/images/GradientGridDotPattern.svg) -10px 6px no-repeat padding-box;
-  margin:-20px 0 0 -10px;
+  background: transparent url(/images/GradientGridDotPattern.svg) -10px 6px no-repeat
+    padding-box;
+  margin: -20px 0 0 -10px;
   position: relative;
   padding-left: 23%;
   width: auto;
   @include until($herobreak) {
-    background: transparent url(/images/Unfurl_Mobile_GridDotPatternwgradient.png) center top repeat-x;
-    padding:160px 0 0 0;
-    margin:-80px 0 0 0;
+    background: transparent
+      url(/images/Unfurl_Mobile_GridDotPatternwgradient.png) center top repeat-x;
+    padding: 160px 0 0 0;
+    margin: -80px 0 0 0;
   }
 }
+.unfurl-hero .top-head2 {
+  margin: -20px 0 0 -200px;
+  position: relative;
+  padding-left: 23%;
+  width: auto;
+  @include until($herobreak) {
+    padding: 160px 0 0 0;
+    margin: -80px 0 0 0;
+  }
+}
+
 .unfurl-hero .top-subhead {
   width: calc(420px + 23%);
   margin: -16px 0 0 100px;
@@ -58,26 +73,28 @@ $herobreak: $tablet;
   float: right;
   @include until($herobreak) {
     margin-top: 1rem;
-    float:none;
+    float: none;
   }
 }
 
 .unfurl-hero h1 {
   font-size: 50px;
   padding: 0;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   line-height: 0.9;
   background-color: $unfurlbeige;
   @include until($herobreak) {
-    background: transparent linear-gradient(90deg, #FFFFFF 0%, $unfurlbeige 100%) 0% 0% no-repeat padding-box;
+    background: transparent
+      linear-gradient(90deg, #ffffff 0%, $unfurlbeige 100%) 0% 0% no-repeat
+      padding-box;
   }
 }
 .unfurl-hero h1 + h1 {
   color: $unfurlblue;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 .unfurl-hero .top-subhead h2 {
-  display:inline-block;
+  display: inline-block;
   margin-bottom: 1rem;
   @include until($herobreak) {
     line-height: 2rem;
@@ -86,9 +103,9 @@ $herobreak: $tablet;
 }
 .unfurl-hero hr {
   border-bottom: 2px solid $unfurlblue;
-  margin:23px 0 14px 0;
+  margin: 23px 0 14px 0;
   @include until($herobreak) {
     width: 14em;
-    margin:0.5rem auto 1rem;
+    margin: 0.5rem auto 1rem;
   }
 }
