@@ -8,6 +8,11 @@ layout: home
 
 
 <script src="https://unpkg.com/ityped@1.0.3"></script>
+<script>
+// root is the browser viewport / screen
+
+
+</script>
 
 <section class="unfurl-hero section">
   <div
@@ -25,7 +30,7 @@ layout: home
       <hr class="clearfix" />
       <h2>Lightweight, serverless cloud management</h2>
       <div class="container top-buttons">
-        <button class="button outlined has-text-weight-bold">
+        <button class="button outlined">
           <a href="/howitworks.html">Learn More</a>
         </button>
       </div>
@@ -37,7 +42,7 @@ layout: home
     
   >
     <div class="columns is-gapless">
-      <div
+      <div 
         class="column is-three-quarters has-text-center has-text-left-tablet has-text-left-desktop has-text-left-widescreen has-text-left-fullhd blue is-size-3 is-uppercase has-text-weight-bold"
       >
         <h1 id="bg">
@@ -67,31 +72,48 @@ layout: home
   </div>
 </section>
 
-<section class="section new-hero">
-  <div class="columns has-text-centered has-vcentered-child">
-    <div class="column pt-7-mobile">
-      <div>
+
+
+<section  class="section new-hero">
+  
+  <div id="animated-typing" class="columns has-text-centered has-vcentered-child">
+    <div   class="column pt-7-mobile">
+    
         <div
-          id="ityped"
-          class=" is-size-5-mobile  is-size-4 pt-2 mt-3 has-text-weight-semibold"
+          id="ityped" style="height:50px"
+          class="is-size-5-mobile is-size-4 pt-2 mt-3 has-text-weight-semibold"
         ></div>
-      </div>
+     
     </div>
+  
   </div>
-</section>
 
 <script>
   
-  window.ityped.init("#ityped", {
-    strings: ["$ unfurl deploy"],
-    startDelay: 200,
-    loop: false,
-    disableBackTyping: true,
-    showCursor: false,
-  });
+  let observer = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting === true){	
+        setTimeout(function () {
+        window.ityped.init("#ityped", {
+          strings: ["$ Unfurl Deploy"],
+          startDelay: 300,
+          loop: false,
+          disableBackTyping: true,
+          showCursor: false, 
+        });
+        console.log("visible");})
+      } else if (entries[0].isIntersecting === false){
+        console.log('Element not visible');
+        document.getElementById("ityped").innerHTML = "";
+      
+      }
+      
+      
+},{ threshold: [0.5], rootMargin: "0px 0px 50px 0px", }); 
+
+observer.observe(document.querySelector("#animated-typing"));
 </script>
 
-<section class="section content markup is-small intro">
+<section  class="section content markup is-small intro">
   <div class="columns is-centered">
    
    
@@ -102,8 +124,8 @@ layout: home
       >
       </a>
      
-    <iframe class="frame-dim" height="400" width="500" src="/examples/term1.html#fast">THREEEE</iframe>
-      <div class="container">
+    <iframe class="frame-dim" height="400" width="500" src="/examples/term1.html#fast"></iframe>
+      <div class="container" style="padding-bottom:70px;">
         <button class="button outlined">
           <a href="/examples/example.html">Try this now</a>
         </button>
@@ -113,7 +135,7 @@ layout: home
   </div>
 </section>
 
-
+</section>
 <section class="for-app-dev">
   <div class="container has-text-centered">
     <div class="centered headline is-size-4 has-text-weight-semibold">
@@ -161,7 +183,7 @@ layout: home
       </div>
     </div>
     <div class="centered pt-3">
-      <button class="button outlined has-text-weight-bold btn-blue">
+      <button class="button outlined ">
         <a href="/platform">Learn More</a>
       </button>
     </div>
@@ -189,7 +211,7 @@ layout: home
             <strong>Cloud Independence
             </strong> 
             <br>
-            Declarative, high level, cloud independent model of your cloud infrastructure. <br><span class="blue">Learn more ></span>
+            Declarative, high level, cloud independent model of your cloud infrastructure. <br><span class="blue has-text-weight-semibold">Learn more ></span>
           </p>
         </div>
       
@@ -212,7 +234,7 @@ layout: home
             </strong> 
             <br>
             Unfurl integrates with the deployment tools you are already using, like, Terraform, Ansible, Helm and just...
-            <br><span class="blue">Learn more ></span>
+            <br><span class="blue has-text-weight-semibold">Learn more ></span>
           </p>
         </div>
       
@@ -235,7 +257,7 @@ layout: home
             </strong> 
             <br>
             Developer friendly: Self-contained CLI tool, no server component. All state is stored in git as readable and editable...
-            <br><span class="blue">Learn more ></span>
+            <br><span class="blue has-text-weight-semibold">Learn more ></span>
           </p>
         </div>
       
@@ -261,7 +283,7 @@ layout: home
 
             </strong> 
             <br>
-            Inline, local encryption or use external secret managers. <br><span class="blue">Learn more ></span>
+            Inline, local encryption or use external secret managers. <br><span class="blue has-text-weight-semibold">Learn more ></span>
           </p>
         </div>
       
@@ -285,7 +307,7 @@ layout: home
             </strong> 
             <br>
             Bootstrap and manage your local environment or build isolated deployment environments.
-            <br><span class="blue">Learn more ></span>
+            <br><span class="blue has-text-weight-semibold">Learn more ></span>
           </p>
         </div>
       
@@ -308,7 +330,7 @@ layout: home
             </strong> 
             <br>
             Support for “day two” management: incrementally apply changes; easy to define your own workflows...
-            <br><span class="blue">Learn more ></span>
+            <br><span class="blue has-text-weight-semibold">Learn more ></span>
           </p>
         </div>
       
@@ -345,7 +367,7 @@ layout: home
         </h2>
         <h2>Bootstrap and isolate your deployment environments.</h2>
         <h2>
-          <button class="button outlined">
+          <button class="button outlined ">
             <a href="howitworks.html#1-organize-your-deployment-environment"
               >Learn More</a
             >
