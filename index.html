@@ -3,18 +3,10 @@ permalink: "/index"
 layout: home
 ---
 
-<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-
-
-
-<script src="https://unpkg.com/ityped@1.0.3"></script>
-
 
 <section class="unfurl-hero section">
   <div
-    class="container has-text-centered unfurl-section"
-    
-  >
+    class="container has-text-centered unfurl-section">
     <div class="container top-logo">
       <img alt="logo" height="195" width="300" src="/images/unfurl-logo.svg" />
     </div>
@@ -34,13 +26,10 @@ layout: home
   </div>
 
   <div
-    class="container has-text-centered lost-clouds"
-    
-  >
+    class="container has-text-centered lost-clouds">
     <div class="columns is-gapless">
       <div 
-        class="column is-three-quarters has-text-center has-text-left-tablet has-text-left-desktop has-text-left-widescreen has-text-left-fullhd blue is-size-3 is-uppercase has-text-weight-bold"
-      >
+        class="column is-three-quarters has-text-center has-text-left-tablet has-text-left-desktop has-text-left-widescreen has-text-left-fullhd blue is-size-3 is-uppercase has-text-weight-bold">
         <h1 id="bg">
           <span class="line mobile-font">dont' get lost</span>
           <span class="line mobile-font">in the clouds!</span>
@@ -52,8 +41,7 @@ layout: home
     </div>
     <div class="columns has-text-left">
       <div
-        class="column column-text is-three-quarters has-text-center has-text-left-tablet has-text-left-desktop has-text-left-widescreen has-text-left-fullhd is-justify-content-center is-size-4 has-text-weight-semibold subtxt-p"
-      >
+        class="column column-text is-three-quarters has-text-center has-text-left-tablet has-text-left-desktop has-text-left-widescreen has-text-left-fullhd is-justify-content-center is-size-4 has-text-weight-semibold subtxt-p">
         <p>
           <span class="blue">Unfurl </span> makes it easy to build a flexible
           and mature DevOps infrastructure using Git.
@@ -68,58 +56,22 @@ layout: home
   </div>
 </section>
 
-
-
 <section  class="section new-hero">
-  
   <div id="animated-typing" class="columns has-text-centered has-vcentered-child">
     <div   class="column pt-7-mobile">
-    
         <div
           id="ityped" style="height:50px"
           class="is-size-5-mobile is-size-4 pt-2 mt-3 has-text-weight-semibold"
         ></div>
-     
     </div>
-  
   </div>
-
-<script>
-  
-  let observer = new IntersectionObserver(function(entries) {
-      if (entries[0].isIntersecting === true){	
-        setTimeout(function () {
-        window.ityped.init("#ityped", {
-          strings: ["$ Unfurl Deploy"],
-          startDelay: 300,
-          loop: false,
-          disableBackTyping: true,
-          showCursor: false, 
-        });
-        console.log("visible");})
-      } else if (entries[0].isIntersecting === false){
-        console.log('Element not visible');
-        document.getElementById("ityped").innerHTML = "";
-      
-      }
-      
-      
-},{ threshold: [0.5], rootMargin: "0px 0px 50px 0px", }); 
-
-observer.observe(document.querySelector("#animated-typing"));
-</script>
-
+</section>
 <section  class="section content markup is-small intro">
   <div class="columns is-centered">
-   
-   
     <div class=" column overflow-x has-text-centered">
       <a class="frame-dim"
-        href="/examples/example.html"
-
-      >
+        href="/examples/example.html">
       </a>
-     
     <iframe class="frame-dim" height="400" width="500" src="/examples/term1.html#fast"></iframe>
       <div class="container" style="padding-bottom:70px;">
         <button class="button outlined">
@@ -127,17 +79,15 @@ observer.observe(document.querySelector("#animated-typing"));
         </button>
       </div>
     </div>
-  
   </div>
 </section>
 
-</section>
+
 <section class="for-app-dev">
   <div class="container has-text-centered">
     <div class="centered headline is-size-4 has-text-weight-semibold">
       <span class="line mobile-font">Clone, fork, and deploy cloud services</span>
       <span class="line mobile-font">as easily as cloning and building code from git.</span>
-       
     </div>
     <div class="centered">
       <div class="columns is-centered">
@@ -188,11 +138,9 @@ observer.observe(document.querySelector("#animated-typing"));
 <div class="centered has-text-centered headline is-size-4 is-italic" style="min-height: 20vh; margin-top: 10%; padding: 0 30px 0 30px">
   <span class="line mobile-font blue has-text-weight-semibold">Unfurl</span>: the easiest way to deploy complicated software.</span>
   <hr id="blue" class="clearfix" />
-   
 </div>
 <div class="container" style="padding:0 50px 110px 50px;">
 <div class="columns">
-  
   <div class="column is-one-third columns-top">
     <article class="media">
       <figure class="media-left">
@@ -210,9 +158,7 @@ observer.observe(document.querySelector("#animated-typing"));
             Declarative, high level, cloud independent model of your cloud infrastructure. <br><span class="blue has-text-weight-semibold">Learn more ></span>
           </p>
         </div>
-      
       </div>
-     
     </article>
   </div>
   <div class="column is-one-third columns-top">
@@ -233,9 +179,7 @@ observer.observe(document.querySelector("#animated-typing"));
             <br><span class="blue has-text-weight-semibold">Learn more ></span>
           </p>
         </div>
-      
       </div>
-     
     </article>
   </div>
   <div class="column is-one-third columns-top">
@@ -256,14 +200,11 @@ observer.observe(document.querySelector("#animated-typing"));
             <br><span class="blue has-text-weight-semibold">Learn more ></span>
           </p>
         </div>
-      
       </div>
-     
     </article>
   </div>
 </div>
 <div class="columns">
-  
   <div class="column is-one-third columns-top">
     <article class="media">
       <figure class="media-left">
@@ -276,15 +217,12 @@ observer.observe(document.querySelector("#animated-typing"));
         <div class="content">
           <p>
             <strong>Secrets Management
-
             </strong> 
             <br>
             Inline, local encryption or use external secret managers. <br><span class="blue has-text-weight-semibold">Learn more ></span>
           </p>
         </div>
-      
       </div>
-     
     </article>
   </div>
   <div class="column is-one-third columns-top">
@@ -306,9 +244,7 @@ observer.observe(document.querySelector("#animated-typing"));
             <br><span class="blue has-text-weight-semibold">Learn more ></span>
           </p>
         </div>
-      
       </div>
-     
     </article>
   </div>
   <div class="column is-one-third columns-top">
@@ -322,25 +258,17 @@ observer.observe(document.querySelector("#animated-typing"));
         <div class="content">
           <p>
             <strong>Day 2 Operations
-
             </strong> 
             <br>
             Support for “day two” management: incrementally apply changes; easy to define your own workflows...
             <br><span class="blue has-text-weight-semibold">Learn more ></span>
           </p>
         </div>
-      
       </div>
-     
     </article>
   </div>
 </div>
 </div>
-
-
-<section>
-
-</section>
 <section class="home is-small">
   <div class="grid-container light-green">
     <div class="grid-item has-text-centered container">
@@ -451,3 +379,34 @@ observer.observe(document.querySelector("#animated-typing"));
     </div>
   </div>
 </section>
+
+
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+
+<script src="https://unpkg.com/ityped@1.0.3"></script>
+
+<script>
+
+  let observer = new IntersectionObserver(function(entries) {
+    setTimeout(function () {
+      if (entries[0].isIntersecting === true && document.getElementById("ityped").innerHTML === ""){	
+        
+        window.ityped.init("#ityped", {
+          strings: ["$ Unfurl Deploy"],
+          startDelay: 0,
+          loop: false,
+          disableBackTyping: true,
+          showCursor: false, 
+        });
+      }
+    }, 1000); 
+    if (entries[0].isIntersecting === false){
+        console.log('Element not visible');
+        document.getElementById("ityped").innerHTML = "";
+      
+      } 
+},{ threshold: [0.5], rootMargin: "0px 0px 50px 0px", }); 
+
+observer.observe(document.querySelector("#animated-typing"));
+
+</script>
