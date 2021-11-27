@@ -79,6 +79,15 @@ $palette: (
   justify-content: center;
 }
 
+.has-vcentered-child {
+  display: flex;
+}
+
+.has-vcentered-child * {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .strong {
   font-weight: 800;
 }
@@ -112,19 +121,15 @@ body {
 .intro {
   padding: 0;
   .columns {
-    background-color: $whitepure;
     height: auto
   }
 }
 
 .intro-left {
-  color: $white;
- 
-  ;
   padding: 3rem;
   // padding: 0 5%;
   letter-spacing: 0px;
-  font: normal normal 600 20pt/26pt Open Sans;
+  font: normal normal 600 30px/42px Open Sans;
   .strong {
     color: $white;
   }
@@ -488,18 +493,27 @@ pre.citation {
 }
 
 .unfurl-section{
-  min-height: 50vh; 
+  min-height: 50vh;
   margin-top: 15%;
   @include mobile{
     margin-top: 25%;
   }
 }
+
 .lost-clouds{
-  min-height: 50vh; 
-  margin-top: 10%; 
+  background-image: url("/images/cloud-grid-dots.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+
+  min-height: 300px;
+  margin-top: 10%;
   padding: 0 30px 0 30px;
   @include mobile{
-    margin-top: 50%; 
+    margin-top: 50%;
+  }
+  h1  {
+    font: normal normal bold 58px/80px Open Sans Condensed;
   }
 }
 
@@ -536,10 +550,6 @@ pre.citation {
   @include mobile {
     margin-top: 0px;
   }
-}
-
-#bg {
-  background: transparent;
 }
 
 span.line {
@@ -591,7 +601,6 @@ $brkpoint: 768px;
   }
 }
 .for-app-dev {
-  background-color: #edfcfa;
   padding: 10rem;
   @include mobile {
     padding: 5rem 1rem;
@@ -606,7 +615,7 @@ $brkpoint: 768px;
 }
 
 .light-green {
-  background-color: #edfcfa;
+  background-color: $unfurlbeige;
 }
 
 .content {
@@ -631,7 +640,7 @@ $brkpoint: 768px;
 
 .footer {
   justify-content: center;
-  background-color: #edfcfa;
+  background-color: $unfurlbeige;
   font-size: 2vh;
   padding: 2rem 1.5rem 3rem;
   @include mobile {
@@ -717,9 +726,7 @@ $brkpoint: 768px;
   height:400px;
   width:500px;
   @include mobile {
-   height:400px;
    width:400px;
-   
 }}
 
 $smallmobile: 375px;
@@ -734,5 +741,5 @@ $smallmobile: 375px;
 
 #ityped{
   padding: 80px 0 ;
- 
+
 }

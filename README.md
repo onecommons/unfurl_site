@@ -2,7 +2,8 @@
 
 The `unfurl` folder contains an unfurl project with an ensemble that will deploy a local copy of the site. 
 
-The /docs directory is updated with: ```cp -R .tox/docs/html/* docs```
+To update /docs directory, in your unfurl development directory,
+rebuild all docs with `tox -e docs -- -E -a` then copy the docs files: ```cp -R .tox/docs/html/* /path/to/unfurl_site/docs```
 
 ## Release
 
