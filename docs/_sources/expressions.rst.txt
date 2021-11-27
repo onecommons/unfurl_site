@@ -57,6 +57,7 @@ concat
 ^^^^^^
 
   The concat function is used to concatenate two or more string values. See :tosca_spec:`concat <_Toc454458585>`.
+  ``concat`` can optionally take a ``sep`` keyword argument the specifies as a string the separator to use when joining the list.
 
 get_artifact
 ^^^^^^^^^^^^
@@ -144,35 +145,39 @@ token
 Expression Functions
 ~~~~~~~~~~~~~~~~~~~~
 
-  =========== ================================
-  Key         Value
-  =========== ================================
-  `abspath`   path | [path, location, mkdir?]
-  `and`       [test+]
-  `eq`        [a, b]
-  external    name
-  `file`      (see below)
-  foreach     {key?, value?}
-  `get_dir`   location | [location, mkdir?]
-  `if`        (see below)
-  local       name
-  `lookup`    (see below)
-  `or`        [test+]
-  `not`       expr
-  `python`    path#function_name | module.function_name
-  `secret`    name
-  `sensitive` any
-  `tempfile`  (see below)
-  `template`  contents
-  `validate`  [contents, schema]
-  =========== ================================
+  ===================== ================================
+  Key                   Value
+  ===================== ================================
+  `abspath`             path | [path, location, mkdir?]
+  `and`                 [test+]
+  `eq`                  [a, b]
+  external              name
+  `file`                (see below)
+  foreach               {key?, value?}
+  `get_dir`             location | [location, mkdir?]
+  `if`                  (see below)
+  local                 name
+  `lookup`              (see below)
+  `or`                  [test+]
+  `not`                 expr
+  `python`              path#function_name | module.function_name
+  `secret`              name
+   :std:ref:`sensitive` any
+  `tempfile`            (see below)
+  `template`            contents
+  `validate`            [contents, schema]
+  ===================== ================================
 
 abspath
 ^^^^^^^
 
-  :name: a named folder
+  :path: A file path
+  :location: (optional) A named folder (see `get_dir`)
+  :mkdir: (default: false) If true, create the folder if missing.
 
-  Get the absolute path.
+  Get the absolute path to the given path. If ``location`` is supplied it will be
+  relative to that location (see `get_dir`) otherwise it will be relative to the current directory.
+
   Also available as a jinja2 filter.
 
 and
@@ -192,31 +197,43 @@ external
 file
 ^^^^
 
-  Read or write a file
-  ``encoding`` can be "binary", "vault", "json", "yaml" or an encoding registered with the Python codec registry
+  Read or write a file. If the ``contents`` keyword argument is present, a file will be written
+  upon evaluation of this function, otherwise it will be read.
 
   .. code-block:: YAML
 
-       eval:
-         file:
-         contents:
-       select: contents
+      # read
+      eval:
+        file: foo/local.config
+      select: contents
+
+      # write
+      eval:
+        file: path.txt.vault
+        contents: "this will be saved as a vault encrypted file"
+        encoding: vault
+      select: path
 
   ========= ===============================
   Key       Value
   ========= ===============================
   file:     path
+  dir?:     path
   encoding? "binary" | "vault" | "json" | "yaml" | python_text_encoding
   contents? any
   ========= ===============================
 
   ``encoding`` can be "binary", "vault", "json", "yaml" or an encoding registered with the Python codec registry
 
-  Key can be one of:
+  The ``select`` clause can evaluate the following keys:
 
-  path # absolute path
-  contents # file contents (None if it doesn't exist)
-  encoding
+  ========= ===============================
+  Key       Returns
+  ========= ===============================
+  path:     absolute path of the file
+  encoding  encoding of the file
+  contents? file contents (None if it doesn't exist)
+  ========= ===============================
 
 foreach
 ^^^^^^^
@@ -224,20 +241,29 @@ foreach
 get_dir
 ^^^^^^^
 
+  :location: a named folder
+  :mkdir: (default: false) If true, create the folder if missing.
+
   Return an absolute path to the given named folder where ``name`` is one of:
 
-  :.:   directory that contains the current instance's the ensemble
-  :src: directory of the source file this expression appears in
-  :home: The "home" directory for the current instance (committed to repository)
+  :.:   Directory that contains the current instance's ensemble
+  :src: Directory of the source file this expression appears in
+  :artifacts: Directory for the current instance (committed to repository).
   :local: The "local" directory for the current instance (excluded from repository)
-  :tmp:   A temporary directory (removed after unfurl exits)
+  :secrets: The "secrets" directory for the current instance (files written there are vault encrypted when committed to the repository)
+  :tmp:   A temporary directory for the instance (removed after unfurl exits)
+  :tasks: Job specific directory for the current instance (excluded from repository).
+  :operation: Operation specific directory for the current instance (excluded from repository).
+  :workflow: Workflow specific directory for the current instance (excluded from repository).
   :spec.src: The directory of the source file the current instance's template appears in.
-  :spec.home: The "home" directory of the source file the current instance's template.
-  :spec.local: The "local" directory of the source file the current instance's template.
+  :spec.home: Directory unique to current instance's TOSCA template (committed to the spec repository).
+  :spec.local: Local directory unique to current instance's TOSCA template (excluded from repository).
   :project: The root directory of the current project.
-  :unfurl.home: The location of home project (``UNFURL_HOME``).
+  :unfurl.home: The location of home project (UNFURL_HOME).
 
   Otherwise look for a repository with the given name and return its path or None if not found.
+
+  Also available as a jinja2 filter.
 
 if
 ^^
@@ -305,6 +331,13 @@ not
 python
 ^^^^^^
 
+  ======== =========================================
+  Key      Value
+  ======== =========================================
+  python   path#function_name | module.function_name
+  args?    mapped_value
+  ======== =========================================
+
   .. code-block:: YAML
 
     eval:
@@ -315,10 +348,17 @@ python
     eval:
       python: python_module.func
 
+    # with args:
+
+    eval:
+      python: python_module.func
+      args:   foo
+
   Execute the given python function and evaluate to its return value.
-  The function will being invoke the current `RefContext` as an argument.
   If the path to the python script is a relative path, it will be treated as relative to the current source file
   (ie. the template file that is invoking the expression).
+  The function will being invoke the current `RefContext` as the first argument.
+  If ``args`` is declared, its value will passed as a second argument to the function.
 
 secret
 ^^^^^^
@@ -357,7 +397,21 @@ tempfile
 template
 ^^^^^^^^
 
-  Evaluate contents as an Ansible-flavored Jinja2 template
+Evaluate file or inline contents as an Ansible-flavored Jinja2 template.
+
+.. code-block:: YAML
+
+  eval:
+    template:
+      path: path/to/template.j2
+
+.. code-block:: YAML
+
+  eval:
+    template: >
+      {%if testVar %}success{%else%}failed{%endif%}
+  vars:
+    testVar: true
 
 validate
 ^^^^^^^^

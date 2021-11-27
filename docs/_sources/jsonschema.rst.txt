@@ -38,11 +38,13 @@ unfurl.yaml
 Sections
 ---------
 
-.. jsonschema:: manifest-schema.json#/definitions/context
+.. jsonschema:: manifest-schema.json#/definitions/environment
 
 .. jsonschema:: manifest-schema.json#/definitions/instance
 
 .. jsonschema:: manifest-schema.json#/definitions/external
+
+.. jsonschema:: manifest-schema.json#/definitions/repositories
 
 .. jsonschema:: manifest-schema.json#/definitions/status
 
