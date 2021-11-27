@@ -1,78 +1,36 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Interfaces &mdash; Unfurl Documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon32.png"/>
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/custom.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html">
-          
-
-          
-            
             <img src="../_static/unfurl_logo.svg" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -80,18 +38,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../README.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../README.html#installation">Installation</a></li>
@@ -113,78 +60,37 @@
 <li class="toctree-l1"><a class="reference internal" href="../api.html">Python API</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Unfurl</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Interfaces</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../_sources/toscaref/spec-interfaces.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="interfaces">
-<span id="interfaces2"></span><h1>Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="interfaces">
+<span id="interfaces2"></span><h1>Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this headline"></a></h1>
 <p>Interfaces provide a way to map logical tasks to executable operations.</p>
-<div class="section" id="declaration">
-<h2>Declaration<a class="headerlink" href="#declaration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="node-types-and-requirements-interface">
-<h3>Node Types and requirements Interface<a class="headerlink" href="#node-types-and-requirements-interface" title="Permalink to this headline">¶</a></h3>
+<section id="declaration">
+<h2>Declaration<a class="headerlink" href="#declaration" title="Permalink to this headline"></a></h2>
+<section id="node-types-and-interfaces">
+<h3>Node Types and Interfaces<a class="headerlink" href="#node-types-and-interfaces" title="Permalink to this headline"></a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">node_types</span><span class="p">:</span>
   <span class="nt">some_type</span><span class="p">:</span>
     <span class="nt">interfaces</span><span class="p">:</span>
@@ -205,10 +111,10 @@
         <span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
-<p>Each interface declaration under the different <code class="docutils literal notranslate"><span class="pre">interfaces</span></code>/<code class="docutils literal notranslate"><span class="pre">source_interfaces</span></code>/<code class="docutils literal notranslate"><span class="pre">target_interfaces</span></code> sections is a dictionary of operations.</p>
-</div>
-<div class="section" id="operation-declaration-in-node-types-and-requirements-interfaces">
-<h3>Operation Declaration in Node Types and requirements Interfaces<a class="headerlink" href="#operation-declaration-in-node-types-and-requirements-interfaces" title="Permalink to this headline">¶</a></h3>
+<p>Each interface declaration under the <code class="docutils literal notranslate"><span class="pre">interfaces</span></code> section is a dictionary of operations.</p>
+</section>
+<section id="operation-declaration-in-node-types-interfaces">
+<h3>Operation Declaration in Node Types Interfaces<a class="headerlink" href="#operation-declaration-in-node-types-interfaces" title="Permalink to this headline"></a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">node_types</span><span class="p">:</span>
   <span class="nt">some_type</span><span class="p">:</span>
     <span class="nt">interfaces</span><span class="p">:</span>
@@ -217,15 +123,12 @@
           <span class="nt">implementation</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
           <span class="nt">inputs</span><span class="p">:</span>
             <span class="l l-Scalar l-Scalar-Plain">...</span>
-          <span class="nt">executor</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
-          <span class="nt">max_retries</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
-          <span class="nt">retry_interval</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="definition">
-<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline"></a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 13%" />
@@ -249,28 +152,13 @@
 <tr class="row-odd"><td><p>inputs</p></td>
 <td><p>no</p></td>
 <td><p>dict</p></td>
-<td><p>Schema of inputs that will be passed to the implementation as kwargs.</p></td>
-</tr>
-<tr class="row-even"><td><p>executor</p></td>
-<td><p>no</p></td>
-<td><p>string</p></td>
-<td><p>Valid values: central _deployment_agent, host_agent</p></td>
-</tr>
-<tr class="row-odd"><td><p>max_retries</p></td>
-<td><p>no</p></td>
-<td><p>number</p></td>
-<td><p>Maximum number of retries for a task. -1 means infinite retries (Default: task_retries in manager tosca Cloudify Manager Type for remote workflows and task_retries workflow configuration for local workflows).</p></td>
-</tr>
-<tr class="row-even"><td><p>retry_interval</p></td>
-<td><p>no</p></td>
-<td><p>number</p></td>
-<td><p>Minimum wait time (in seconds) in between task retries (Default: task_retry_interval in manager tosca Manager Type for remote workflows and task_retry_interval workflow configuration for local workflows).</p></td>
+<td><p>Schema of inputs that will be passed to the implementation.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="simple-mapping">
-<h2>Simple Mapping<a class="headerlink" href="#simple-mapping" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="simple-mapping">
+<h2>Simple Mapping<a class="headerlink" href="#simple-mapping" title="Permalink to this headline"></a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">node_types</span><span class="p">:</span>
 
   <span class="nt">some_type</span><span class="p">:</span>
@@ -282,9 +170,9 @@
 <p>When mapping an operation to an implementation, if there is no need to
 pass inputs or override the executor, the full mapping structure can be
 avoided and the implementation can be written directly.</p>
-</div>
-<div class="section" id="operation-input-schema-definition">
-<h2>Operation Input Schema Definition<a class="headerlink" href="#operation-input-schema-definition" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="operation-input-schema-definition">
+<h2>Operation Input Schema Definition<a class="headerlink" href="#operation-input-schema-definition" title="Permalink to this headline"></a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">node_types</span><span class="p">:</span>
   <span class="nt">some_type</span><span class="p">:</span>
     <span class="nt">interfaces</span><span class="p">:</span>
@@ -331,9 +219,9 @@ avoided and the implementation can be written directly.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="node-templates-interface-definition">
-<h2>Node Templates Interface Definition<a class="headerlink" href="#node-templates-interface-definition" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="node-templates-interface-definition">
+<h2>Node Templates Interface Definition<a class="headerlink" href="#node-templates-interface-definition" title="Permalink to this headline"></a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">some_node</span><span class="p">:</span>
   <span class="nt">interfaces</span><span class="p">:</span>
     <span class="l l-Scalar l-Scalar-Plain">...</span>
@@ -346,8 +234,8 @@ avoided and the implementation can be written directly.</p>
         <span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
-<div class="section" id="operation-inputs-in-node-templates-interfaces">
-<h3>Operation Inputs in Node Templates Interfaces<a class="headerlink" href="#operation-inputs-in-node-templates-interfaces" title="Permalink to this headline">¶</a></h3>
+<section id="operation-inputs-in-node-templates-interfaces">
+<h3>Operation Inputs in Node Templates Interfaces<a class="headerlink" href="#operation-inputs-in-node-templates-interfaces" title="Permalink to this headline"></a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">node_types</span><span class="p">:</span>
   <span class="nt">some_type</span><span class="p">:</span>
     <span class="nt">interfaces</span><span class="p">:</span>
@@ -377,10 +265,10 @@ avoided and the implementation can be written directly.</p>
 <li><p>All inputs that were declared in the operation inputs schema must be provided.</p></li>
 <li><p>Additional inputs, which were not specified in the operation inputs schema, may be passed as well.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h2>
 <p>In the following examples, we will declare an interface which will allow us to:</p>
 <ul class="simple">
 <li><p>Configure a master deployment server using a plugin.</p></li>
@@ -388,9 +276,9 @@ avoided and the implementation can be written directly.</p>
 <li><p>Verify that the deployment succeeded using a shell script.</p></li>
 <li><p>Start the application after the deployment ended.</p></li>
 </ul>
-<p>For the sake of simplicity, we will not refer to <a class="reference internal" href="../configurators.html#id30"><span class="std std-ref">requirements</span></a> in these examples.</p>
-<div class="section" id="configuring-interfaces-in-node-types">
-<h3>Configuring Interfaces in Node Types<a class="headerlink" href="#configuring-interfaces-in-node-types" title="Permalink to this headline">¶</a></h3>
+<p>For the sake of simplicity, we will not refer to <a class="reference internal" href="spec-requirements.html#requirements"><span class="std std-ref">requirements</span></a> in these examples.</p>
+<section id="configuring-interfaces-in-node-types">
+<h3>Configuring Interfaces in Node Types<a class="headerlink" href="#configuring-interfaces-in-node-types" title="Permalink to this headline"></a></h3>
 <p>Configuring the master server:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">plugins</span><span class="p">:</span>
   <span class="nt">deployer</span><span class="p">:</span>
@@ -414,12 +302,12 @@ avoided and the implementation can be written directly.</p>
 <p>In this example, we’ve:</p>
 <ul class="simple">
 <li><p>Declared a <code class="docutils literal notranslate"><span class="pre">deployer</span></code> plugin which, <a class="reference external" href="#overriding-the-executor">by default</a>, should execute its operations on the TOSCA manager.</p></li>
-<li><p>Declared a <span class="xref std std-ref">node type</span> with a <code class="docutils literal notranslate"><span class="pre">my_deployment_interface</span></code> interface that has a single <code class="docutils literal notranslate"><span class="pre">configure</span></code> operation which is mapped to the <code class="docutils literal notranslate"><span class="pre">deployer.config_in_master.configure</span></code> task.</p></li>
+<li><p>Declared a <a class="reference internal" href="spec-node-types.html#node-types"><span class="std std-ref">node type</span></a> with a <code class="docutils literal notranslate"><span class="pre">my_deployment_interface</span></code> interface that has a single <code class="docutils literal notranslate"><span class="pre">configure</span></code> operation which is mapped to the <code class="docutils literal notranslate"><span class="pre">deployer.config_in_master.configure</span></code> task.</p></li>
 <li><p>Declared a <code class="docutils literal notranslate"><span class="pre">nodejs</span></code> node template of type <code class="docutils literal notranslate"><span class="pre">nodejs_app</span></code>.</p></li>
 </ul>
-</div>
-<div class="section" id="overriding-the-executor">
-<h3>Overriding the executor<a class="headerlink" href="#overriding-the-executor" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="overriding-the-executor">
+<h3>Overriding the executor<a class="headerlink" href="#overriding-the-executor" title="Permalink to this headline"></a></h3>
 <p>In the above example we’ve declared an <code class="docutils literal notranslate"><span class="pre">executor</span></code> for our <code class="docutils literal notranslate"><span class="pre">deployer</span></code> plugin. TOSCA enables declaring an <code class="docutils literal notranslate"><span class="pre">executor</span></code> for a single operation thus overriding the previous declaration.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">plugins</span><span class="p">:</span>
   <span class="nt">deployer</span><span class="p">:</span>
@@ -451,9 +339,9 @@ interface.</p>
 <p class="admonition-title">Note</p>
 <p>Note that its <code class="docutils literal notranslate"><span class="pre">executor</span></code> attribute is configured to <code class="docutils literal notranslate"><span class="pre">host_agent</span></code> which means that even though the <code class="docutils literal notranslate"><span class="pre">deployer</span></code> plugin is configured to execute operations on the <code class="docutils literal notranslate"><span class="pre">central_deployment_agent</span></code>, the <code class="docutils literal notranslate"><span class="pre">deploy</span></code> operation will be executed on hosts of the <code class="docutils literal notranslate"><span class="pre">nodejs_app</span></code> rather than the TOSCA manager.</p>
 </div>
-</div>
-<div class="section" id="declaring-an-operation-implementation-within-the-node">
-<h3>Declaring an operation implementation within the node<a class="headerlink" href="#declaring-an-operation-implementation-within-the-node" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="declaring-an-operation-implementation-within-the-node">
+<h3>Declaring an operation implementation within the node<a class="headerlink" href="#declaring-an-operation-implementation-within-the-node" title="Permalink to this headline"></a></h3>
 <p>You can specify a full operation definition within the node’s interface under the node template itself.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">plugins</span><span class="p">:</span>
   <span class="nt">deployer</span><span class="p">:</span>
@@ -482,9 +370,9 @@ interface.</p>
 <p>Let’s say that we use our <code class="docutils literal notranslate"><span class="pre">my_deployment_interface</span></code> on more than the <code class="docutils literal notranslate"><span class="pre">nodejs</span></code> node. While on all other nodes, a <code class="docutils literal notranslate"><span class="pre">start</span></code> operation is not mapped to anything, we’d like to have a <code class="docutils literal notranslate"><span class="pre">start</span></code> operation for the <code class="docutils literal notranslate"><span class="pre">nodejs</span></code> node specifically, which will run our application after it is deployed.</p>
 <p>Here, we’ve declared a <code class="docutils literal notranslate"><span class="pre">start</span></code> operation and mapped it to execute a script specifically on the <code class="docutils literal notranslate"><span class="pre">nodejs</span></code> node.</p>
 <p>This comes to show that you can define your interfaces either in <code class="docutils literal notranslate"><span class="pre">node_types</span></code> or in <code class="docutils literal notranslate"><span class="pre">node_templates</span></code> depending on whether you want to reuse the declared interfaces in diffrent nodes or declare them in specific nodes.</p>
-</div>
-<div class="section" id="operation-inputs">
-<h3>Operation Inputs<a class="headerlink" href="#operation-inputs" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="operation-inputs">
+<h3>Operation Inputs<a class="headerlink" href="#operation-inputs" title="Permalink to this headline"></a></h3>
 <p>Operations can specify inputs that will be passed to the implementation.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">plugins</span><span class="p">:</span>
   <span class="nt">deployer</span><span class="p">:</span>
@@ -534,52 +422,36 @@ interface.</p>
 <p class="admonition-title">See also</p>
 <p>For more information, refer to <a class="reference external" href="../_static/TOSCA-Simple-Profile-YAML-v1.3-os-toc.html#_Toc50125307">TOSCA Interface Section</a></p>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020, Adam Souzis.
-
-    </p>
+    <p>&#169; Copyright 2020, Adam Souzis.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

@@ -1,80 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Runtime Environment &mdash; Unfurl Documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon32.png"/>
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/custom.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Configurators" href="configurators.html" />
     <link rel="prev" title="Jobs and Workflows" href="jobs.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html">
-          
-
-          
-            
             <img src="_static/unfurl_logo.svg" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -82,18 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="README.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="README.html#installation">Installation</a></li>
@@ -123,76 +70,35 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">Python API</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">Unfurl</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Runtime Environment</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/runtime.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="runtime-environment">
-<h1>Runtime Environment<a class="headerlink" href="#runtime-environment" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="job-variables">
-<h2>Job Variables<a class="headerlink" href="#job-variables" title="Permalink to this headline">¶</a></h2>
-<p>When a task is being evaluated the following variables are available as an <a class="reference internal" href="expressions.html#eval-expressions"><span class="std std-ref">expression</span></a> variable or a jinja2 template variable.
+             
+  <section id="runtime-environment">
+<span id="runtime"></span><h1>Runtime Environment<a class="headerlink" href="#runtime-environment" title="Permalink to this headline"></a></h1>
+<section id="job-variables">
+<h2>Job Variables<a class="headerlink" href="#job-variables" title="Permalink to this headline"></a></h2>
+<p>When a task is being evaluated the following variables are available as an <a class="reference internal" href="glossary.html#eval-expressions"><span class="std std-ref">expression</span></a> variable or a jinja2 template variable.
 Instances are represented as a dictionary containing its properties and attributes and its <a class="reference internal" href="expressions.html#special-keys"><span class="std std-ref">Special keys</span></a>.</p>
 <blockquote>
 <div><dl class="field-list simple">
@@ -202,34 +108,31 @@ Instances are represented as a dictionary containing its properties and attribut
 <dt class="field-even">connections</dt>
 <dd class="field-even"><p>See <a class="reference internal" href="#connections"><span class="std std-ref">Connections</span></a> below.</p>
 </dd>
-<dt class="field-odd">allConnections</dt>
-<dd class="field-odd"><p>See <a class="reference internal" href="#connections"><span class="std std-ref">Connections</span></a> below.</p>
+<dt class="field-odd">SELF</dt>
+<dd class="field-odd"><p>The current task’s target instance.</p>
 </dd>
-<dt class="field-even">SELF</dt>
-<dd class="field-even"><p>The current task’s target instance.</p>
+<dt class="field-even">HOST</dt>
+<dd class="field-even"><p>The host of SELF.</p>
 </dd>
-<dt class="field-odd">HOST</dt>
-<dd class="field-odd"><p>The host of SELF.</p>
+<dt class="field-odd">ORCHESTRATOR</dt>
+<dd class="field-odd"><p>The instance Unfurl is running on (<code class="docutils literal notranslate"><span class="pre">localhost</span></code>)</p>
 </dd>
-<dt class="field-even">ORCHESTRATOR</dt>
-<dd class="field-even"><p>The instance Unfurl is running on (<code class="docutils literal notranslate"><span class="pre">localhost</span></code>)</p>
+<dt class="field-even">ORCHESTRATOR_HOST</dt>
+<dd class="field-even"><p>Current task’s <code class="docutils literal notranslate"><span class="pre">operation_host</span></code>. If it is not declared, defaults to <code class="docutils literal notranslate"><span class="pre">localhost</span></code>.</p>
 </dd>
-<dt class="field-odd">ORCHESTRATOR_HOST</dt>
-<dd class="field-odd"><p>Current task’s <code class="docutils literal notranslate"><span class="pre">operation_host</span></code>. If it is not declared, defaults to <code class="docutils literal notranslate"><span class="pre">localhost</span></code>.</p>
+<dt class="field-odd">SOURCE</dt>
+<dd class="field-odd"><p>If the task’s target instance is a relationship, its source instance</p>
 </dd>
-<dt class="field-even">SOURCE</dt>
-<dd class="field-even"><p>If the task’s target instance is a relationship, its source instance</p>
+<dt class="field-even">TARGET</dt>
+<dd class="field-even"><p>If the task’s target instance is a relationship, its target instance</p>
 </dd>
-<dt class="field-odd">TARGET</dt>
-<dd class="field-odd"><p>If the task’s target instance is a relationship, its target instance</p>
-</dd>
-<dt class="field-even">task</dt>
-<dd class="field-even"><p>A dictionary containing the current task’s settings. Its keys include:</p>
+<dt class="field-odd">task</dt>
+<dd class="field-odd"><p>A dictionary containing the current task’s settings. Its keys include:</p>
 </dd>
 </dl>
 </div></blockquote>
-<div class="section" id="task-keys">
-<h3><code class="docutils literal notranslate"><span class="pre">task</span></code> Keys<a class="headerlink" href="#task-keys" title="Permalink to this headline">¶</a></h3>
+<section id="task-keys">
+<h3><code class="docutils literal notranslate"><span class="pre">task</span></code> Keys<a class="headerlink" href="#task-keys" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">name</dt>
@@ -261,10 +164,10 @@ Instances are represented as a dictionary containing its properties and attribut
 </dd>
 </dl>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="connections">
-<h2>Connections<a class="headerlink" href="#connections" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="connections">
+<h2>Connections<a class="headerlink" href="#connections" title="Permalink to this headline"></a></h2>
 <p>In order to execute operations on a resource Unfurl often needs connection settings,
 in particular credentials for authorization. These settings could be
 passed as inputs to each operation that needs them but this can be repetitive and inflexible.
@@ -274,34 +177,33 @@ it need to connect to resources. It does so by adding a <code class="docutils li
 doesn’t need to be explicitly referenced in the <code class="docutils literal notranslate"><span class="pre">requirements</span></code> section of a node template as regular relationship templates
 must be, but instead is applied to any target node that matches the relationship type’s specification.</p>
 <p>Because credentials likely are specific to the user or machine running Unfurl
-you can define them with the <code class="docutils literal notranslate"><span class="pre">localhost</span></code> ensemble in <code class="xref any docutils literal notranslate"><span class="pre">.unfurl_home</span></code> and by default they will be imported into the current ensemble. This can be explicitly specified when importing an external ensemble using the <a class="reference internal" href="#connections"><span class="std std-ref">Connections</span></a> key as described in the <a class="reference internal" href="projects.html#external-ensembles"><span class="std std-ref">External ensembles</span></a> section.</p>
-<p>As described in <a class="reference internal" href="get-started-step-by-step.html#getting-started"><span class="std std-ref">Getting Started</span></a>, the <code class="docutils literal notranslate"><span class="pre">localhost</span></code> ensemble provides several connection relationship templates for connecting to the the most common cloud providers.</p>
-<p>When Unfurl executes an operation it looks for relationship templates between the <code class="xref any docutils literal notranslate"><span class="pre">OPERATION_HOST</span></code> and the node that the operation is targeting, including any connection relationship templates that apply. If those templates contain any environment variables they will be set otherwise they can be accessed through to variables:</p>
+you can define them with the <code class="docutils literal notranslate"><span class="pre">localhost</span></code> ensemble in <a class="reference internal" href="get-started-step-by-step.html#configure"><span class="std std-ref">.unfurl_home</span></a> and by default they will be imported into the current ensemble. This can be explicitly specified when importing an external ensemble using the <a class="reference internal" href="#connections"><span class="std std-ref">Connections</span></a> key as described in the <a class="reference internal" href="projects.html#external-ensembles"><span class="std std-ref">External ensembles</span></a> section.</p>
+<p>As described in <a class="reference internal" href="helloworld.html#getting-started"><span class="std std-ref">Getting started</span></a>, the <code class="docutils literal notranslate"><span class="pre">localhost</span></code> ensemble provides several connection relationship templates for connecting to the the most common cloud providers.</p>
+<p>When Unfurl executes an operation it looks for relationship templates between the <code class="docutils literal notranslate"><span class="pre">OPERATION_HOST</span></code> and the node that the operation is targeting, including any connection relationship templates that apply. If those templates contain any environment variables they will be set otherwise they can be accessed through to variables:</p>
 <dl class="field-list simple">
-<dt class="field-odd">$allConnections</dt>
-<dd class="field-odd"><p>all connections available to the <code class="xref any docutils literal notranslate"><span class="pre">OPERATION_HOST</span></code> as a dictionary where the key is the (mapped) name of the relationship template.</p>
-</dd>
-<dt class="field-even">$connections</dt>
-<dd class="field-even"><p>the current connections between the OPERATION_HOST and the target or the target’s HOSTs as a list</p>
+<dt class="field-odd">$connections</dt>
+<dd class="field-odd"><p>the current connections between the OPERATION_HOST and the target or the target’s HOSTs as a dictionary.
+The keys are the name of the relationship template or the name of the type of the relationship.</p>
 </dd>
 </dl>
-<p>For example, both these expressions evaluate to the same value:</p>
+<p>For example, these expressions all evaluate to the same value:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">access_key:</span> <span class="pre">{{</span> <span class="pre">&quot;$allConnections::aws::AWS_ACCESS_KEY_ID&quot;</span> <span class="pre">|</span> <span class="pre">eval</span> <span class="pre">}}</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">access_key:</span> <span class="pre">{{</span> <span class="pre">&quot;$connections::AWS_ACCESS_KEY_ID&quot;</span> <span class="pre">|</span> <span class="pre">eval</span> <span class="pre">}}</span></code></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">access_key:</span> <span class="pre">{{</span> <span class="pre">&quot;$connections::aws::AWS_ACCESS_KEY_ID&quot;</span> <span class="pre">|</span> <span class="pre">eval</span> <span class="pre">}}</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">access_key:</span> <span class="pre">{{</span> <span class="pre">&quot;$connections::AWSAccount::AWS_ACCESS_KEY_ID&quot;</span> <span class="pre">|</span> <span class="pre">eval</span> <span class="pre">}}</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">access_key:</span> <span class="pre">{{</span> <span class="pre">&quot;$connections::*::AWS_ACCESS_KEY_ID&quot;</span> <span class="pre">|</span> <span class="pre">eval</span> <span class="pre">}}</span></code></p>
 </div></blockquote>
 <dl class="simple">
 <dt>In addition, because environment value because that properties</dt><dd><p><code class="docutils literal notranslate"><span class="pre">AWS_ACCESS_KEY_ID</span></code> is marked as an environment variable in the relationship’s type definition, it will also be added to the environment when the operation executed.</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="environment-variables">
-<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
-<p>You can control the environment variables are available while Unfurl is running
-by the setting the <a class="reference internal" href="projects.html#environment"><span class="std std-ref">Environment</span></a> directive.
-When set in a <a class="reference internal" href="jsonschema.html#context"><span class="std std-ref">context</span></a> object it is applied globally or it can be appear in
-the operation’s <code class="xref any docutils literal notranslate"><span class="pre">implementation</span></code> declaration where it will only be applied to that operation.</p>
-<p>In either case, <a class="reference internal" href="projects.html#environment"><span class="std std-ref">Environment</span></a> makes a copy of the current environment and applied each of its keys
+</section>
+<section id="environment-variables">
+<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline"></a></h2>
+<p>You can set the environment variables that are available while Unfurl is running
+in the <code class="docutils literal notranslate"><span class="pre">variables</span></code> section when declaring an <code class="docutils literal notranslate"><span class="pre">environment</span></code>.
+These global directives can be overridden when executing an individual operation by
+by adding an <code class="docutils literal notranslate"><span class="pre">environment</span></code> section to an operation’s <code class="docutils literal notranslate"><span class="pre">implementation</span></code> declaration.</p>
+<p>In either case, the directives makes a copy of the current environment and applied each of its keys
 in the order they are declared, adding the given key and value as
 environment variables except keys starting with “+” and “-”
 will copy or remove the variable from the current into environment
@@ -356,69 +258,54 @@ into the new one. In that case “*” and “?” are treated like filename wil
 </tr>
 <tr class="row-odd"><td><p>PYTHONPATH</p></td>
 </tr>
-<tr class="row-even"><td><p>UNFURL_TMPDIR</p></td>
+<tr class="row-even"><td><p>VIRTUAL_ENV</p></td>
 </tr>
-<tr class="row-odd"><td><p>UNFURL_LOGGING</p></td>
+<tr class="row-odd"><td><p>UNFURL_TMPDIR</p></td>
 </tr>
-<tr class="row-even"><td><p>UNFURL_HOME</p></td>
+<tr class="row-even"><td><p>UNFURL_LOGGING</p></td>
 </tr>
-<tr class="row-odd"><td><p>UNFURL_RUNTIME</p></td>
+<tr class="row-odd"><td><p>UNFURL_HOME</p></td>
 </tr>
-<tr class="row-even"><td><p>UNFURL_NORUNTIME</p></td>
+<tr class="row-even"><td><p>UNFURL_RUNTIME</p></td>
+</tr>
+<tr class="row-odd"><td><p>UNFURL_NORUNTIME</p></td>
 </tr>
 </tbody>
 </table>
 <p>If the <code class="docutils literal notranslate"><span class="pre">ASDF_DATA_DIR</span></code> environment variable is set or the <code class="docutils literal notranslate"><span class="pre">https://github.com/asdf-vm/asdf.git</span></code> repository is part of a current project
-and a <code class="xref any docutils literal notranslate"><span class="pre">.tool-versions</span></code> file exists (or <code class="docutils literal notranslate"><span class="pre">$ASDF_DEFAULT_TOOL_VERSIONS_FILENAME</span></code>) in the root of a current project, then <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable will be configured to include the paths to the tools listed in that file.</p>
-</div>
-</div>
+and a <code class="docutils literal notranslate"><span class="pre">.tool-versions</span></code> file exists (or <code class="docutils literal notranslate"><span class="pre">$ASDF_DEFAULT_TOOL_VERSIONS_FILENAME</span></code>) in the root of a current project, then <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable will be configured to include the paths to the tools listed in that file.</p>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="configurators.html" class="btn btn-neutral float-right" title="Configurators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="jobs.html" class="btn btn-neutral float-left" title="Jobs and Workflows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="configurators.html" class="btn btn-neutral float-right" title="Configurators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020, Adam Souzis.
-
-    </p>
+    <p>&#169; Copyright 2020, Adam Souzis.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

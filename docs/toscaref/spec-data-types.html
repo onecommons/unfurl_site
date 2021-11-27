@@ -1,80 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Data Types &mdash; Unfurl Documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon32.png"/>
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/custom.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Other Types" href="spec-other-types.html" />
     <link rel="prev" title="Node Types" href="spec-node-types.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html">
-          
-
-          
-            
             <img src="../_static/unfurl_logo.svg" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -82,18 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../README.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../README.html#installation">Installation</a></li>
@@ -143,78 +90,36 @@
 <li class="toctree-l1"><a class="reference internal" href="../api.html">Python API</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Unfurl</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../toscaref.html">TOSCA Language Reference</a> &raquo;</li>
-        
       <li>Data Types</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../_sources/toscaref/spec-data-types.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="data-types">
-<h1>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="data-types">
+<h1>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline"></a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">data_types</span></code> section allows you to define custom datatypes that you can use as the value for properties, attributes, and parameters (inputs and outputs).</p>
-<div class="section" id="declaration">
-<h2>Declaration<a class="headerlink" href="#declaration" title="Permalink to this headline">¶</a></h2>
+<section id="declaration">
+<h2>Declaration<a class="headerlink" href="#declaration" title="Permalink to this headline"></a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">data_types</span><span class="p">:</span>
 
   <span class="nt">data_type1</span><span class="p">:</span>
@@ -227,9 +132,9 @@
     <span class="nt">properties</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="definition">
-<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 17%" />
@@ -262,12 +167,12 @@
 </tr>
 </tbody>
 </table>
-<div class="section" id="description">
-<h3>description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+<section id="description">
+<h3>description<a class="headerlink" href="#description" title="Permalink to this headline"></a></h3>
 <p>This property may be used to describe the data type.</p>
-</div>
-<div class="section" id="properties">
-<h3>properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="properties">
+<h3>properties<a class="headerlink" href="#properties" title="Permalink to this headline"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">properties</span></code> property is used to define the data type schema.</p>
 <p><code class="docutils literal notranslate"><span class="pre">properties</span></code> is a dictionary from a property name to a dictionary describing the property. The nested dictionary includes the following keys:</p>
 <table class="colwidths-given docutils align-default">
@@ -307,18 +212,18 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="derived-from">
-<h3>derived_from<a class="headerlink" href="#derived-from" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="derived-from">
+<h3>derived_from<a class="headerlink" href="#derived-from" title="Permalink to this headline"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">derived_from</span></code> property may be used to build over and extend an existing data type.</p>
 <p>When a data type derives from another data type, its <code class="docutils literal notranslate"><span class="pre">properties</span></code> get merged with the parent’s <code class="docutils literal notranslate"><span class="pre">properties</span></code>. The merge is on the property level: A property defined on the parent type will be overridden by a property with the same name defined on the deriving type. An exception to this rule is when a property <code class="docutils literal notranslate"><span class="pre">type</span></code> references some other custom data type. This will be explained in detail in the following examples
 section.</p>
-</div>
-</div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="basic-usage">
-<h3>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h2>
+<section id="basic-usage">
+<h3>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline"></a></h3>
 <p>In the following example, we define a <code class="docutils literal notranslate"><span class="pre">my.datatypes.Endpoint</span></code> data
 type with two properties: <code class="docutils literal notranslate"><span class="pre">ip</span></code> and <code class="docutils literal notranslate"><span class="pre">port</span></code>. Next, we define a node
 type <code class="docutils literal notranslate"><span class="pre">DatabaseService</span></code> to represnt some external database service. In
@@ -358,8 +263,8 @@ configures the endpoint properties (i.e. the <code class="docutils literal notr
         <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2233</span>
 </pre></div>
 </div>
-<div class="section" id="schema-validations">
-<h4>Schema Validations<a class="headerlink" href="#schema-validations" title="Permalink to this headline">¶</a></h4>
+<section id="schema-validations">
+<h4>Schema Validations<a class="headerlink" href="#schema-validations" title="Permalink to this headline"></a></h4>
 <p>If we were to miss a property or specify an additional property under
 <code class="docutils literal notranslate"><span class="pre">endpoint</span></code>, the service template will fail validation.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">node_templates</span><span class="p">:</span>
@@ -388,10 +293,10 @@ configures the endpoint properties (i.e. the <code class="docutils literal notr
 </div>
 <p>This will fail validation on unexpected <code class="docutils literal notranslate"><span class="pre">some_other_property</span></code> that is not
 specified in <code class="docutils literal notranslate"><span class="pre">endpoint</span></code>’s schema.</p>
-</div>
-</div>
-<div class="section" id="inheritance">
-<h3>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="inheritance">
+<h3>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline"></a></h3>
 <p>We can derive from previously defined data types to extend their schema.
 For example, consider the <code class="docutils literal notranslate"><span class="pre">my.datatypes.Endpoint</span></code> defined in the
 previous example. We can derive from it, to create an endpoint data type
@@ -429,9 +334,9 @@ that also includes a user name.</p>
         <span class="nt">username</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">jimmy</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="composition">
-<h3>Composition<a class="headerlink" href="#composition" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="composition">
+<h3>Composition<a class="headerlink" href="#composition" title="Permalink to this headline"></a></h3>
 <p>Data type property types can be other data types themselves. We will
 reuse the previously defined <code class="docutils literal notranslate"><span class="pre">my.datatypes.Endpoint</span></code>. This time, we
 will create a <code class="docutils literal notranslate"><span class="pre">my.datatypes.Connection</span></code> that will hold endpoint
@@ -479,9 +384,9 @@ information + authentication details.</p>
           <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">secret</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="default-values">
-<h3>Default Values<a class="headerlink" href="#default-values" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="default-values">
+<h3>Default Values<a class="headerlink" href="#default-values" title="Permalink to this headline"></a></h3>
 <p>Default values can help make highly configurable components easy to use
 by setting default values where it makes sense. Consider our previously
 defined <code class="docutils literal notranslate"><span class="pre">my.datatypes.Connection</span></code>. We can simplify its usage if we
@@ -539,8 +444,8 @@ will be <code class="docutils literal notranslate"><span class="pre">admin</span
 <p>Notice how the <code class="docutils literal notranslate"><span class="pre">my_db_service</span></code> node template only specified the
 <code class="docutils literal notranslate"><span class="pre">connection.endpoint.ip</span></code> and <code class="docutils literal notranslate"><span class="pre">connection.auth.password</span></code>. The other
 properties got the default <code class="docutils literal notranslate"><span class="pre">2233</span></code> port and <code class="docutils literal notranslate"><span class="pre">admin</span></code> user.</p>
-<div class="section" id="overriding-default-values">
-<h4>Overriding Default Values<a class="headerlink" href="#overriding-default-values" title="Permalink to this headline">¶</a></h4>
+<section id="overriding-default-values">
+<h4>Overriding Default Values<a class="headerlink" href="#overriding-default-values" title="Permalink to this headline"></a></h4>
 <p>As its name implies, default values are of course, just defaults. As
 such, you can override them in same way you would configure properties
 without default values. For example:</p>
@@ -558,12 +463,12 @@ without default values. For example:</p>
 </pre></div>
 </div>
 <p>Here we have overridden the default <code class="docutils literal notranslate"><span class="pre">connection.endpoint.port</span></code> value and kept the default <code class="docutils literal notranslate"><span class="pre">connection.auth.username</span></code> value.</p>
-</div>
-</div>
-<div class="section" id="nested-merging-semantics">
-<h3>Nested Merging Semantics<a class="headerlink" href="#nested-merging-semantics" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="data-type-node-type-node-template">
-<h4>Data Type ← Node Type ← Node Template<a class="headerlink" href="#data-type-node-type-node-template" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="nested-merging-semantics">
+<h3>Nested Merging Semantics<a class="headerlink" href="#nested-merging-semantics" title="Permalink to this headline"></a></h3>
+<section id="data-type-node-type-node-template">
+<h4>Data Type ← Node Type ← Node Template<a class="headerlink" href="#data-type-node-type-node-template" title="Permalink to this headline"></a></h4>
 <p>In this example, we define a data type <code class="docutils literal notranslate"><span class="pre">datatypes.Data1</span></code> with three
 properties that have their default values set. Next, we define a node
 type <code class="docutils literal notranslate"><span class="pre">nodes.MyApp</span></code> which has a <code class="docutils literal notranslate"><span class="pre">data1</span></code> property of type
@@ -631,9 +536,9 @@ will be:</p>
   <span class="nt">prop3</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">prop3_default</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="nested-merging-and-inheritance">
-<h4>Nested Merging and Inheritance<a class="headerlink" href="#nested-merging-and-inheritance" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="nested-merging-and-inheritance">
+<h4>Nested Merging and Inheritance<a class="headerlink" href="#nested-merging-and-inheritance" title="Permalink to this headline"></a></h4>
 <p>When a node type derives from another node type, if it overrides a
 property who’s type is a custom data type and keeps that type
 explicitly, a similar nested merging logic will apply as described
@@ -685,57 +590,40 @@ previously. For example:</p>
 <p class="admonition-title">See also</p>
 <p>For more information, refer to <a class="reference external" href="../_static/TOSCA-Simple-Profile-YAML-v1.3-os-toc.html#_Toc50125486">TOSCA Data Types Section</a></p>
 </div>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="spec-other-types.html" class="btn btn-neutral float-right" title="Other Types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="spec-node-types.html" class="btn btn-neutral float-left" title="Node Types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="spec-other-types.html" class="btn btn-neutral float-right" title="Other Types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020, Adam Souzis.
-
-    </p>
+    <p>&#169; Copyright 2020, Adam Souzis.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

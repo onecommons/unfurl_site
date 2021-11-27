@@ -29,11 +29,26 @@ table.align-default {
 
 }
 
+
+
 /*Side nav bar on hover selection*/
 
 .wy-menu-vertical a:hover {
     background-color: #00D2D9;
 
+}
+
+/*Selected side nav bar on hover selection*/
+
+.wy-menu-vertical li.current a:hover {
+    background: #00d2d9;
+}
+
+/*Side nav bar - section selected - right border*/
+
+.wy-menu-vertical li.current a {
+
+    border-right: 1px solid #00d2d9;
 }
 
 /*Side nav bar - section selected - top & bottom borders*/
@@ -50,25 +65,39 @@ table.align-default {
 
 }
 
+/*Selected sub section background color*/
+
+.wy-menu-vertical li.toctree-l2.current>a, .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
+    background: #c4f1f3; /* #c9c9c9 */
+}
+
+.wy-menu-vertical li.toctree-l3.current>a, .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a {
+    background: #9eecef;
+}
+
+/*Nav bar selected background*/
+
+.wy-menu-vertical li ul li a {
+
+    background-color: #e7fafb;
+}
+
 
 .wy-nav-side {
 
     color: #9b9b9b;
-    background: #fcfcfc; 
+    background: #fcfcfc;
 
 }
 
 /*Side nav bar on hover selection*/
-
 a {
     color: #00D2D9;
-
 }
 
 /*Main RST body content*/
 
 .wy-nav-content {
-
     max-width: 850px;
     margin-left: 7%;
 }
@@ -77,13 +106,15 @@ a {
 /*Extra left background*/
 
 @media screen and (min-width: 1400px) {
-    .wy-nav-content-wrap {
-    background: #fcfcfc; 
-    }
-    .wy-nav-content {
-
+    .wy-nav-content, .wy-nav-content-wrap  {
         background: #fcfcfc;
     }
+}
+
+@media screen and (min-width: 1100px) {
+  .wy-nav-content, .wy-nav-content-wrap  {
+      background: #fcfcfc;
+  }
 }
 
 /*In line code color*/

@@ -5,8 +5,6 @@ Python API
     :depth: 2
 
 
-.. _python:
-
 API for writing configurators
 -----------------------------
 
@@ -15,40 +13,48 @@ API for writing configurators
   :undoc-members:
 
 .. automodule:: unfurl.support
-  :members: Status, NodeState, Priority
+  :members: Status, NodeState, Priority, Reason
   :undoc-members:
 
 .. automodule:: unfurl.result
   :members: ChangeRecord, ChangeAware
 
-Runtime
-~~~~~~~
+Runtime module
+~~~~~~~~~~~~~~
 .. automodule:: unfurl.runtime
   :members: Operational, OperationalInstance
 
 APIs for controlling Unfurl
 ----------------------------
 
+Localenv module
+~~~~~~~~~~~~~~~
 .. automodule:: unfurl.localenv
   :members: LocalEnv, Project
   :undoc-members:
 
+Job module
+~~~~~~~~~~~~~~
 .. automodule:: unfurl.job
-  :members: runJob, JobOptions, ConfigChange, Job
+  :members: run_job, JobOptions, ConfigChange, Job
 
-.. automodule:: unfurl.plan
-  :members: DeployPlan
-
+Init module
+~~~~~~~~~~~
 .. automodule:: unfurl.init
-  :members: clone, _createInClonedProject, createProjectRepo
+  :members: clone
 
 Utility classes and functions
 -----------------------------
 
-.. automodule:: unfurl.eval
-  :members: Ref, mapValue, evalRef, RefContext
+.. automodule:: unfurl.logs
+  :members: sensitive
 
 .. automodule:: unfurl.util
-  :members: UnfurlError, UnfurlTaskError, wrapSensitiveValue, isSensitive,
+  :members: UnfurlError, UnfurlTaskError, wrap_sensitive_value, is_sensitive,
     sensitive_bytes, sensitive_str, sensitive_dict, sensitive_list,
-    filterEnv, Generate
+    filter_env
+
+Eval module
+~~~~~~~~~~~~~~
+.. automodule:: unfurl.eval
+  :members: Ref, map_value, eval_ref, RefContext
