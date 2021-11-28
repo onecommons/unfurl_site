@@ -1,12 +1,15 @@
 # unfurl.run website
 
-The `unfurl` folder contains an unfurl project with an ensemble that will deploy a local copy of the site. 
+The `.unfurl` folder contains an Unfurl project with an ensemble that will deploy a local copy of the site. 
 
 The /docs directory is updated with: ```cp -R .tox/docs/html/* docs```
 
 ## Release
 
-JEKYLL_ENV=production bundle exec jekyll build -d _release
+1. Make sure the repository is clean.
+2. rm -rf _release
+3. JEKYLL_ENV=production bundle exec jekyll build -d _release
+4. unfurl deploy --force --instance website_bucket
 
 ## Notes on the console examples
 
