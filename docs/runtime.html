@@ -98,7 +98,7 @@
 <span id="runtime"></span><h1>Runtime Environment<a class="headerlink" href="#runtime-environment" title="Permalink to this headline"></a></h1>
 <section id="job-variables">
 <h2>Job Variables<a class="headerlink" href="#job-variables" title="Permalink to this headline"></a></h2>
-<p>When a task is being evaluated the following variables are available as an <a class="reference internal" href="glossary.html#eval-expressions"><span class="std std-ref">expression</span></a> variable or a jinja2 template variable.
+<p>When a task is being evaluated the following variables are available as an <a class="reference internal" href="expressions.html#eval-expressions"><span class="std std-ref">expression</span></a> variable or a jinja2 template variable.
 Instances are represented as a dictionary containing its properties and attributes and its <a class="reference internal" href="expressions.html#special-keys"><span class="std std-ref">Special keys</span></a>.</p>
 <blockquote>
 <div><dl class="field-list simple">
@@ -178,7 +178,7 @@ doesn’t need to be explicitly referenced in the <code class="docutils literal 
 must be, but instead is applied to any target node that matches the relationship type’s specification.</p>
 <p>Because credentials likely are specific to the user or machine running Unfurl
 you can define them with the <code class="docutils literal notranslate"><span class="pre">localhost</span></code> ensemble in <a class="reference internal" href="get-started-step-by-step.html#configure"><span class="std std-ref">.unfurl_home</span></a> and by default they will be imported into the current ensemble. This can be explicitly specified when importing an external ensemble using the <a class="reference internal" href="#connections"><span class="std std-ref">Connections</span></a> key as described in the <a class="reference internal" href="projects.html#external-ensembles"><span class="std std-ref">External ensembles</span></a> section.</p>
-<p>As described in <a class="reference internal" href="helloworld.html#getting-started"><span class="std std-ref">Getting started</span></a>, the <code class="docutils literal notranslate"><span class="pre">localhost</span></code> ensemble provides several connection relationship templates for connecting to the the most common cloud providers.</p>
+<p>As described in <a class="reference internal" href="get-started-step-by-step.html#getting-started"><span class="std std-ref">Getting Started</span></a>, the <code class="docutils literal notranslate"><span class="pre">localhost</span></code> ensemble provides several connection relationship templates for connecting to the the most common cloud providers.</p>
 <p>When Unfurl executes an operation it looks for relationship templates between the <code class="docutils literal notranslate"><span class="pre">OPERATION_HOST</span></code> and the node that the operation is targeting, including any connection relationship templates that apply. If those templates contain any environment variables they will be set otherwise they can be accessed through to variables:</p>
 <dl class="field-list simple">
 <dt class="field-odd">$connections</dt>
