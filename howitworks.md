@@ -5,7 +5,7 @@
 Unfurl is a command line tool that works with Git to record and deploy changes to your DevOps infrastructure.
 It tracks configuration changes, keeping a history of exactly how you did it and what the results are, so you can easily repair or recreate what you did later.
 
-Unfurl integrates with the deployment tools you are already using, like Ansible, Terraform and Helm, organizing their usage into Ensembles, shareable abstractions that ease migrations to new environments as well as share and reuse your work.
+Unfurl integrates with the deployment tools you are already using, like Terraform, Ansible, and Helm, organizing their usage into Ensembles, shareable abstractions that ease migrations to new environments as well as share and reuse your work.
 
 ## Key Concepts
 
@@ -22,7 +22,7 @@ At the core of Unfurl is an Ensemble manifest, a YAML file that includes:
 #### Unfurl projects
 
 An unfurl project is directory that consists of:
-* A project file "unfurl.yaml" that describes the `contexts` that the ensembles in the project will run in.
+* A project file "unfurl.yaml" that describes the `environments` that the ensembles in the project will run in.
 * `Ensemble templates`, which contain a declarative model of your cloud infrastructure and how to invoke operations for creating and managing it.
 * One or more ensembles, which are folders containing a `ensemble.yaml` -- a manifest describing the instantiation of an Ensemble template, including the status and state of the cloud resources it manages and a precise record of the artifacts and source repositories used. 
 
@@ -42,29 +42,29 @@ Unfurl creates a “home” project (by default in `~/.unfurl_home`) representin
 4. [Activate](#4-activate-and-manage)
 5. [Publish and Remix](#5-share-clone-and-remix)
 
-## 1. Organize your deployment environment
+## 1. Organize your deployment environments
 
 <div class="has-text-centered">
 
-![contexts](/images/contexts-diagram.svg)
+![environments](/images/contexts-diagram.svg)
 
 </div>
 
-### Unfurl allows you to collect your configuration information and organize them into contexts.
-Contexts are used to create isolated environments that the Unfurl deployment process runs in.
-For example, you might create different context for different projects or different deployment environments such as "production" or "staging".
+### Unfurl allows you to collect your configuration information and organize them into environments.
+Environments are used to create isolated contexts that the Unfurl deployment process runs in.
+For example, you might create different environments for different projects or different deployment environments such as "production" or "staging".
 
 Some of supported configuration include: 
 * accounts and connections settings
 * environment variables
 * location and version for build tools and artifacts like executables and container images
 
-Contexts can include secrets which can be in managed in a variety of ways including support for secret managers such as Hashicorp Vault or Amazon Secret Manager or transparently encrypting them using Ansible Vault.
+Environments can include secrets which can be in managed in a variety of ways including support for secret managers such as Hashicorp Vault or Amazon Secret Manager or transparently encrypting them using Ansible Vault.
 
 ### Bootstrap and manage your local environment
 
-Unfurl stores these local contexts in an ".unfurl_home" Ensemble that represents its local environment. 
-So you can use all its functionality to manage the local machine it is running on,
+Unfurl create a local environment in an ".unfurl_home" Ensemble. 
+So you can use all of Unfurl's functionality to manage the local machine it is running on,
  for example, it can:
 * automatically install project dependencies such as packages and executables. 
 * Store configuration history in the ensemble's local git repository

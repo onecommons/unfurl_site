@@ -1,0 +1,90 @@
+apiVersion: unfurl/v1alpha1
+kind: Ensemble
+spec:
+  service_template:
+    imports:
+    - repository: unfurl
+      file: tosca_plugins/artifacts.yaml
+
+    topology_template:
+      inputs:
+        rootdomain:
+          type: string
+          default: unfurl.run
+
+      node_templates:
+        website_bucket:
+          type: tosca:Root
+          properties:
+            bucket: '{{ {"get_input": "rootdomain"} | eval }}-root'
+          requirements:
+          - dependency: staging_site
+          interfaces:
+            Standard:
+              configure:
+                implementation: Ansible
+                inputs:
+                  # https://docs.ansible.com/ansible/latest/collections/community/aws/s3_sync_module.html
+                  playbook:
+                  - s3_sync:
+                      bucket: '{{ SELF.bucket }}'
+                      file_root: '{{ "../_release" | abspath("spec") }}'
+                      file_change_strategy: checksum
+                      mime_map: {'': text/html}
+                      delete: true
+                      # cache_control: "public, max-age=31536000"
+
+        staging_site:
+          type: unfurl.nodes.Installer.Terraform
+          interfaces:
+            Standard:
+              create:
+                inputs:
+                  resultTemplate:
+                    attributes:
+                      website_cdn_root_id: '{{ outputs.website_cdn_root_id.value }}'
+            defaults:
+              inputs:
+                tfvars:
+                  rootdomain: {get_input: rootdomain}
+                main: |
+                  provider "aws" {
+                    version = "~> 2.0"
+                  }
+
+                  # resource "aws_route53_zone" "main" {
+                  #   name = var.rootdomain
+                  # }
+                  #
+                  # resource "aws_route53_zone" "staging" {
+                  #   name = "staging.${var.rootdomain}"
+                  #
+                  #   tags = {
+                  #     Environment = "staging"
+                  #   }
+                  # }
+                  #
+                  # # add NS record of "staging" into the root zone
+                  # resource "aws_route53_record" "staging-ns" {
+                  #   zone_id = aws_route53_zone.main.zone_id
+                  #   name    = "staging.${var.rootdomain}"
+                  #   type    = "NS"
+                  #   ttl     = "30"
+                  #   records = aws_route53_zone.staging.name_servers
+                  # }
+
+                  module "aws_static_website" {
+                    source = "cloudmaniac/static-website/aws"
+
+                    website-domain-main     = "${var.rootdomain}"
+                    website-domain-redirect = "www.${var.rootdomain}"
+                  }
+
+                  variable "rootdomain" {
+                    type = string
+                  }
+
+                  output "website_cdn_root_id" {
+                    description = "Main CloudFront Distribution ID"
+                    value       = module.aws_static_website.website_cdn_root_id
+                  }

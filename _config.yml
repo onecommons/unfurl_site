@@ -50,7 +50,7 @@ exclude:
   - README.md
   - node_modules
   - vendor
-  - unfurl
+  - .unfurl
   - unused
   - _release
   - .gitignore
