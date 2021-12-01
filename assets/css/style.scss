@@ -48,6 +48,7 @@ $navbar-item-color: $white;
 $navbar-item-active-background-color: $white;
 $button-color: $white;
 $button-background-color: $blue;
+$content-heading-color: $black;
 
 @import "bulma";
 
@@ -672,6 +673,10 @@ $brkpoint: 768px;
   }
 }
 
+.features a {
+  color: $text;
+}
+
 .features .blue-title {
   font-size: 36px;
   @include mobile {
@@ -703,11 +708,8 @@ $brkpoint: 768px;
   background-color: $unfurlbeige;
 }
 
-.content {
-  line-height: 1.6;
-  padding: 0 !important;
-  margin: auto;
-  font-size: 18px;
+.media-content .content {
+  padding: 0;
 }
 
 .simplicity-img{
@@ -775,8 +777,10 @@ $brkpoint: 768px;
 }
 
 .icon-size {
-  margin: 10px 15px;
+  font-size: 30px;
+  color: $black;
 
+  margin: 10px 15px;
   @include mobile {
     margin: 10px 5px 0 5px;
   }
@@ -800,7 +804,7 @@ $brkpoint: 768px;
 @media screen and (max-width: 652px) {
   .footer-span:last-of-type {
     display: block;
-    color: black;
+    color: $black;
   }
 }
 

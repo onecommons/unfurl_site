@@ -69,7 +69,7 @@ layout: home
 
 <section class="features section">
   <div class="centered has-text-centered blue-title">
-    Everything you need to manage your DevOps infrastructure.
+    Manage your deployments without lots of tooling
   </div>
   <div class="container" style="padding:0 50px 110px 50px;">
   <div class="columns">
@@ -77,16 +77,19 @@ layout: home
       <article class="media">
         <figure class="media-left">
           <p class="simplicity-img">
-            <img src="images/Unfurl_feature_icon-decentralized.svg">
+            <a href="/docs/README.html#no-server-agentless">
+              <img src="images/Unfurl_feature_icon-decentralized.svg">
+            </a>
           </p>
         </figure>
         <div class="media-content">
           <div class="content">
-            <p>
+            <p><a href="/docs/README.html#no-server-agentless">
               <strong>Decentralized</strong>
               <br>
-              Self-contained CLI tool, no server component. All state is stored in git as readable and editable.
+              Self-contained CLI tool; no server or agent required. All state is stored in git. Works in any CI/CD pipeline.
                <br><span class="blue has-text-weight-semibold">Learn more ></span>
+            </a>
             </p>
           </div>
         </div>
@@ -95,19 +98,19 @@ layout: home
     <div class="column is-one-third columns-top">
       <article class="media">
         <figure class="media-left">
-          <p class="simplicity-img">
+          <p class="simplicity-img"><a href="/docs/README.html#deploy-infrastructure-from-simple-application-centric-descriptions">
             <img src="images/Unfurl_feature_icon-app_centric.svg">
-          </p>
+          </a></p>
         </figure>
         <div class="media-content">
           <div class="content">
-            <p>
+            <p><a href="/docs/README.html#deploy-infrastructure-from-simple-application-centric-descriptions">
               <strong>Application-centric
               </strong>
               <br>
-              Declarative, high level, cloud independent model of your cloud infrastructure.
+              Declarative, high level, cloud independent description your cloud infrastructure in YAML.
               <br><span class="blue has-text-weight-semibold">Learn more ></span>
-            </p>
+            </a></p>
           </div>
         </div>
       </article>
@@ -115,19 +118,20 @@ layout: home
     <div class="column is-one-third columns-top">
       <article class="media">
         <figure class="media-left">
-          <p class="simplicity-img">
+          <p class="simplicity-img"><a href="/docs/README.html#developer-friendly-state-management">
             <img src="images/Unfurl_feature_icon-developer.svg">
-          </p>
+          </a></p>
         </figure>
         <div class="media-content">
           <div class="content">
-            <p>
+            <p><a href="/docs/README.html#developer-friendly-state-management">
               <strong>Developer-Friendly
               </strong>
               <br>
-              Unfurl integrates with the deployment tools you are already using, like, Terraform, Ansible, Helm and just...
+              Unfurl integrates with the tools you are already using, including Terraform, Ansible, and Helm.
+              Collaborate using your familiar git workflow.
               <br><span class="blue has-text-weight-semibold">Learn more ></span>
-            </p>
+            </a></p>
           </div>
         </div>
       </article>
@@ -138,17 +142,16 @@ layout: home
       <article class="media">
         <figure class="media-left">
           <p class="simplicity-img">
-            <img src="images/Unfurl_feature_icon-secrets.svg">
+            <a href="/docs/README.html#flexible-secrets-management"><img src="images/Unfurl_feature_icon-secrets.svg"></a>
           </p>
         </figure>
         <div class="media-content">
           <div class="content">
-            <p>
-              <strong>Secrets Management
-              </strong>
+            <p><a href="/docs/README.html#flexible-secrets-management">
+              <strong>Secrets Management</strong>
               <br>
-              Inline, local encryption or use external secret managers. <br><span class="blue has-text-weight-semibold">Learn more ></span>
-            </p>
+              Choose built-in encryption or integration with external secret managers like Vault. <br><span class="blue has-text-weight-semibold">Learn more ></span>
+            </a></p>
           </div>
         </div>
       </article>
@@ -156,18 +159,18 @@ layout: home
     <div class="column is-one-third columns-top">
       <article class="media">
         <figure class="media-left">
-          <p class="simplicity-img">
+          <p class="simplicity-img"><a href="/docs/README.html#zero-installation">
             <img src="images/Unfurl_feature_icon_isolated_envt.svg">
-          </p>
+          </a></p>
         </figure>
         <div class="media-content">
           <div class="content">
-            <p>
+            <p><a href="/docs/README.html#zero-installation">
               <span class=""><strong>Isolated Environments</strong>
               <br>
               Bootstrap and manage your local environment or build isolated deployment environments.
               <br><span class="blue has-text-weight-semibold">Learn more ></span>
-            </p>
+            </a></p>
           </div>
         </div>
       </article>
@@ -175,19 +178,19 @@ layout: home
     <div class="column is-one-third columns-top">
       <article class="media">
         <figure class="media-left">
-          <p class="simplicity-img">
+          <p class="simplicity-img"><a href="/docs/README.html#day-two-operations">
             <img src="images/Unfurl_feature_icon-day2ops.svg">
-          </p>
+          </a></p>
         </figure>
         <div class="media-content">
           <div class="content">
-            <p>
+            <p><a href="/docs/README.html#day-two-operations">
               <strong>Day 2 Operations
               </strong>
               <br>
-              Support for “day two” management: incrementally apply changes; easy to define your own workflows...
+              Define your own workflows and operations. Incrementally apply changes.
               <br><span class="blue has-text-weight-semibold">Learn more ></span>
-            </p>
+            </a></p>
           </div>
         </div>
       </article>
@@ -212,17 +215,15 @@ layout: home
     <div class="grid-item">
       <div>
         <h1>
-          1. Bring <span class="strong">clarity</span> to your online
-          infrastructure
+          1. Configure
         </h1>
         <div class="is-hidden-tablet mobile-home-img">
           <img width="307" height="315" src="/images/context.svg" />
         </div>
         <h2>
-          Easily model your resources, manage configuration and secrets, track
-          status, and store it all in Git.
+          Unfurl creates a git repository with YAML templates you edit to describe your cloud architecture,
+          configuration and code dependencies.
         </h2>
-        <h2>Bootstrap and isolate your deployment environments.</h2>
         <h2>
           <button class="button outlined ">
             <a href="howitworks.html#1-organize-your-deployment-environment"
@@ -237,13 +238,14 @@ layout: home
     <div class="left deploy-text grid-item">
       <div>
         <h1>
-          2. Integrate your tools
+          2. Implement
         </h1>
         <div class="is-hidden-tablet mobile-deploy-img">
           <img alt="implementations" src="/images/implementation-wide.svg" />
         </div>
         <h2>
-          Unfurl integrates with Terraform, Ansible, and more. Use our existing library and record and replay your deployment history.
+          Define lifecycle operations by importing templates
+          or adopt your existing DevOps processes using Unfurl's integrations with Terraform, Ansible, Helm and more.
         </h2>
         <h2>
           <button class="button outlined">
@@ -268,17 +270,14 @@ layout: home
         <div>
           <h1>3. Deploy Anywhere</h1>
           <h2>
-            Build <span class="strong">Ensembles</span> to encapsulate live
-            instances and treat them like code.
+           Unfurl will generate a plan based on your target environment and high-level model and choose the correct operations to call.
           </h2>
           <h2>
-            <span class="strong">Ensembles</span> are re-usable, shareable
-            abstractions that avoid vendor lock-in and streamline deployments
-            and development.
+          As you deploy, it commits to git a history of changes to your cloud accounts.
           </h2>
           <h2>
             <button class="button outlined">
-              <a href="howitworks.html#5-share-clone-and-remix">Learn More</a>
+              <a href="howitworks.html#4-activate-and-manage">Learn More</a>
             </button>
           </h2>
         </div>

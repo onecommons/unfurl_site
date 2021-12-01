@@ -13,10 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Unfurl - GitOps for Everyone
+title: Unfurl - DevOps for Everyone
 email: unfurl@onecommons.org
 description: >- # this means to ignore newlines until "baseurl:"
-  Unfurl: GitOps for Everyone. Lightweight, serverless cloud management.
+  Unfurl: DevOps for Everyone. Simple, decentralized cloud management.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://unfurl.run"
 twitter_username: onecommons
