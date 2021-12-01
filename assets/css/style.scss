@@ -79,13 +79,28 @@ $palette: (
   justify-content: center;
 }
 
+.has-centered-child {
+  display: flex;
+  * {
+    margin: auto;
+  }
+}
+
 .has-vcentered-child {
+  display: flex;
+   * {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+.has-hcentered-child {
   display: flex;
 }
 
-.has-vcentered-child * {
-  margin-top: auto;
-  margin-bottom: auto;
+.has-hcentered-child * {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .strong {
@@ -118,18 +133,28 @@ body {
   text-align: center
 }
 
+.blue-title {
+  font-size: 48px;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 700 !important;
+  color: $unfurlblue;
+  text-transform: uppercase;
+}
+
 .intro {
-  padding: 0;
   .columns {
     height: auto
   }
 }
 
 .intro-left {
-  padding: 3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+
   // padding: 0 5%;
   letter-spacing: 0px;
-  font: normal normal 600 30px/42px Open Sans;
+  font-weight: 600;
+  font-size: 24px;
   .strong {
     color: $white;
   }
@@ -141,11 +166,20 @@ body {
 
 }
 
+.step1 {
+    column-gap: 140px;
+    padding-left: 16%;
+    padding-right: 16%;
+}
+
 .home {
   // background-color: $unfurlbeige;
   h1 {
     font-size: 36px;
     font-weight: bold;
+    @include mobile {
+      font-size: 30px;
+    }
   }
   h2 {
     font-size: 18px;
@@ -189,6 +223,17 @@ body {
 
 .stacked .level-item {
   max-width: 960px
+}
+
+.howitworks {
+  @include tablet {
+    min-height: 275px;
+  }
+  @include mobile {
+    .blue-title {
+      padding-top: 50px;
+    }
+  }
 }
 
 // from 'general':
@@ -415,6 +460,19 @@ pre.citation {
   }
 }
 
+
+.unfurl-cloud-img {
+  height: 80px;
+  @include mobile {
+    height: 60px;
+  }
+}
+.unfurl-cloud-h1 {
+  @include mobile {
+    padding-top: 50px;
+  }
+}
+
 .deploy-text {
   padding: 3rem 3rem;
   max-width: 60vw;
@@ -424,12 +482,13 @@ pre.citation {
     padding: 1.5rem 0rem;
   }
   .grid-item {
-    padding: 1.5rem 1.5rem;
+    padding: 4rem 0;
   }
   .intro {
-    padding-top:0;
+    padding-top: 100px;
     .intro-left {
-      padding: 4rem;
+      padding-left: 4rem;
+      padding-right: 4rem;
     }
   }
   .home {
@@ -476,6 +535,10 @@ pre.citation {
       margin-top: 30px;
     }
   }
+  .step1 .grid-item {
+    padding: 0px 0px 175px 0px;
+    min-height: 200px;
+  }
   .grid-container {
     .left {
         padding-right: 0;
@@ -493,7 +556,7 @@ pre.citation {
 }
 
 .unfurl-section{
-  min-height: 50vh;
+  min-height: 60vh;
   margin-top: 15%;
   @include mobile{
     margin-top: 25%;
@@ -501,30 +564,38 @@ pre.citation {
 }
 
 .lost-clouds{
+  @include tablet {
   background-image: url("/images/cloud-grid-dots.svg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 514px 357px;
   background-position: right;
-
-  min-height: 300px;
-  margin-top: 10%;
+}
+  min-height: 70vh;
   padding: 0 30px 0 30px;
-  @include mobile{
-    margin-top: 50%;
+  @include mobile {
+    margin-top: 25%;
+    padding: 50px 100px;
   }
-  h1  {
-    font: normal normal bold 58px/80px Open Sans Condensed;
+  h3 {
+    @include mobile {
+      margin-left: -50px;
+      margin-right: -50px;
+      text-align: center;
+    }
+  }
+  .mobile-cloud-img {
+    margin: 50px 0px;
   }
 }
 
 .blue {
-  color: #00d2d9;
+  color: $unfurlblue;
 
   // line-height: 70.81px;
 }
 
 #blue {
-  background-color: #00d2d9;
+  background-color: $unfurlblue;
 
   // line-height: 70.81px;
 }
@@ -600,14 +671,28 @@ $brkpoint: 768px;
     position: relative;
   }
 }
+
+.features .blue-title {
+  font-size: 36px;
+  @include mobile {
+    font-size: 30px;
+    padding-left: 16%;
+    padding-right: 16%;
+    padding-top: 50px;
+    margin-bottom: -50px;
+  }
+}
+
+.features .content strong {
+  font-family: "Open Sans Condensed", sans-serif;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
 .for-app-dev {
   padding: 10rem;
   @include mobile {
     padding: 5rem 1rem;
-  }
-  .headline {
-    max-width: 640px;
-    padding-bottom: 4rem;
   }
   .columns {
     max-width: 850px;
@@ -626,7 +711,8 @@ $brkpoint: 768px;
 }
 
 .simplicity-img{
-  width:70%;
+  width:50px;
+  height: 50px;
 }
 .columns-top {
   margin-top: 80px;
@@ -644,13 +730,13 @@ $brkpoint: 768px;
   font-size: 2vh;
   padding: 2rem 1.5rem 3rem;
   @include mobile {
-    font-size: 2vw;
+    font-size: 2vh;
     padding: 1rem 0rem 1rem;
   }
 }
 
 .footer-blue-font {
-  color: #00d2d9;
+  color: $unfurlblue;
 }
 
 .privacy-terms {
