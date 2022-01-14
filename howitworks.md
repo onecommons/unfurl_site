@@ -78,7 +78,7 @@ So you can use all of Unfurl's functionality to manage the local machine it is r
 
 </div>
 
-Specify your servers, applications, network, etc. with a declarative model that describes resources and their properties, dependencies, and relationships using the OASIS's [TOSCA](/docs/tosca.html) ("Topology and Orchestration Specification for Cloud Applications") standard). Leverage the TOSCA ecosystem of existing model libraries and tools.
+Specify your servers, applications, network, etc. with a declarative model that describes resources and their properties, dependencies, and relationships using the OASIS's [TOSCA](https://https://docs.unfurl.run.unfurl.run/tosca.html) ("Topology and Orchestration Specification for Cloud Applications") standard). Leverage the TOSCA ecosystem of existing model libraries and tools.
 
 TOSCA supports abstract type hierarchies and reusable templates for resources and relationships so your models can be truly cloud-agnostic. 
 
@@ -98,17 +98,17 @@ Models can be dynamically generated and updated as part of the deployment proces
 
 Once you've specified the model, you associate it with operations and workflows in YAML using plugins called "configurators", which integrate configuration tools, including:
 
-* [Shell scripts](docs/configurators.html#shell): Invoke scripts or invoke programs.
-* [Terraform](docs/configurators.html#terraform): Embed Terraform modules, manages Terraform state and artifacts.
-* [Ansible](docs/configurators.html#ansible): Embed playbooks, map TOSCA instances to Ansible inventories
-* [Python](docs/api.html#module-unfurl.configurator): Execute Python code in a virtual Python environment. 
+* [Shell scripts](https://docs.unfurl.run/configurators.html#shell): Invoke scripts or invoke programs.
+* [Terraform](https://docs.unfurl.run/configurators.html#terraform): Embed Terraform modules, manages Terraform state and artifacts.
+* [Ansible](https://docs.unfurl.run/configurators.html#ansible): Embed playbooks, map TOSCA instances to Ansible inventories
+* [Python](https://docs.unfurl.run/api.html#module-unfurl.configurator): Execute Python code in a virtual Python environment. 
 
 Domain-specific configurators:
 
-* [Docker](docs/configurators.html#docker): create and manage long running containers or run commands in ephemeral containers
-* [Kubernetes](docs/configurators.html#kubernetes): create and manage Kubernetes resources
-* [Helm](docs/configurators.html#helm): Deploy Helm charts and manage Helm releases
-* [Supervisor](docs/configurators.html#supervisor): Simple process control for local development.
+* [Docker](https://docs.unfurl.run/configurators.html#docker): create and manage long running containers or run commands in ephemeral containers
+* [Kubernetes](https://docs.unfurl.run/configurators.html#kubernetes): create and manage Kubernetes resources
+* [Helm](https://docs.unfurl.run/configurators.html#helm): Deploy Helm charts and manage Helm releases
+* [Supervisor](https://docs.unfurl.run/configurators.html#supervisor): Simple process control for local development.
 
 The YAML configuration language has several facilities for processing an operation's inputs and outputs, including:
 
