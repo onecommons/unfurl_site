@@ -13,7 +13,7 @@
               "Effect": "Allow",
               "Principal": {
                 "AWS": [
-                  "arn:aws:iam::284355325122:root"
+                  "arn:aws:iam::284355325122:user/unfurl-cloud-instance-dev"
                 ]
               },
               "Action": [
@@ -31,7 +31,7 @@
         },
         "Policies": [
          {
-            "PolicyName": "NetworkDescribe",
+            "PolicyName": "Deploy",
             "PolicyDocument": {
               "Version": "2012-10-17",
               "Statement": [
