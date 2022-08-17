@@ -26,7 +26,7 @@ repository: onecommons/unfurl_site
 # Build settings
 markdown: kramdown
 theme: jekyll-theme-tactile
-google_analytics: G-9RHXGH42Q2
+google_analytics: G-PK1TCQTWQV
 plugins:
   - jekyll-feed
   - jekyll-sitemap

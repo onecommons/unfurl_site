@@ -32,5 +32,5 @@ Parameters:
     Type: String
 Outputs:
   RoleArn:
-    Description: The ARN of the IAM role
+    Description: Copy this role ARN into "Provision Role ARN" field on your environment page 
     Value: !GetAtt [UnfurlCloudProvisionRole, Arn]
